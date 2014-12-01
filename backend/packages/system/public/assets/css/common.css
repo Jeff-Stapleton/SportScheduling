@@ -50,3 +50,14 @@ footer p {
 /*.ng-valid.ng-dirty{*/
     /*border-color:#78FA89;*/
 /*}*/
+
+body{background-image:url('../img/loginBackground4.jpg'); background-repeat:no-repeat; background-position: center top; 
+        text-align: center; padding-top: 290px; font-family: serif; color: white;}
+
+h1{font-size:3.7em;}
+
+p{font-size: 1.6em;}
+
+.button-primary-fb{}
+
+#fb-login-button{}
