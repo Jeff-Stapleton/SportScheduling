@@ -1,7 +1,26 @@
-angular.module('SportsScheduler', [])
-.controller('MainCtrl', [
-	'$scope',
-	function($scope){
-		$scope.test = 'Hello World!';
-	}]);
+(function(){
+	var app = angular.module('SportSceduler', []);
+
+	app.controller('UserController', function(){
+		this.user = user; 
+	});
+
+	app.controller('FacilityController', function(){
+		this.facility = facility;
+	});
+
+	var user = {
+		userId: ,
+		name: ,
+		isSignedIn: false,
+	}
+
+	var facility = {
+
+
+	}
+
+})();
+
+
 
