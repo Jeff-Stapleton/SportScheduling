@@ -68,7 +68,7 @@
 
         window.fbAsyncInit = function() {
           FB.init({
-            appId      : '158293387693472',
+            appId      : '624244104353794',
             cookie     : true,
             xfbml      : true,
             version    : 'v2.1'
@@ -120,10 +120,12 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false" data-scope="public_profile,email,user_friends">
-              <button type="button" class="btn btn-primary"> User Sign in with Facebook</button>
+              <!-- <button type="button" class="btn btn-primary"> User Sign in with Facebook</button> -->
+              <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();">
+              </fb:login-button>
             </div>
-            <!-- <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();">
-            </fb:login-button> -->
+              <!-- <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();">
+              </fb:login-button> --> 
           </div>
 
           
