@@ -15,9 +15,13 @@
     </head>
 
      <body ng-app="SportSceduler">
-
+      <div id="fb-root"></div>
       <script>
     // This is called with the results from from FB.getLoginStatus().
+      function goToHome() {
+          window.location = "http://pick-upper.com/homepage/homePage.html";
+      }
+    
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
       console.log(response);
@@ -25,10 +29,10 @@
       // app know the current login status of the person.
       // Full docs on the response object can be found in the documentation
       // for FB.getLoginStatus().
-      if (response.status === 'connected') {
+      
+      if (response.status === 'connected') { 
         // Logged into your app and Facebook.
-        goToHomePage();
-        testAPI();
+        // testAPI();
       } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
         document.getElementById('status').innerHTML = 'Please log ' +
@@ -59,15 +63,6 @@
       version    : 'v2.2' // use version 2.1
     });
 
-    function goToHomePage() {
-      FB.Event.subscribe('auth.login', function () {
-          window.location = "http://pick-upper.com/homepage/homePage.html";
-      });
-
-
-
-    }
-  
     // Now that we've initialized the JavaScript SDK, we call 
     // FB.getLoginStatus().  This function gets the state of the
     // person visiting this page and can return one of three states to
@@ -123,7 +118,7 @@
         <div class="row">
           <div class="col-xs-12">
 
-            <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false" data-scope="public_profile,email,user_friends">
+            <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false" onlogin="goToHome()" data-scope="public_profile,email,user_friends">
             </div>
 
           </div>          
