@@ -1,24 +1,17 @@
 (function(){
 	var app = angular.module('SportSceduler', []);
 
-	app.controller('UserController', function(){
+	app.controller('UserCtrl', function(){
 		this.user = user; 
 	});
 
-	app.controller('FacilityController', function(){
-		this.facility = facility;
-	});
-
 	var user = {
-		userId: ,
-		name: ,
+		userId: 0,
+		firstName: '',
+		lastName: '',
 		isSignedIn: false,
 	}
 
-	var facility = {
-
-
-	}
 
 })();
 
