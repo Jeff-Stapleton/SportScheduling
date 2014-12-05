@@ -5,7 +5,7 @@
 		this.user = user; 
 	});
 
-	app.controller('FacilityCtrl', function(){
+	app.controller('FacilityController', function(){
 		this.facilities = facilities;
 	});
 
@@ -14,55 +14,71 @@
 
 	}
 
-	var facilites = [
+	var facilities = [
 		
 		{
 			name: 'Provo Recreation Center',
 			file: 'ProvoRec.jpg',
 			link: '',
-			imageLink: '<img src="ProvoRec.jpg" alt="Provo Rec Center" >',
+			images: [
+				"ProvoRec.jpg" 
+			]
 		}
 		{
 			name: 'Orem Recreation Center',
 			file: 'OremRec.jpg',
 			link: 'http://www.oremrecreation.com/index.php/fitness-center',
-			imageLink: '<img src="OremRec.jpg" alt="Orem Rec Center" >',
+			images: [ 
+				"OremRec.jpg"
+			]
 		}
 		{
 			name: 'Richards Building - BYU'
 			file: 'rb.jpg',
 			link: 'http://rbfacilities.byu.edu/content/information-center',
-			imageLink: '<img src="rb.jpg" alt="Richards Building - BYU" >',
+			images: [ 
+				"rb.jpg"
+			]
 		}
 		{
 			name: '24 Hour Fitness',
 			file: '24Hour.jpg',
 			link: 'https://www.24hourfitness.com/Website/Club/343',
-			imageLink: '<img src="24Hour.jpg" alt="24 Hour Fitness" >',
+			images: [
+				"24Hour.jpg"
+			]
 		}
 		{
 			name: 'Provo Recreation Center',
 			file: 'ProvoRec.jpg',
 			link: '',
-			imageLink: '<img src="ProvoRec.jpg" alt="Provo Rec Center" >',
+			images: [
+				"ProvoRec.jpg" 
+			]
 		}
 		{
 			name: 'Orem Recreation Center',
 			file: 'OremRec.jpg',
 			link: 'http://www.oremrecreation.com/index.php/fitness-center',
-			imageLink: '<img src="OremRec.jpg" alt="Orem Rec Center" >',
+			images: [ 
+				"OremRec.jpg"
+			]
 		}
 		{
 			name: 'Richards Building - BYU'
 			file: 'rb.jpg',
 			link: 'http://rbfacilities.byu.edu/content/information-center',
-			imageLink: '<img src="rb.jpg" alt="Richards Building - BYU" >',
+			images: [ 
+				"rb.jpg"
+			]
 		}
 		{
 			name: '24 Hour Fitness',
 			file: '24Hour.jpg',
 			link: 'https://www.24hourfitness.com/Website/Club/343',
-			imageLink: '<img src="24Hour.jpg" alt="24 Hour Fitness" >',
+			images: [
+				"24Hour.jpg"
+			]
 		}
 	]
 
