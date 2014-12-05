@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="home">
+<head>
+	<title>Ball So Hard</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<!-- AngularJS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<!-- Our styles and code -->
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <script type ="text/javascript" src="app.js"></script>
+
+	<meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+	<body>
+		<script>
+	    window.fbAsyncInit = function() {
+	      FB.init({
+	        appId      : '624244104353794',
+	        xfbml      : true,
+	        version    : 'v2.2'
+	      });
+	    };
+
+	    (function(d, s, id){
+	       var js, fjs = d.getElementsByTagName(s)[0];
+	       if (d.getElementById(id)) {return;}
+	       js = d.createElement(s); js.id = id;
+	       js.src = "//connect.facebook.net/en_US/sdk.js";
+	       fjs.parentNode.insertBefore(js, fjs);
+	     }(document, 'script', 'facebook-jssdk'));
+	  </script>
+
+		<div id="title">
+			<h1>Find Games In Your Area</h1>
+			<h3> You can join or leave any game you want. Start playing today.</h3>
+		</div>
+
+		<div id="container" ng-controller="FacilityCtrl as facility" style="padding-top: 80px;">
+			<div class="row">
+		    <div class="col-xs-12 col-s-6 col-m-3" ng-repeat="fac in facility.facilities">
+		    	<img src="ProvoRec.jpg" alt="Provo Rec Center" >
+		    	<img src="OremRec.jpg" alt="Orem Rec Center" >
+		    	<img src="rb.jpg" alt="Richards Building BYU" >
+		    	<img src="24Hour.jpg" alt="24 Hour Fitness Provo" >
+		    </div>
+		  </div>
+		  <div class="row">
+		    <div class="col-xs-12 col-s-6 col-m-3">
+		    	<img src="ProvoRec.jpg" alt="Provo Rec Center" >
+		    	<img src="OremRec.jpg" alt="Orem Rec Center" >
+		    	<img src="rb.jpg" alt="Richards Building BYU" >
+		    	<img src="24Hour.jpg" alt="24 Hour Fitness Provo" >
+		    </div>
+		  </div>
+		</div>
+
+
+
+
+
+	</body>
+</html>
