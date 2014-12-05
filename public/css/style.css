@@ -1,11 +1,26 @@
+html { 
+    background: url(../assets/loginbackground.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
+body { 
+    text-align: center; 
+    padding-top: 290px; 
+    font-family: serif; 
+    color: white; 
+    background-color: rgb(240,240,240);
+}
 
-body{background-image:url('../assets/loginBackground4.jpg'); background-repeat:no-repeat; background-position: center top; 
-		text-align: center; padding-top: 290px; font-family: serif; color: white; background-color: rgb(240,240,240);}
+h1 {
+    font-size:3.7em;
+}
 
-h1{font-size:3.7em;}
-
-p{font-size: 1.6em;}
+p {
+    font-size: 1.6em;
+}
 
 .fb-login-button{}
 
