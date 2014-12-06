@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Facility</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- AngularJS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<!-- Our styles and code -->
+	<link rel="stylesheet" type="text/css" href="../css/facility.css">
+	<script type ="text/javascript" src="app.js"></script>
+
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+	<a class="navbar-brand" href="/views/homePage.html">Home</a>
+      </div>
+      <ul class="nav navbar-nav">
+	<li><a href="/views/profile.html">Profile</a></li>
+	<li><a href="/views/games.html">Events</a></li>
+      </ul>
+    </nav>
+
+    <div id="title">
+      <h1> Provo Recreation Center</h1>
+      <h3> View court details before reserving a time </h3>
+    </div>
+
+    <!-- middle column -->
+    <div id="middleColumn">
+      <div id="header">
+	<div id="profilePic">
+	</div>
+      </div>
+      <div id="buffer">
+      </div>
+      <div id="container" ng-controller="FacilityCtrl as facility" style="padding-top: 80px;">
+	<div class="row">
+	  <div class="col-xs-12 col-s-6 col-m-3" ng-repeat="fac in facility.facilities">
+
+	    <!-- One Court -->
+	    <div class="court">
+	      <div id="nameBlock">
+		<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
+	      </div>
+	      <div id="picBlock">
+		<div id="courtPic"></div>
+	      </div>
+	      
+		<div id="info1"> Availability </div>
+		<div id="info2"> Time slots available </div>
+	      
+	    </div>
+
+	     <!-- One Court -->
+	    <div class="court">
+	      <div id="nameBlock">
+		<div id="courtName"> Bulldog Court</div>
+	      </div>
+	      <div id="picBlock">
+		<div id="courtPic"></div>
+	      </div>
+	      <div id="infoBlock">
+		<div id="info1"> Availability </div>
+		<div id="info2"> Time slots available </div>
+	      </div>
+	    </div>
+
+	     <!-- One Court -->
+	    <div class="court">
+	      <div id="nameBlock">
+		<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
+	      </div>
+	      <div id="picBlock">
+		<div id="courtPic"></div>
+	      </div>	      
+		<div id="info1"> Availability </div>
+		<div id="info2"> Time slots available </div>  
+	    </div>
+
+	     <!-- One Court -->
+	    <div class="court">
+	      <div id="nameBlock">
+		<div id="courtName"> Bulldog Court</div>
+	      </div>
+	      <div id="picBlock">
+		<div id="courtPic"></div>
+	      </div>
+	      <div id="infoBlock">
+		<div id="info1"> Availability </div>
+		<div id="info2"> Time slots available </div>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-xs-12 col-s-6 col-m-3">
+
+	     <!-- One Court -->
+	    <div class="court">
+	      <div id="nameBlock">
+		<div id="courtName"> Bulldog Court</div>
+	      </div>
+	      <div id="picBlock">
+		<div id="courtPic"></div>
+	      </div>
+	      <div id="infoBlock">
+		<div id="info1"> Availability </div>
+		<div id="info2"> Time slots available </div>
+	      </div>
+	    </div>
+
+	     <!-- One Court -->
+	    <div class="court">
+	      <div id="nameBlock">
+		<div id="courtName"> Bulldog Court</div>
+	      </div>
+	      <div id="picBlock">
+		<div id="courtPic"></div>
+	      </div>
+	      <div id="infoBlock">
+		<div id="info1"> Availability </div>
+		<div id="info2"> Time slots available </div>
+	      </div>
+	    </div>
+
+	    <!-- One Court -->
+	    <div class="court">
+	      <div id="nameBlock">
+		<div id="courtName"> Bulldog Court</div>
+	      </div>
+	      <div id="picBlock">
+		<div id="courtPic"></div>
+	      </div>
+	      <div id="infoBlock">
+		<div id="info1"> Availability </div>
+		<div id="info2"> Time slots available </div>
+	      </div>
+	    </div>
+
+	     <!-- One Court -->
+	    <div class="court">
+	      <div id="nameBlock">
+		<div id="courtName"> Bulldog Court</div>
+	      </div>
+	      <div id="picBlock">
+		<div id="courtPic"></div>
+	      </div>
+	      <div id="infoBlock">
+		<div id="info1"> Availability </div>
+		<div id="info2"> Time slots available </div>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+      </div>
+    </div>
+    <div id="footer">
+    </div>	 
+  </body>
+</html>

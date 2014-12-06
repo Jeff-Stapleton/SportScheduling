@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Profile</title>
+    <title>Facility</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- AngularJS -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 	<!-- Our styles and code -->
-	<link rel="stylesheet" type="text/css" href="../css/profile.css">
+	<link rel="stylesheet" type="text/css" href="../css/facility.css">
 	<script type ="text/javascript" src="app.js"></script>
 
 	<meta charset="utf-8"> 
@@ -26,8 +26,8 @@
     </nav>
 
     <div id="title">
-      <h1> Jeff Stapleton </h1>
-      <h3> View and edit you profile page </h3>
+      <h1> Provo Recreation Center</h1>
+      <h3> View court details before reserving a time </h3>
     </div>
 
     <!-- middle column -->
@@ -38,15 +38,24 @@
       </div>
       <div id="buffer">
       </div>
-      <div id="info">
-	<h2>Email</h2>
-	<P> jeff.d.stapleton@gmail.com </P>
-	<h2>Phone Number</h2>
-	<P> (949) 632-0102 </P>
+      <div id="courts" ng-controller="FacilityCtrl as facility" style="padding-top: 80px;">
+	<div class="row">
+	  <div class="col-xs-12 col-s-6 col-m-3" ng-repeat="fac in facility.facilities">
+	    <img src="../assets/ProvoRec.jpg" alt="Provo Rec Center" >
+	    <img src="../assets/OremRec.jpg" alt="Orem Rec Center" >
+	    <img src="../assets/rb.jpg" alt="Richards Building BYU" >
+	    <img src="../assets/24Hour.jpg" alt="24 Hour Fitness Provo" >
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-xs-12 col-s-6 col-m-3">
+	    <img src="../assets/ProvoRec.jpg" alt="Provo Rec Center" >
+	    <img src="../assets/OremRec.jpg" alt="Orem Rec Center" >
+	    <img src="../assets/rb.jpg" alt="Richards Building BYU" >
+	    <img src="../assets/24Hour.jpg" alt="24 Hour Fitness Provo" >
+	  </div>
+	</div>
       </div>
-    </div>
-
-    <div id="footer">
     </div>	 
   </body>
 </html>

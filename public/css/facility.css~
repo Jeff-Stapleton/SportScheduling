@@ -43,8 +43,8 @@ p {
 
 #middleColumn {
     background-color: #ffffff;
-    width: 750px;
-    height: 700px;
+    width: 850px;
+    height: 2000px;
     margin-left:auto;
     margin-right:auto;
     -moz-box-shadow:0 5px 10px rgba(0,0,0,0.5);
@@ -64,16 +64,10 @@ p {
     display:block; 
     position:relative;
     overflow:hidden;
-    background-image: url("http://4.bp.blogspot.com/-xsZFgAwTaow/UumqvTFjURI/AAAAAAAACGI/LdXISuoVc00/s1600/vscocam_1390962236.676736.55.jpg");
+    background-image: url("http://bloximages.chicago2.vip.townnews.com/heraldextra.com/content/tncms/assets/v3/editorial/2/b7/2b7f8bea-e8b8-59ab-b6bd-bb89f5e13eb7/51b6c0bf0ebe1.preview-620.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 75% 25%;
-}
-
-#info {
-    padding-left: 25px;
-    text-align: left;
-    color: #666666
+    background-position: 50% 50%;
 }
 
 #footer {
