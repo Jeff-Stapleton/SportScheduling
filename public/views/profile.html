@@ -14,14 +14,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
   </head>
   <body>
+    <script>
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '624244104353794',
+      xfbml      : true,
+      version    : 'v2.2'
+      });
+      };
+
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <nav class="navbar navbar-inverse">
-      <div class="navbar-header">
-	<a class="navbar-brand" href="/views/homePage.html">Home</a>
-      </div>
       <ul class="nav navbar-nav">
-	<li><a href="/views/profile.html">Profile</a></li>
-	<li><a href="/views/games.html">Events</a></li>
+      	<li><a href="/views/homePage.html">Home</a></li>
+        <div class="navbar-header">
+         <a class="navbar-brand" href="/views/profile.html">Profile</a>
+        </div>
+      	<li><a href="/views/events.html">Events</a></li>
       </ul>
     </nav>
 
