@@ -13,7 +13,7 @@
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
   </head>
-  <body>
+  <body ng-controller="UserController">
     <script>
       window.fbAsyncInit = function() {
       FB.init({
@@ -39,31 +39,58 @@
          <a class="navbar-brand" href="/views/profile.html">Profile</a>
         </div>
       	<li><a href="/views/events.html">Events</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Facilities <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/views/facility.html">Richards Building - BYU</a></li>
+            <li><a href="/views/facility.html">24 Hour Fitness</a></li>
+            <li><a href="/views/facility.html">Orem Recreation Center</a></li>  
+            <li><a href="/views/facility.html">Provo Recreation Center</a></li>                      
+          </ul>
+        </li>
       </ul>
     </nav>
 
-    <div id="title">
+    <div class="container">
+      <div class="row" id="title">
+        <div class="col-xs-12">
+          <h1> Jeff Stapleton </h1>
+          <h3> View and edit you profile page </h3>
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-xs-12"></div>
+        <div class="col-*-*"></div>
+        <div class="col-*-*"></div>
+      </div>
+      <div class="row">
+        
+      </div>
+    </div>
+
+    <!-- <div id="title">
       <h1> Jeff Stapleton </h1>
       <h3> View and edit you profile page </h3>
     </div>
 
-    <!-- middle column -->
+    
     <div id="middleColumn">
       <div id="header">
-	<div id="profilePic">
-	</div>
+	     <div id="profilePic"></div>
       </div>
-      <div id="buffer">
-      </div>
+      <div id="buffer"></div>
       <div id="info">
-	<h2>Email</h2>
-	<P> jeff.d.stapleton@gmail.com </P>
-	<h2>Phone Number</h2>
-	<P> (949) 632-0102 </P>
+      	<h2>Email</h2>
+      	<P> jeff.d.stapleton@gmail.com </P>
+      	<h2>Phone Number</h2>
+      	<P> (949) 632-0102 </P>
       </div>
     </div>
 
-    <div id="footer">
-    </div>	 
+    <div id="footer"></div> -->	 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
   </body>
 </html>

@@ -33,14 +33,23 @@
     </script>
 
 		<nav class="navbar navbar-inverse">
-	    <ul class="nav navbar-nav" style="font-size: 1.4em; text-align: center; ">
-				<li><a href="/views/homePage.html">Home</a></li>
-				<li><a href="/views/profile.html">Profile</a></li>
-	    </ul>
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="/views/events.html">Events</a>
-	    </div>
-	  </nav>
+      <ul class="nav navbar-nav">
+        <li><a href="/views/homePage.html">Home</a></li>
+        <div class="navbar-header">
+         <a class="navbar-brand" href="/views/profile.html">Profile</a>
+        </div>
+        <li><a href="/views/events.html">Events</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Facilities <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/views/facility.html">Richards Building - BYU</a></li>
+            <li><a href="/views/facility.html">24 Hour Fitness</a></li>
+            <li><a href="/views/facility.html">Orem Recreation Center</a></li>  
+            <li><a href="/views/facility.html">Provo Recreation Center</a></li>                      
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
 	  <div class="container" style="padding-top: 50px;">
       <h1 style="text-align: center; font-family: serif;">Play Today, Join a Game</h1>
