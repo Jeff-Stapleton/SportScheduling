@@ -1,6 +1,7 @@
 
 var Game     = require('./models/game');
 var Facility = require('./models/facility');
+var User = require('./models/user');
 
 module.exports = function(app) {
 
@@ -14,20 +15,11 @@ module.exports = function(app) {
 	app.get('/', function(req, res) {
 		res.sendfile('./public/index.html');
 	});
-
-	app.put('/games',function(req,res){
-		
-		var game = new Game();
-		game.name = "Games"
-		// res.json({message:game.name});
-
-
-		game.save(function(err){
-			if(err)
-				res.send(err);
-			res.json({message: 'Game created'});
-		});
-	});
+    
+//////////////////////////////////////////////////////////////////    
+////GAMES/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////   
+    
 
 	app.get('/games',function(req,res){
 		Game.find(function(err, games) {
@@ -44,21 +36,39 @@ module.exports = function(app) {
 			res.json(game);
 		});
 	});
+    
+    app.put('/games/:name/:location/:ownerId/:start/:end/:people',function(req,res){
+		
+		var game = new Game();
+		game.name = req.params.name;
+        game.location = req.params.location;
+        game.ownerId = req.params.ownerId;
+        game.start = req.params.start;
+        game.end = req.params.end;
+        
+		// res.json({message:game.name});
 
-	app.get('/facilities',function(req,res){
-		res.json({message:'Here\'s the facilites'});
-		Facility.find(function(err,games){
+
+		game.save(function(err){
 			if(err)
 				res.send(err);
-			res.json(games);
+			res.json({message: 'Game created'});
 		});
 	});
 
-	app.put('/facilities/:fac_id',function(req,res){
-
+//////////////////////////////////////////////////////////////////    
+////FACILITIES////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+    
+	app.get('/facilities',function(req,res){
+		Facility.find(function(err,facilities){
+			if(err)
+				res.send(err);
+			res.json(facilities);
+		});
 	});
 
-	app.get('/facilites/:fac_id',function(req,res){
+    app.get('/facilites/:fac_id',function(req,res){
 		Facility.findById(req.params.fac_id,function(err,facility){
 			if (err)
 				res.send(err);
@@ -66,19 +76,55 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/users',function(req,res){
+    
+	app.put('/facilities/:name/:address/:phone',function(req,res){
+        var facility = new Facility();
+        facility.name = req.params.name;
+        facility.location = req.params.location;
+        facility.phone = req.params.phone;
+        
+        facility.save(function(err){
+           if(err)
+               res.send(err);
+            res.json({message: 'Facility created'});
+        });
+	});
 
+
+//////////////////////////////////////////////////////////////////    
+////USERS/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+    
+	app.get('/users',function(req,res){
+        User.find(function(err,users){
+			if(err)
+				res.send(err);
+			res.json(users);
+		});
 	});
 
 	app.get('/users/:user_id',function(req,res){
-
+		User.findById(req.params.user_id,function(err,user){
+			if (err)
+				res.send(err);
+			res.json(user);
+		});
 	});
-
-	app.post('/')
-
-
-
-
+    
+    app.put('/users/:firstName/:lastName/:email/:phone/:picture',function(req,res){
+        var user = new User();
+        user.firstName = req.params.firstName;
+        user.lastName = req.params.lastName;
+        user.email = req.params.email;
+        user.phone = req.params.phone;
+        user.picture = req.params.picture;
+        
+        user.save(function(err){
+           if(err)
+               res.send(err);
+            res.json({message: 'User created'});
+        });
+    });
 
 
 
