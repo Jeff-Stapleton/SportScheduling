@@ -52,11 +52,11 @@
       </ul>
     </nav>
 
-    <div class="container" ng-controller="UserController">
+    <div class="container" ng-controller="UserController as user">
       <div class="user row" id="title">
         <div class="col-xs-12">
           <!-- <h1> Jeff Stapleton </h1> -->
-          <h1> {{firstName}} + {{lastName}} </h1>
+          <h1> {{user.firstName}} + {{user.lastName}} </h1>
           <h3> View and edit you profile page </h3>
         </div>
       </div>
