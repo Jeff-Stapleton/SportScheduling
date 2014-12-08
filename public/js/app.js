@@ -8,7 +8,7 @@
 
 
 (function(){
-	var app = angular.module('SportScheduler', []);
+	var app = angular.module('SportScheduler', ['$scope']);
 
 	app.controller('UserController', function(){
 		this.user = user; 
@@ -16,6 +16,13 @@
 
 	app.controller('FacilityController', function(){
 		this.facilities = facilities;
+	});
+
+	app.controller('FormCtrl', function(){
+
+		this.submit = function(data) {
+
+		};
 	});
 
 	var user = {
