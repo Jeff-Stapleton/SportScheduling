@@ -8,19 +8,19 @@
 
 
 (function(){
-	var app = angular.module('SportScheduler', ['$scope']);
+	var app = angular.module('SportScheduler', []);
 
-	app.controller('UserController', function(){
-		this.user = user; 
+	app.controller('UserController', function($scope){
+		$scope.user = user; 
 	});
 
-	app.controller('FacilityController', function(){
-		this.facilities = facilities;
+	app.controller('FacilityController', function($scope){
+		$scope.facilities = facilities;
 	});
 
-	app.controller('FormCtrl', function(){
+	app.controller('FormCtrl', function($scope){
 
-		this.submit = function(data) {
+		$scope.submit = function(data) {
 
 		};
 	});
