@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html ng-app="SportScheduler">
+<html >
   <head>
     <title>Profile</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- AngularJS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
 	<!-- Our styles and code -->
 	<link rel="stylesheet" type="text/css" href="../css/profile.css">
 	<script src="../js/app.js"></script>
@@ -13,7 +13,7 @@
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
   </head>
-  <body ng-controller="UserController as user">
+  <body ng-app="SportScheduler">
     <script>
       window.fbAsyncInit = function() {
       FB.init({
@@ -51,8 +51,8 @@
       </ul>
     </nav>
 
-    <div class="container">
-      <div class="row" id="title">
+    <div class="container" ng-controller="UserController as user">
+      <div class="user row" id="title">
         <div class="col-xs-12">
           <h1> {{user.firstName}} + {{user.lastName}} </h1>
           <h3> View and edit you profile page </h3>
