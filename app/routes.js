@@ -55,6 +55,16 @@ module.exports = function(app) {
 			res.json({message: 'Game created'});
 		});
 	});
+    
+    app.delete('/games/:game_id',function(req,res){
+        Game.remove({
+ 			_id: req.params.game_id
+ 		}, function(err, game) {
+ 			if (err)
+ 				res.send(err);
+ 			res.json({ message: 'Successfully deleted' });
+ 		});
+    });
 
 //////////////////////////////////////////////////////////////////    
 ////FACILITIES////////////////////////////////////////////////////
@@ -89,6 +99,17 @@ module.exports = function(app) {
             res.json({message: 'Facility created'});
         });
 	});
+    
+    app.delete('/facilities/:facility_id',function(req,res){
+        Facility.remove({
+ 			_id: req.params.facility_id
+ 		}, function(err, user) {
+ 			if (err)
+ 				res.send(err);
+
+ 			res.json({ message: 'Successfully deleted' });
+ 		});
+    });
 
 
 //////////////////////////////////////////////////////////////////    
@@ -126,6 +147,16 @@ module.exports = function(app) {
         });
     });
 
+    app.delete('/users/:user_id',function(req,res){
+        User.remove({
+ 			_id: req.params.user_id
+ 		}, function(err, user) {
+ 			if (err)
+ 				res.send(err);
+
+ 			res.json({ message: 'Successfully deleted' });
+ 		});
+    });
 
 
 // app.get('/', function(req, res) {
