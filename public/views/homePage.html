@@ -38,6 +38,16 @@
     
   </nav>
 
+  <script type="text/javascript" ng-controller="UserController">
+    FB.api('/me', function(response) {
+      console.log(JSON.stringify(response));
+      var vals = JSON.stringify(response);
+      {{user.firstName}} = vals[2];
+      {{user.email}} = vals[1];
+      {{user.fbUserId}} = vals[0];
+    });
+  </script>
+
   <div id="title">
     <h1>Find Games In Your Area</h1>
     <h3> You can join or leave any game you want. Start playing today.</h3>

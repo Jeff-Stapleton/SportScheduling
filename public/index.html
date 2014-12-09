@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
-     <body ng-app="SportScheduler">
+     <body ng-controller="UserController">
       <div id="fb-root"></div>
       <script>
     // This is called with the results from from FB.getLoginStatus().
@@ -32,7 +32,6 @@
       
       if (response.status === 'connected') { 
         // Logged into your app and Facebook.
-
         // testAPI();
       } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
