@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- AngularJS -->
     <script src="../libs/angular/angular.js"></script>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script> -->
 	<!-- Our styles and code -->
 	<link rel="stylesheet" type="text/css" href="../css/profile.css">
 	<script type="text/javascript" src="../js/app.js"></script>
@@ -61,12 +60,12 @@
       </div>
     </div>
 
-    <div class="container" id="middleColumn" >
+    <div class="container" id="middleColumn" ng-controller="UserController">
       <div class="row" >
 
-        <form class="form-horizontal" role="form" ng-controller="FormCtrl as ctrl" ng-submit="ctrl.submit(user)">
+        <form class="form-horizontal" role="form" >
           <div class="col-sm-8" id="profilePic" style="text-align: center; align-content:center;">
-            <img ng-src="user.image" class="img-responsive" alt="profile pic">
+            <img ng-src="{{user.image}}" class="img-responsive" alt="profile pic">
             <!-- <img src="http://4.bp.blogspot.com/-xsZFgAwTaow/UumqvTFjURI/AAAAAAAACGI/LdXISuoVc00/s1600/vscocam_1390962236.676736.55.jpg" class="img-responsive" alt="profile pic"> -->
           </div>
           <div class="col-xs-8 col-sm-4" >
