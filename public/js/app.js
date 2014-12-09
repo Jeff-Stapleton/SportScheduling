@@ -44,7 +44,25 @@
 				images: [
 					"../assets/24Hour.jpg"
 				]
-			}
+			},
+			{
+					name: 'Orem Recreation Center',
+					hours: '5:00 am - 10:00 pm Mon-Fri
+							7:00 am - 7:00 pm Sat',
+					phone: '(801) 852-6600',
+					images: [ 
+						"../assets/OremRec.jpg"
+					]
+				},
+				{
+					name: 'Provo Recreation Center',
+					hours: '5:00 am - 10:00 pm Mon-Fri
+							7:00 am - 8:00 pm Sat',
+					phone: '(801) 229-7154',
+					images: [
+						"../assets/ProvoRec.jpg" 
+					]
+				}
 
 		];
 
