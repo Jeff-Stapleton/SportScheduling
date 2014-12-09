@@ -18,7 +18,10 @@
 		};
 
 		$scope.submit = function() {
-		 	
+		 	console.log($scope.user.firstName);
+		 	console.log($scope.user.lastName);
+		 	console.log($scope.user.email);
+		 	console.log($scope.user.fbUserId);
 
 		};
 
