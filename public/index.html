@@ -14,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
-     <body >
+     <body ng-controller="UserController">
       <div id="fb-root"></div>
-      <script ng-controller="UserController">
+      <script >
     // This is called with the results from from FB.getLoginStatus().
       function goToHome() {
           FB.api('/me', function(response) {
@@ -39,7 +39,7 @@
         // Logged into your app and Facebook.
         var id = response.authResponse.userID;
         var vals = JSON.stringify(response);
-        
+
         // testAPI();
       } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
