@@ -5,7 +5,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <!-- AngularJS -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="../libs/angular/angular.js"></script>
   <!-- Our styles and code -->
   <link rel="stylesheet" type="text/css" href="../css/home.css">
   <script type ="text/javascript" src="../js/app.js"></script>
@@ -56,8 +56,35 @@
     <h3> You can join or leave any game you want. Start playing today.</h3>
   </div>
 
-  <div class="cover-container" ng-controller="FacilityCtrl as facility" style="padding-top: 50px;">
-    <div class="row">
+
+
+  <div class="cover-container" ng-controller="FacilityController" style="padding-top: 50px;">
+    <div class="row" ng-repeat="facility in facilities">
+      
+      <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="row">
+            <div class="col-xs-12 cover-tile-image" style="text-align: center;">
+              <a href="/views/facility.html">
+                <img src="{{facility.images[0]}}" alt=""/>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 cover-tile-text" style="text-align: center;">
+                <h5>{{facility.name}}</h5>
+                <h5>Hours: {{facility.hours}}</h5>
+                <h5>Phone: {{facility.phone}}</h5>
+            </div>
+          </div>
+      </div>
+
+    </div> 
+  </div>
+
+
+
+  <!-- <div class="cover-container" ng-controller="FacilityController" style="padding-top: 50px;">
+    <div class="row" ng-repeat="facility in facilities">
       
       <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="row">
@@ -130,7 +157,7 @@
       </div>
 
     </div> 
-  </div>
+  </div> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
