@@ -17,13 +17,36 @@
  		image: 'http://4.bp.blogspot.com/-xsZFgAwTaow/UumqvTFjURI/AAAAAAAACGI/LdXISuoVc00/s1600/vscocam_1390962236.676736.55.jpg'
 		};
 
-		$scope.submit = function() {
-			if($scope.user.email){
-				
-			} else {
+		// $scope.submit = function() {
+		// 	if($scope.user.email){
 
+		// 	} else {
+
+		// 	}
+		// };
+
+	});
+
+	app.controller('FacilityController', function($scope){
+ 		$scope.facilities = [
+ 			{
+				name: 'Richards Building - BYU',
+				hours: '6:00 am - 9:45 pm Mon-Sat',
+				phone: '(801) 422-3644',
+				images: [ 
+					"../assets/rb.jpg"
+				]
+			},
+			{
+				name: '24 Hour Fitness',
+				hours: '6:00 am - 12:00 pm Mon-Sat',
+				phone: '(801) 224-2096',
+				images: [
+					"../assets/24Hour.jpg"
+				]
 			}
-		};
+
+		];
 
 	});
 
