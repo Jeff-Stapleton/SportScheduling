@@ -6,7 +6,7 @@
 (function() {
 	var app = angular.module('SportScheduler', []);
  
- 	app.controller('UserController', function($scope){
+ 	app.controller('UserController', ['$scope', function($scope){
  		$scope.user = {
  		firstName: 'Jeff',
  		lastName: 'Stapleton',
@@ -29,9 +29,9 @@
 			$scope.user.fbUserId = id;
 		};
 
-	});
+	}]);
 
-	app.controller('FacilityController', function($scope){
+	app.controller('FacilityController', ['$scope', function($scope){
  		$scope.facilities = [
  			{
 				name: 'Richards Building - BYU',
@@ -64,7 +64,7 @@
 
 		];
 
-	});
+	}]);
 
 })();
 
