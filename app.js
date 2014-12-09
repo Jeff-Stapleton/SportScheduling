@@ -9,6 +9,10 @@
 		this.facilities = facilities;
 	});
 
+	app.controller('CourtCtrl', function(){
+		this.courts = courts;
+	});
+
 	var user = {
 
 
@@ -63,6 +67,29 @@
 			file: '24Hour.jpg',
 			link: 'https://www.24hourfitness.com/Website/Club/343',
 			imageLink: '<img src="img/24Hour.jpg" alt="24 Hour Fitness" >',
+		}
+	]
+
+	var courts = [
+		{
+			name: 'Bulldog',
+			image: "../assets/rb.jpg"
+			hours: ['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm'],
+			hoursOfOp: [
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0]
+				],
 		}
 	]
 

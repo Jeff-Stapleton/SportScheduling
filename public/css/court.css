@@ -1,0 +1,146 @@
+﻿html {
+    background-color: #f2f2f2;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size:2.3em;
+    line-height:0.2em;
+}
+
+h2 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size:1.6em;
+    line-height:0.4em;
+}
+
+h3 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1.3em;
+}
+
+#title {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: #666666;
+}
+
+#buffer {
+    width: 100%;
+    height: 10px;
+}
+
+#middleColumn {
+    background-color: #ffffff;
+    padding-bottom: 10px;
+    -moz-box-shadow:0 5px 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow:0 5 10px rgba(0,0,0,0.5);
+    box-shadow:0 5px 10px rgba(0,0,0,0.5);
+}
+
+/*#middleColumn {
+    background-color: #ffffff;
+    width: 850px;
+    height: 2000px;
+    margin-left:auto;
+    margin-right:auto;
+    -moz-box-shadow:0 5px 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow:0 5 10px rgba(0,0,0,0.5);
+    box-shadow:0 5px 10px rgba(0,0,0,0.5);
+}*/
+
+#header {
+    background-color: #000000;
+    width: 100%;
+    height: 300px;
+}
+
+#profilePic {
+    width:100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#courtPic {
+    width:100%;
+    height:100%; 
+    display:block; 
+    position:relative;
+    overflow:hidden;
+    background-image: url("http://bloximages.chicago2.vip.townnews.com/heraldextra.com/content/tncms/assets/v3/editorial/2/b7/2b7f8bea-e8b8-59ab-b6bd-bb89f5e13eb7/51b6c0bf0ebe1.preview-620.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+div.court {
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif
+    text-align: left;
+    -moz-box-shadow:0 5px 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow:0 5 10px rgba(0,0,0,0.5);
+    box-shadow:0 5px 10px rgba(0,0,0,0.5);
+}
+
+#nameBlock {
+    width:100%;
+    height:30px;
+}
+
+#courtName {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: #0099ff;
+}
+
+#picBlock{
+    width:100%;
+    height:120px;
+}
+
+#courtPic {
+    width:100%;
+    height:100%; 
+    display:block; 
+    position:relative;
+    overflow:hidden;
+    background-image: url("http://bloximages.chicago2.vip.townnews.com/heraldextra.com/content/tncms/assets/v3/editorial/2/b7/2b7f8bea-e8b8-59ab-b6bd-bb89f5e13eb7/51b6c0bf0ebe1.preview-620.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+
+#info1 {
+    padding-top: 8px;
+    padding-left: 5px;
+    color: #666666;
+    font-size: 1.0em;
+}
+
+#info2 {
+    padding-left: 5px;
+    color: #666666;
+    font-size: 0.8em;
+}
+
+#footer {
+    width: 100%;
+    height: 50px;
+}
+
+img {
+    text-align: center;
+    -moz-box-shadow:0 5px 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow:0 5 10px rgba(0,0,0,0.5);
+    box-shadow:0 5px 10px rgba(0,0,0,0.5);
+}
