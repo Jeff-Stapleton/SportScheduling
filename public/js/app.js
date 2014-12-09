@@ -11,6 +11,7 @@
 	var app = angular.module('SportScheduler', []);
 
 	app.controller('UserController', function($scope){
+		$scope.name = "Jeff Stapleton";
 		$scope.user = {
 		firstName: 'Jeff',
 		lastName: 'Stapleton',
@@ -19,7 +20,7 @@
 		fbUserId: '',
 		accessToken: '',
 		image: 'http://4.bp.blogspot.com/-xsZFgAwTaow/UumqvTFjURI/AAAAAAAACGI/LdXISuoVc00/s1600/vscocam_1390962236.676736.55.jpg'
-	} 
+	}; 
 	});
 
 	app.controller('FacilityController', function($scope){
