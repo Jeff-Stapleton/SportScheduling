@@ -18,6 +18,10 @@
 		};
 
 		$scope.submit = function() {
+		 	
+		};
+
+		$scope.log = function() {
 		 	console.log($scope.user.firstName);
 		 	console.log($scope.user.lastName);
 		 	console.log($scope.user.email);
