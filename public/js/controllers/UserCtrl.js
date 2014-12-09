@@ -17,6 +17,7 @@
 	app.submit = function(email, phone) {
 		$scope.user.email = email;
 		$scope.user.phone = phone;
+		console.log(email);
 	};
 
 })();
