@@ -18,9 +18,10 @@
 		};
 
 		$scope.submit = function(email, phone) {
-		 	$scope.user.email = email;
-		 	$scope.user.phone = phone;
-		 	console.log(email);
+		 	console.log($scope.user.email);
+			$scope.user.email = email;
+			$scope.user.phone = phone;
+			console.log($scope.user.email);
 		};
 
 	});
