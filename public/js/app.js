@@ -23,10 +23,10 @@
 		};
 
 		$scope.setUser = function(firstName, lastName, email, id,){
-			$scope.user.firstName = firstName;
+			/*$scope.user.firstName = firstName;
 			$scope.user.lastName = lastName;
 			$scope.user.email = email;
-			$scope.user.fbUserId = id;
+			$scope.user.fbUserId = id;*/
 		};
 
 	});
