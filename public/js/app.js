@@ -17,11 +17,9 @@
  		image: 'http://4.bp.blogspot.com/-xsZFgAwTaow/UumqvTFjURI/AAAAAAAACGI/LdXISuoVc00/s1600/vscocam_1390962236.676736.55.jpg'
 		};
 
-		$scope.submit = function(email, phone) {
+		$scope.submit = function() {
 		 	console.log($scope.user.email);
-			$scope.user.email = email;
-			$scope.user.phone = phone;
-			console.log($scope.user.email);
+
 		};
 
 	});
