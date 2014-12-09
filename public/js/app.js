@@ -18,7 +18,7 @@
 		};
 
 		$scope.submit = function() {
-		 	console.log($scope.user.email);
+		 	
 
 		};
 
