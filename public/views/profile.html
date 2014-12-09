@@ -56,13 +56,13 @@
           <div class="col-xs-8 col-sm-4" >
             <div class="form-group" style="padding-left: 10px; padding-top: 15%;">
               <label for="email">Email:</label>
-              <input ng-model="{{user.email}}" type="email" class="form-control" id="email" placeholder="Enter email">
+              <input ng-model="user.email" type="email" class="form-control" id="email" placeholder="Enter email">
             </div>
             <div class="form-group" style="padding-left: 10px;">
               <label for="phone">Phone Number:</label>
               <input ng-model="{{user.phone}}" type="text" class="form-control" id="phone" placeholder="Enter phone number">
             </div>
-            <button type="submit" class="btn btn-default" ng-submit="submit({{email}}, {{phone}})">Submit</button>
+            <button type="submit" class="btn btn-default" ng-submit="submit(email, phone)">Submit</button>
           </div>
         </form>
 
