@@ -17,8 +17,4 @@
 
 	};
 
-	app.getUser = function(){
-		return this.user;
-	};
-
 })();
