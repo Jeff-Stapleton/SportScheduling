@@ -10,7 +10,7 @@ var morgan = require ('morgan');
 	
 // config files
 //var db = require('./config/db');
-mongoose.connect('mongodb://localhost/sport-scheduler'); // connect to our database
+mongoose.connect('mongodb://localhost/SportScheduling'); // connect to our database
 
 var port = process.env.PORT || 8080; // set our port
 // mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
