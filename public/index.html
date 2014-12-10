@@ -5,7 +5,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- AngularJS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="../libs/angular/angular.js"></script>
     <!-- Our styles and code -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type ="text/javascript" src="../js/app.js"></script>
@@ -14,18 +14,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
-     <body >
+     <body ng-controller="UserController">
       <div id="fb-root"></div>
-      <script ng-controller="UserController">
+      <script >
     // This is called with the results from from FB.getLoginStatus().
       function goToHome() {
-          /*FB.api('/me', function(response) {
+          FB.api('/me', function(response) {
             console.log(JSON.stringify(response));
-            var vals = JSON.stringify(response);
-            setUser(vals[2], vals[4], vals[1], vals[0]);
-            log();
-          });*/
-          window.location = "views/homePage.html";
+            var text = JSON.stringify(response);
+            var vals = JSON.parse(text);
+            sessionStorage.setItem("first_name", vals.first_name);
+            sessionStorage.setItem("last_name", vals.last_name);
+            sessionStorage.setItem("email", vals.email);
+            sessionStorage.setItem("id", vals.id);
+            sessionStorage.setItem("loggedIn", "true");
+          });
+          FB.api('/me/picture?redirect=0&height=500&type=normal&width=500', function(response) {
+            var text = JSON.stringify(response);
+            var pic = JSON.parse(text);
+            sessionStorage.setItem("image", pic.data.url);
+            window.location = "views/homePage.html";
+          });
       }
     
     function statusChangeCallback(response) {
@@ -41,13 +50,13 @@
         // testAPI();
       } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
-        document.getElementById('status').innerHTML = 'Please log ' +
-          'into this app.';
+        /*document.getElementById('status').innerHTML = 'Please log ' +
+          'into this app.';*/
       } else {
         // The person is not logged into Facebook, so we're not sure if
         // they are logged into this app or not.
-        document.getElementById('status').innerHTML = 'Please log ' +
-          'into Facebook.';
+        /*document.getElementById('status').innerHTML = 'Please log ' +
+          'into Facebook.';*/
       }
     }
   

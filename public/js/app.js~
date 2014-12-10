@@ -1,20 +1,21 @@
+/*(function() {
+	var app = angular.module('SportScheduler', ['SportScheduler-User', 'SportScheduler-Facility']);
 
+
+})();*/
 (function() {
 	var app = angular.module('SportScheduler', []);
  
- 	app.controller('UserController', ['$scope', '$http', function($scope, $http){
+ 	app.controller('UserController', ['$scope', function($scope){
  		$scope.user = {
- 		firstName: '',
- 		lastName: '',
- 		email: '',
- 		phone: '',
+ 		firstName: 'Jeff',
+ 		lastName: 'Stapleton',
+ 		email: 'jeff.d.stapleton@gmail.com',
+ 		phone: '(949)632-0102',
  		fbUserId: '',
  		accessToken: '',
- 		image: ''
+ 		image: 'http://4.bp.blogspot.com/-xsZFgAwTaow/UumqvTFjURI/AAAAAAAACGI/LdXISuoVc00/s1600/vscocam_1390962236.676736.55.jpg'
 		};
-
-		$scope.userGetPath = '/users/' + $scope.user.fbUserId;
-		$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image;
 
 		$scope.submit = function() {
 		 	
@@ -25,39 +26,14 @@
 		 	console.log($scope.user.lastName);
 		 	console.log($scope.user.email);
 		 	console.log($scope.user.fbUserId);
+
 		};
 
-		$scope.setUser = function(){
-			if(sessionStorage.getItem("loggedIn") === "true"){
-				$scope.user.firstName = sessionStorage.getItem("first_name");
-				$scope.user.lastName = sessionStorage.getItem("last_name");
-				$scope.user.email = sessionStorage.getItem("email");
-				$scope.user.fbUserId = sessionStorage.getItem("id");
-				$scope.user.image = sessionStorage.getItem("image");
-			}
-		};
-
-		$scope.get = function() {
-			$http({method: 'GET', url: $scope.userGetPath}).
-				success(function(data, status) {
-					if(data.length) {
-						var userVals = JSON.parse(data);
-						$scope.user.firstName = userVals.firstName;
-						$scope.user.lastName = userVals.lastName;
-						$scope.user.email = userVals.email;
-						$scope.user.phone = userVals.phone;
-						$scope.user.image = userVals.picture;
-					}
-				});
-		};
-
-		$scope.put = function() {
-			$http({method: 'PUT', url: $scope.userPutPath}).
-				success(function(data, status) {
-					if(status = '200'){
-						console.log(data);
-					}
-				});
+		$scope.setUser = function(firstName, lastName, email, id){
+			$scope.user.firstName = firstName;
+			$scope.user.lastName = lastName;
+			$scope.user.email = email;
+			$scope.user.fbUserId = id;
 		};
 
 	}]);
