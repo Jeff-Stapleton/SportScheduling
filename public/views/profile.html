@@ -17,6 +17,11 @@
   <body ng-controller="UserController">
     <div id="fb-root"></div>
     <script>
+
+      FB.logout(function(response) {
+          window.location = "/";
+      });
+
       window.fbAsyncInit = function() {
       FB.init({
       appId      : '624244104353794',
@@ -64,7 +69,8 @@
               <label for="phone">Phone Number:</label>
               <input ng-model="user.phone" type="text" class="form-control" id="phone" placeholder="Enter phone number">
             </div>
-            <button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
+            <button type="submit" class="btn btn-primary" ng-click="submit()">Save</button>
+            <button type="button" class="btn btn-primary pull-right" click="FB.logout()">Log Out</button>
           </div>
         </form>
 
