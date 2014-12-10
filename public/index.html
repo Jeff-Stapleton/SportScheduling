@@ -22,7 +22,6 @@
           FB.api('/me', function(response) {
             console.log(JSON.stringify(response));
             var vals = JSON.stringify(response);
-            setUser(vals[2], vals[4], vals[1], vals[0]);
             sessionStorage.userID = vals[0];
             sessionStorage.fName = vals[2];
             sessionStorage.lName = vals[4];
