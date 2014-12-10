@@ -41,6 +41,7 @@
 
 		$scope.logout = function() {
 			localStorage.setItem("loggedIn", "false");
+			window.location = "../index.html";
 		}
 
 		$scope.get = function() {
