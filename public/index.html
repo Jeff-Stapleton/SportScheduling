@@ -22,12 +22,13 @@
           FB.api('/me', function(response) {
             console.log(JSON.stringify(response));
             var text = JSON.stringify(response);
-            var vals = JSON.parse(text);
-            sessionStorage.userID = vals.id;
-            sessionStorage.fName = vals.first_name;
-            sessionStorage.lName = vals.last_name;
-            sessionStorage.email = vals.email;
+            
           });
+          var vals = JSON.parse(text);
+          sessionStorage.userID = vals.id;
+          sessionStorage.fName = vals.first_name;
+          sessionStorage.lName = vals.last_name;
+          sessionStorage.email = vals.email;
           window.location = "views/homePage.html";
       }
     
