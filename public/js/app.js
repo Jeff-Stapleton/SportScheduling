@@ -10,11 +10,12 @@
  		phone: '',
  		fbUserId: '',
  		accessToken: '',
- 		image: ''
+ 		image: '',
+ 		loggedIn: 'false'
 		};
 
 		$scope.userGetPath = '/users/' + $scope.user.fbUserId;
-		$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image;
+		$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
 
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
@@ -36,6 +37,7 @@
 				$scope.user.fbUserId = localStorage.getItem("id");
 				$scope.user.image = localStorage.getItem("image");
 				$scope.user.phone = localStorage.getItem("phone");
+				$scope.user.loggedIn = localStorage.getItem("loggedIn");
 			}
 		};
 
@@ -60,6 +62,8 @@
 						$scope.user.email = userVals.email;
 						$scope.user.phone = userVals.phone;
 						$scope.user.image = userVals.picture;
+						$scope.user.fbUserId = userVals.fbUserId;
+						$scope.user.loggedIn = userVals.loggedIn;
 					}
 				});
 		};
