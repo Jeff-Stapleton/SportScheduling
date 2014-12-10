@@ -18,7 +18,7 @@
 
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
-		 	sessionStorage.phone = phone;
+		 	localStorage.phone = phone;
 		};
 
 		$scope.log = function() {
@@ -29,15 +29,19 @@
 		};
 
 		$scope.setUser = function(){
-			if(sessionStorage.getItem("loggedIn") === "true"){
-				$scope.user.firstName = sessionStorage.getItem("first_name");
-				$scope.user.lastName = sessionStorage.getItem("last_name");
-				$scope.user.email = sessionStorage.getItem("email");
-				$scope.user.fbUserId = sessionStorage.getItem("id");
-				$scope.user.image = sessionStorage.getItem("image");
-				$scope.user.phone = sessionStorage.getItem("phone");
+			if(localStorage.getItem("loggedIn") === "true"){
+				$scope.user.firstName = localStorage.getItem("first_name");
+				$scope.user.lastName = localStorage.getItem("last_name");
+				$scope.user.email = localStorage.getItem("email");
+				$scope.user.fbUserId = localStorage.getItem("id");
+				$scope.user.image = localStorage.getItem("image");
+				$scope.user.phone = localStorage.getItem("phone");
 			}
 		};
+
+		$scope.logout = function() {
+			localStorage.setItem("loggedIn", "false");
+		}
 
 		$scope.get = function() {
 			$http({method: 'GET', url: $scope.userGetPath}).

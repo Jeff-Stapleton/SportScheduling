@@ -23,18 +23,18 @@
             console.log(JSON.stringify(response));
             var text = JSON.stringify(response);
             var vals = JSON.parse(text);
-            sessionStorage.setItem("first_name", vals.first_name);
-            sessionStorage.setItem("last_name", vals.last_name);
-            sessionStorage.setItem("email", vals.email);
-            sessionStorage.setItem("id", vals.id);
-            sessionStorage.setItem("phone", "");
-            sessionStorage.setItem("loggedIn", "true");
+            localStorage.setItem("first_name", vals.first_name);
+            localStorage.setItem("last_name", vals.last_name);
+            localStorage.setItem("email", vals.email);
+            localStorage.setItem("id", vals.id);
+            localStorage.setItem("phone", "");
+            localStorage.setItem("loggedIn", "true");
 
           });
           FB.api('/me/picture?redirect=0&height=500&type=normal&width=500', function(response) {
             var text = JSON.stringify(response);
             var pic = JSON.parse(text);
-            sessionStorage.setItem("image", pic.data.url);
+            localStorage.setItem("image", pic.data.url);
             window.location = "views/homePage.html";
           });
       }
