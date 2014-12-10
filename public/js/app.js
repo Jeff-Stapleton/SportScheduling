@@ -14,7 +14,7 @@
  		phone: '',
  		fbUserId: '',
  		accessToken: '',
- 		image: 'https://www.facebook.com/l.php?u=https%3A%2F%2Ffbcdn-profile-a.akamaihd.net%2Fhprofile-ak-xfp1%2Fv%2Ft1.0-1%2Fp50x50%2F10468678_10152267330671715_3349094449835870340_n.jpg%3Foh%3Dfa466be0700b08f266681ada54e60f1c%26oe%3D54FA059B%26__gda__%3D1426170608_f09e69a365e0e0f1c4373de54912545c&h=GAQGA3i6k'
+ 		image: ''
 		};
 
 		$scope.userGetPath = '/users/' + $scope.user.fbUserId;
