@@ -111,26 +111,59 @@
 	}]);
 
 	app.controller('CourtController', ['$scope', function($scope){
-	 		$scope.courts = [
-				{
-					name: 'Bulldog Court',
-					image: "../assets/rb.jpg",	
-				},
-				{
-					name: 'Falcon Court',
-					image: "../assets/rb.jpg",	
-				},
-				{
-					name: 'Shark Court',
-					image: "../assets/rb.jpg",	
-				},
-				{
-					name: 'Courgar Court',
-					image: "../assets/rb.jpg",	
-				}
+ 		$scope.courts = [
+			{
+				name: 'Bulldog Court',
+				image: "../assets/rb.jpg"	
+			},
+			{
+				name: 'Falcon Court',
+				image: "../assets/rb.jpg"	
+			},
+			{
+				name: 'Shark Court',
+				image: "../assets/rb.jpg"	
+			},
+			{
+				name: 'Courgar Court',
+				image: "../assets/rb.jpg"	
+			}
 
-			];
-		}]);
+		];
+	}]);
+
+	app.controller('CalendarController', ['$scope', function($scope){
+		$scope.calendar = [
+			{
+				name: 'Sunday',
+				hours: ['7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+			},
+			{
+				name: 'Monday',
+				hours: ['7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+			},
+			{
+				name: 'Tuesday',
+				hours: ['7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+			},
+			{
+				name: 'wednesday',
+				hours: ['7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+			},
+			{
+				name: 'Thursday',
+				hours: ['7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+			},
+			{
+				name: 'Friday',
+				hours: ['7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+			},
+			{
+				name: 'Saturday',
+				hours: ['7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+			}
+		];
+	}]);
 
 
 

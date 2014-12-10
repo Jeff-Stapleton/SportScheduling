@@ -51,45 +51,43 @@
 
 
 	    <!-- middle column -->
-	    <div class="container" ng-controller="CourtController" id="middleColumn" style="max-width: 850px;">
+	    <div class="container" id="middleColumn" ng-controller="CourtController" style="max-width: 850px;">
 
 	    	<!-- Court Picture -->
 	    	<div class="row">
-		      	<div class="col-xs-12" id="profilePic" >
-		      		<div id="courtPic">
-                		<img src="{{court.image}}" alt=""/>
-		          	</div>
-		        </div>
+            	<img src="{{court[0].image}}">
 		    </div>
 
 			<!-- Calendar --> 
-			<div class="table-responsive" style="padding-top: 40px; padding-left: 40px; padding-right: 40px; padding-bottom: 40px;">          
-		       	<table class="table table-striped table-bordered">
-			        <thead style="color: #666666; background-color: #eeeeee;">
-				        <tr>
-				            <th>Sunday</th>
-				            <th>Monday</th>
-				        	<th>Tuesday</th>
-				            <th>Wednesday</th>
-				            <th>Thursday</th>
-				            <th>Friday</th>
-				            <th>Saturday</th>
-				        </tr>
-			        </thead>
+			<div class="row">
+				<div class="table-responsive" style="padding-top: 40px; padding-left: 40px; padding-right: 40px; padding-bottom: 40px;">          
+			       	<table class="table table-striped table-bordered">
+				        <thead style="color: #666666; background-color: #eeeeee;">
+					        <tr ng-repeat="calendar in calendars">
+					            <th>{{calendar.name}}</th>
+					            <th>{{calendar.name}}</th>
+					        	<th>{{calendar.name}}</th>
+					            <th>{{calendar.name}}</th>
+					            <th>{{calendar.name}}</th>
+					            <th>{{calendar.name}}</th>
+					            <th>{{calendar.name}}</th>
+					        </tr>
+				        </thead>
 
-			        <!-- Filling out the table-->
-			        <tbody style="text-align: center; color: #cccccc;">
+				        <!-- Filling out the table-->
+				        <tbody style="text-align: center; color: #cccccc;">
 
-			        	<!-- ng-repeat: from open time to close time-->
-			        	<tr ng-repeat="row in court.hoursOfOp">
-  							<td ng-repeat="i in row">
-								<td ng-if="i == 0">{{court.hours[row]}}</td>
-			           			<td ng-if="i == 1" style="color: #cccccc; background-color: #0099ff;">RESERVED</td>
-  							</td>
-						</tr>
-			        </tbody>
-		       </table>
-		      </div>
+				        	<!-- ng-repeat: from open time to close time-->
+				        	<tr ng-repeat="row in court.hoursOfOp">
+	  							<td ng-repeat="i in row">
+									<td ng-if="i == 0">{{court.hours[row]}}</td>
+				           			<td ng-if="i == 1" style="color: #cccccc; background-color: #0099ff;">RESERVED</td>
+	  							</td>
+							</tr>
+				        </tbody>
+			       </table>
+			    </div>
+			</div>
 
 		</div>
 	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
