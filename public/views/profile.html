@@ -18,10 +18,12 @@
     <div id="fb-root"></div>
     <script>
 
-      FB.logout(function(response) {
+      function logout() {
+        FB.logout(function(response) {
           window.location = "/";
-      });
-
+        });
+      };
+      
       window.fbAsyncInit = function() {
       FB.init({
       appId      : '624244104353794',
@@ -70,7 +72,7 @@
               <input ng-model="user.phone" type="text" class="form-control" id="phone" placeholder="Enter phone number">
             </div>
             <button type="submit" class="btn btn-primary" ng-click="submit()">Save</button>
-            <button type="button" class="btn btn-primary pull-right" click="FB.logout()">Log Out</button>
+            <button type="button" class="btn btn-primary pull-right" click="logout()">Log Out</button>
           </div>
         </form>
 
