@@ -6,16 +6,19 @@
 (function() {
 	var app = angular.module('SportScheduler', []);
  
- 	app.controller('UserController', ['$scope', function($scope){
+ 	app.controller('UserController', ['$scope', '$http', function($scope, $http){
  		$scope.user = {
- 		firstName: 'Jeff',
- 		lastName: 'Stapleton',
- 		email: 'jeff.d.stapleton@gmail.com',
- 		phone: '(949)632-0102',
+ 		firstName: '',
+ 		lastName: '',
+ 		email: '',
+ 		phone: '',
  		fbUserId: '',
  		accessToken: '',
- 		image: 'http://4.bp.blogspot.com/-xsZFgAwTaow/UumqvTFjURI/AAAAAAAACGI/LdXISuoVc00/s1600/vscocam_1390962236.676736.55.jpg'
+ 		image: ''
 		};
+
+		$scope.userGetPath = '/users/' + $scope.user.fbUserId;
+		$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image;
 
 		$scope.submit = function() {
 		 	
@@ -34,6 +37,29 @@
 			$scope.user.lastName = lastName;
 			$scope.user.email = email;
 			$scope.user.fbUserId = id;
+		};
+
+		$scope.get = function() {
+			$http({method: 'GET', url: $scope.userGetPath}).
+				success(function(data, status) {
+					if(data.length) {
+						var userVals = JSON.parse(data);
+						$scope.user.firstName = userVals.firstName;
+						$scope.user.lastName = userVals.lastName;
+						$scope.user.email = userVals.email;
+						$scope.user.phone = userVals.phone;
+						$scope.user.image = userVals.picture;
+					}
+				});
+		};
+
+		$scope.put = function() {
+			$http({method: 'PUT', url: $scope.userPutPath}).
+				success(function(data, status) {
+					if(status = '200'){
+						console.log(data);
+					}
+				});
 		};
 
 	}]);
