@@ -41,6 +41,12 @@
 
 		$scope.logout = function() {
 			localStorage.setItem("loggedIn", "false");
+			localStorage.setItem("first_name", "");
+			localStorage.setItem("last_name", "");
+			localStorage.setItem("email", "");
+			localStorage.setItem("id", "");
+			localStorage.setItem("image", "");
+			localStorage.setItem("phone", "");
 			window.location = "../";
 		}
 
