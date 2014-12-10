@@ -49,8 +49,8 @@
   <div class="cover-container" ng-controller="FacilityController" style="padding-top: 50px;">
     <div class="row" >
       
-      <!-- Facility Object -->
-      <div class="col-sx-12 col-sm-6 col-md-4" ng-controller="FacilityController">
+      <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="facility in facilities">
+
         <div class="row">
           <div class="col-xs-12 cover-tile-image" style="text-align: left;">
             <div class="court">
@@ -77,6 +77,9 @@
             </div>
           </div>
         </div> 
+
+
+
       </div>
 
     </div> 
