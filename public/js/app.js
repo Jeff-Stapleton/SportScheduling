@@ -1,8 +1,4 @@
-/*(function() {
-	var app = angular.module('SportScheduler', ['SportScheduler-User', 'SportScheduler-Facility']);
 
-
-})();*/
 (function() {
 	var app = angular.module('SportScheduler', []);
  
@@ -40,14 +36,6 @@
 				$scope.user.image = sessionStorage.getItem("image");
 			}
 		};
-
-		/*$scope.setUser = function(firstName, lastName, email, id, image){
-			$scope.user.firstName = firstName;
-			$scope.user.lastName = lastName;
-			$scope.user.email = email;
-			$scope.user.fbUserId = id;
-			$scope.user.image = image;
-		};*/
 
 		$scope.get = function() {
 			$http({method: 'GET', url: $scope.userGetPath}).
