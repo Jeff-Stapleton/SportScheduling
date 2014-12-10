@@ -31,13 +31,23 @@
 		 	console.log($scope.user.fbUserId);
 		};
 
-		$scope.setUser = function(firstName, lastName, email, id, image){
+		$scope.setUser = function(){
+			if(sessionStorage.getItem("loggedIn")){
+				$scope.user.firstName = sessionStorage.getItem("first_name");
+				$scope.user.lastName = sessionStorage.getItem("last_name");
+				$scope.user.email = sessionStorage.getItem("email");
+				$scope.user.fbUserId = sessionStorage.getItem("id");
+				$scope.user.image = sessionStorage.getItem("image");
+			}
+		};
+
+		/*$scope.setUser = function(firstName, lastName, email, id, image){
 			$scope.user.firstName = firstName;
 			$scope.user.lastName = lastName;
 			$scope.user.email = email;
 			$scope.user.fbUserId = id;
 			$scope.user.image = image;
-		};
+		};*/
 
 		$scope.get = function() {
 			$http({method: 'GET', url: $scope.userGetPath}).
