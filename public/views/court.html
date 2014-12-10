@@ -62,13 +62,13 @@
 			       	<table class="table table-striped table-bordered">
 				        <thead style="color: #666666; background-color: #eeeeee;">
 					        <tr>
-					            <th>{{calendar[0].name}}</th>
-					            <th>{{calendar[1].name}}</th>
-					        	<th>{{calendar[2].name}}</th>
-					            <th>{{calendar[3].name}}</th>
-					            <th>{{calendar[4].name}}</th>
-					            <th>{{calendar[5].name}}</th>
-					            <th>{{calendar[6].name}}</th>
+					            <th>{{calendars[0].name}}</th>
+					            <th>{{calendars[1].name}}</th>
+					        	<th>{{calendars[2].name}}</th>
+					            <th>{{calendars[3].name}}</th>
+					            <th>{{calendars[4].name}}</th>
+					            <th>{{calendars[5].name}}</th>
+					            <th>{{calendars[6].name}}</th>
 					        </tr>
 				        </thead>
 
@@ -77,11 +77,10 @@
 
 				        	<!-- ng-repeat: from open time to close time-->
 				        	<!--<tr ng-repeat="hour in calendar.hours">-->
-	  							<tr> <!-- ng-repeat="calendar in calendars">-->
-									<!--<td>{{calendar.hours[hour]}}</td>-->
+	  							<tr ng-repeat="hour in calendars[0].hours">-->
 
 									<td ng-repeat="calendar in calendars">7 am</td>
-									
+
 	  							</tr>
 							<!--</tr>-->
 				        </tbody>
