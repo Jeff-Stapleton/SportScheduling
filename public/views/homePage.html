@@ -49,22 +49,7 @@
   <div class="cover-container" ng-controller="FacilityController" style="padding-top: 50px;">
     <div class="row" >
       
-      <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="facility in facilities">
-          <div class="row">
-            <div class="col-xs-12 cover-tile-image" style="text-align: center;">
-              <a href="/views/facility.html">
-                <img ng-src="{{facility.images}}" alt="building"/>
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12 cover-tile-text" style="text-align: center;">
-                <h5>{{facility.name}}</h5>
-                <h5>Hours: {{facility.hours}}</h5>
-                <h5>Phone: {{facility.phone}}</h5>
-            </div>
-          </div>
-      </div>
+      <div class="col-sx-12 col-sm-6 col-md-4" ng-include="'facilitiesObject.html'">
 
     </div> 
   </div>
