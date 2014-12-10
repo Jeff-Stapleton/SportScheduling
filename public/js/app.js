@@ -32,7 +32,7 @@
 		};
 
 		$scope.setUser = function(){
-			if(sessionStorage.getItem("loggedIn")){
+			if(sessionStorage.getItem("loggedIn") === "true"){
 				$scope.user.firstName = sessionStorage.getItem("first_name");
 				$scope.user.lastName = sessionStorage.getItem("last_name");
 				$scope.user.email = sessionStorage.getItem("email");
