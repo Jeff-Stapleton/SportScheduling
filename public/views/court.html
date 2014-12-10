@@ -77,9 +77,9 @@
 
 				        	<!-- ng-repeat: from open time to close time-->
 				        	<!--<tr ng-repeat="hour in calendar.hours">-->
-	  							<tr ng-repeat="hour in calendars[0].hours">-->
+	  							<tr ng-repeat="hour in calendars[0].hours">
 
-									<td ng-repeat="calendar in calendars">7 am</td>
+									<td ng-repeat="calendar in calendars">{{calendar.hours[hour]}}</td>
 
 	  							</tr>
 							<!--</tr>-->
