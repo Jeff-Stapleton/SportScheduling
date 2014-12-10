@@ -28,11 +28,6 @@
             sessionStorage.setItem("email", vals.email);
             sessionStorage.setItem("id", vals.id);
             sessionStorage.setItem("loggedIn", "true");
-            /*sessionStorage.setItem("first_name", vals.first_name);
-            sessionStorage.setItem("last_name", vals.last_name);
-            sessionStorage.setItem("email", vals.email);
-            sessionStorage.setItem("id", vals.id);*/
-            /*angular.element(domElement).controller().setUser(vals.first_name, vals.last_name, vals.email, vals.id);*/
           });
           FB.api('/me/picture?redirect=0&height=500&type=normal&width=500', function(response) {
             var text = JSON.stringify(response);
