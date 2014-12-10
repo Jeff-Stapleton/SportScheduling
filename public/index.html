@@ -34,7 +34,7 @@
             console.log(text);
             var pic = JSON.parse(text);
             console.log(pic);
-            console.log(pic.url);
+            console.log(pic.data.url);
             sessionStorage.setItem("image", pic.url);
             window.location = "views/homePage.html";
           });
