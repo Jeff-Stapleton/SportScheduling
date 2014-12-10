@@ -31,11 +31,8 @@
           });
           FB.api('/me/picture', function(response) {
             var text = JSON.stringify(response);
-            console.log(text);
             var pic = JSON.parse(text);
-            console.log(pic);
-            console.log(pic.data.url);
-            sessionStorage.setItem("image", pic.url);
+            sessionStorage.setItem("image", pic.data.url);
             window.location = "views/homePage.html";
           });
       }
