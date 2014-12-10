@@ -35,6 +35,7 @@
 				$scope.user.email = sessionStorage.getItem("email");
 				$scope.user.fbUserId = sessionStorage.getItem("id");
 				$scope.user.image = sessionStorage.getItem("image");
+				$scope.user.phone = sessionStorage.getItem("phone");
 			}
 		};
 
