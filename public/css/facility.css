@@ -15,6 +15,17 @@ img {
     background-size: cover;
 }
 
+img.courtPic {
+    width:100%;
+    height:100%; 
+    display:block; 
+    position:relative;
+    overflow:hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
 h1 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size:2.3em;
@@ -113,18 +124,6 @@ div.court {
 #picBlock{
     width:100%;
     height:120px;
-}
-
-#courtPic {
-    width:100%;
-    height:100%; 
-    display:block; 
-    position:relative;
-    overflow:hidden;
-    background-image: url("http://bloximages.chicago2.vip.townnews.com/heraldextra.com/content/tncms/assets/v3/editorial/2/b7/2b7f8bea-e8b8-59ab-b6bd-bb89f5e13eb7/51b6c0bf0ebe1.preview-620.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
 }
 
 #footer {
