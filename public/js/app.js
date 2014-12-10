@@ -14,7 +14,7 @@
  		phone: '',
  		fbUserId: '',
  		accessToken: '',
- 		image: ''
+ 		image: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/10468678_10152267330671715_3349094449835870340_n.jpg?oh=e192dec8e8fa8faa68b2e95a0404969a&oe=55130D07&__gda__=1426992133_7da52aeae720b9440b3bae9f05b6390d'
 		};
 
 		$scope.userGetPath = '/users/' + $scope.user.fbUserId;
