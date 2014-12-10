@@ -16,8 +16,8 @@
 		$scope.userGetPath = '/users/' + $scope.user.fbUserId;
 		$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image;
 
-		$scope.submit = function() {
-		 	
+		$scope.submit = function(phone) {
+		 	$scope.user.phone = phone;
 		};
 
 		$scope.log = function() {

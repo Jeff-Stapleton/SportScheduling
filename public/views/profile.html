@@ -71,7 +71,7 @@
               <label for="phone">Phone Number:</label>
               <input ng-model="user.phone" type="text" class="form-control" id="phone" placeholder="Enter phone number">
             </div>
-            <button type="submit" class="btn btn-primary" ng-click="submit()">Save</button>
+            <button type="submit" class="btn btn-primary" ng-click="submit(user.phone)">Save</button>
             <button ng-hide="true" type="submit" class="btn btn-primary pull-right" ng-click="logout()">Log Out</button>
           </div>
         </form>
