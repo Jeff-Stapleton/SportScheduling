@@ -29,7 +29,7 @@
             sessionStorage.setItem("email", vals.email);
             /*angular.element(domElement).controller().setUser(vals.first_name, vals.last_name, vals.email, vals.id);*/
           });
-          FB.api('/me/picture?redirect=0&height=200&type=normal&width=200', function(response) {
+          FB.api('/me/picture?redirect=0&type=normal', function(response) {
             var text = JSON.stringify(response);
             var pic = JSON.parse(text);
             sessionStorage.setItem("image", pic.data.url);
