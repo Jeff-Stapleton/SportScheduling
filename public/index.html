@@ -17,6 +17,11 @@
      <body ng-controller="UserController">
       <div id="fb-root"></div>
       <script >
+
+      if(localStorage.loggedIn === "true"){
+        window.location = "/views/homePage.html"
+      }
+
     // This is called with the results from from FB.getLoginStatus().
       function goToHome() {
           FB.api('/me', function(response) {
