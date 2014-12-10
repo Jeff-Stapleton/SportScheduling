@@ -27,7 +27,12 @@
             sessionStorage.setItem("last_name", vals.last_name);
             sessionStorage.setItem("id", vals.id);
             sessionStorage.setItem("email", vals.email);
-            angular.element(domElement).controller().setUser(vals.first_name, vals.last_name, vals.email, vals.id);
+            /*angular.element(domElement).controller().setUser(vals.first_name, vals.last_name, vals.email, vals.id);*/
+          });
+          FB.api('/me/picture', function(response) {
+            var text = JSON.stringify(response);
+            var pic = JSON.parse(text);
+            sessionStorage.setItem("image", pic.url);
             window.location = "views/homePage.html";
           });
       }
