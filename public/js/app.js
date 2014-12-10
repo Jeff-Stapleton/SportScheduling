@@ -31,11 +31,12 @@
 		 	console.log($scope.user.fbUserId);
 		};
 
-		$scope.setUser = function(firstName, lastName, email, id){
+		$scope.setUser = function(firstName, lastName, email, id, image){
 			$scope.user.firstName = firstName;
 			$scope.user.lastName = lastName;
 			$scope.user.email = email;
 			$scope.user.fbUserId = id;
+			$scope.user.image = image;
 		};
 
 		$scope.get = function() {

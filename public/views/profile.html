@@ -14,7 +14,7 @@
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
   </head>
-  <body >
+  <body ng-controller="UserController">
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
@@ -34,19 +34,21 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    <div ng-init="setUser(sessionStorage.getItem('first_name'),sessionStorage.getItem('last_name'),sessionStorage.getItem('email'), sessionStorage.getItem('id'),sessionStorage.getItem('image'))"></div>
+
     <nav class="navbar navbar-inverse" ng-include="'navbar.html'">
     </nav>
 
     <div class="container" >
       <div class="user row" id="title">
-        <div class="col-xs-12" ng-controller="UserController">
+        <div class="col-xs-12">
           <h1> {{user.firstName}} {{user.lastName}} </h1>
           <h3> View and edit you profile page </h3>
         </div>
       </div>
     </div>
 
-    <div class="container" id="middleColumn" ng-controller="UserController">
+    <div class="container" id="middleColumn" >
       <div class="row" >
 
         <form class="form-horizontal" role="form" >
