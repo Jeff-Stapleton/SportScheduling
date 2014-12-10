@@ -29,7 +29,6 @@
 		 	console.log($scope.user.lastName);
 		 	console.log($scope.user.email);
 		 	console.log($scope.user.fbUserId);
-
 		};
 
 		$scope.setUser = function(firstName, lastName, email, id){

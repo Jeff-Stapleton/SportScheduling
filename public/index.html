@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
-     <body ng-controller="UserController">
+     <body ng-controller="UserController as user">
       <div id="fb-root"></div>
       <script >
     // This is called with the results from from FB.getLoginStatus().
@@ -27,6 +27,7 @@
             sessionStorage.setItem("last_name", vals.last_name);
             sessionStorage.setItem("id", vals.id);
             sessionStorage.setItem("email", vals.email);
+            user.setUser(vals.first_name, vals.last_name, vals.email, vals.id);
             window.location = "views/homePage.html";
           });
       }
@@ -41,9 +42,6 @@
       
       if (response.status === 'connected') { 
         // Logged into your app and Facebook.
-        var id = response.authResponse.userID;
-        var vals = JSON.stringify(response);
-
         // testAPI();
       } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
