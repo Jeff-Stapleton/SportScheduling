@@ -49,60 +49,20 @@
 
 
     <!-- middle column -->
-    <div class="container" id="middleColumn">
+    <div class="container" id="middleColumn" ng-controller="FacilityController">
 
       <div class="row">
-      	<div class="col-xs-12" id="profilePic" >
-          <img src="http://bloximages.chicago2.vip.townnews.com/heraldextra.com/content/tncms/assets/v3/editorial/2/b7/2b7f8bea-e8b8-59ab-b6bd-bb89f5e13eb7/51b6c0bf0ebe1.preview-620.jpg" class="img-responsive" alt="profile pic">
+      	<div class="col-xs-12" id="profilePic" ng-style="{'background-image': 'url({{facilities.images}})'}">
+          <!--<img src="http://bloximages.chicago2.vip.townnews.com/heraldextra.com/content/tncms/assets/v3/editorial/2/b7/2b7f8bea-e8b8-59ab-b6bd-bb89f5e13eb7/51b6c0bf0ebe1.preview-620.jpg" class="img-responsive" alt="profile pic"> -->
         </div>
       </div>
 
       <div class="row">
 
-				<div id="container" ng-controller="FacilityCtrl" style="padding-top: 80px;">
+				<div id="container" ng-controller="FacilityController" style="padding-top: 80px;">
 					<div class="row">
 				  	
-				  	<div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="fac in facilities" style="text-align: center;">
-					    <!-- One Court -->
-					    <div class="court">
-					      <div id="nameBlock">
-									<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
-					      </div>
-					      <div id="picBlock">
-									<div id="courtPic"></div>
-					      </div>  
-								<div id="info1"> Availability </div>
-								<div id="info2"> Time slots available </div>    
-		    			</div>
-		  			</div>
-
-		  			<div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="fac in facility.facilities">
-					    <!-- One Court -->
-					    <div class="court">
-					      <div id="nameBlock">
-									<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
-					      </div>
-					      <div id="picBlock">
-									<div id="courtPic"></div>
-					      </div>  
-								<div id="info1"> Availability </div>
-								<div id="info2"> Time slots available </div>    
-		    			</div>
-		  			</div>
-
-				  	<div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="fac in facility.facilities">
-					    <!-- One Court -->
-					    <div class="court">
-					      <div id="nameBlock">
-									<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
-					      </div>
-					      <div id="picBlock">
-									<div id="courtPic"></div>
-					      </div>  
-								<div id="info1"> Availability </div>
-								<div id="info2"> Time slots available </div>    
-		    			</div>
-		  			</div>
+				  		<div class="col-sx-12 col-sm-6 col-md-4" ng-include="'courtObject.html'">
 
 					</div>
 				</div>
@@ -114,80 +74,3 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
-
-
-
-
-
-    <!-- middle column -->
-    <!-- <div id="middleColumn">
-      <div id="header">
-				<div id="profilePic"></div>
-    	</div>
-    	<div id="buffer"></div>
-			<div id="container" ng-controller="FacilityCtrl as facility" style="padding-top: 80px;">
-				<div class="row">
-			  	
-			  	<div class="col-xs-12 col-s-6 col-m-3" ng-repeat="fac in facility.facilities">
-				    
-				    <div class="court">
-				      <div id="nameBlock">
-								<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
-				      </div>
-				      <div id="picBlock">
-								<div id="courtPic"></div>
-				      </div>  
-							<div id="info1"> Availability </div>
-							<div id="info2"> Time slots available </div>    
-	    			</div>
-	  			</div>
-
-	  			<div class="col-xs-12 col-s-6 col-m-3" ng-repeat="fac in facility.facilities">
-				    
-				    <div class="court">
-				      <div id="nameBlock">
-								<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
-				      </div>
-				      <div id="picBlock">
-								<div id="courtPic"></div>
-				      </div>  
-							<div id="info1"> Availability </div>
-							<div id="info2"> Time slots available </div>    
-	    			</div>
-	  			</div>
-
-				</div>
-
-				<div class="row">
-			  	<div class="col-xs-12 col-s-6 col-m-3" ng-repeat="fac in facility.facilities">
-				    
-				    <div class="court">
-				      <div id="nameBlock">
-								<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
-				      </div>
-				      <div id="picBlock">
-								<div id="courtPic"></div>
-				      </div>  
-							<div id="info1"> Availability </div>
-							<div id="info2"> Time slots available </div>    
-	    			</div>
-	  			</div>
-
-	  			<div class="col-xs-12 col-s-6 col-m-3" ng-repeat="fac in facility.facilities">
-				    
-				    <div class="court">
-				      <div id="nameBlock">
-								<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;"> Bulldog Court</p>
-				      </div>
-				      <div id="picBlock">
-								<div id="courtPic"></div>
-				      </div>  
-							<div id="info1"> Availability </div>
-							<div id="info2"> Time slots available </div>    
-	    			</div>
-	  			</div>
-
-				</div>
-			</div>
-		</div>
-    <div id="footer"></div>	 -->
