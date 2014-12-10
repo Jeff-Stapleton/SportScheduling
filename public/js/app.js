@@ -18,6 +18,7 @@
 
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
+		 	sessionStorage.phone = phone;
 		};
 
 		$scope.log = function() {
