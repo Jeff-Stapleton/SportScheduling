@@ -15,6 +15,11 @@
 	</head>
 	<body>
 		<script>
+
+      if(localStorage.loggedIn === "false"){
+        window.location = "../index.html"
+      }
+
       window.fbAsyncInit = function() {
       FB.init({
       appId      : '624244104353794',
