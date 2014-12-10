@@ -113,7 +113,19 @@
 	app.controller('CourtController', ['$scope', function($scope){
 	 		$scope.courts = [
 				{
-					name: 'Bulldog',
+					name: 'Bulldog Court',
+					image: "../assets/rb.jpg",	
+				},
+				{
+					name: 'Falcon Court',
+					image: "../assets/rb.jpg",	
+				},
+				{
+					name: 'Shark Court',
+					image: "../assets/rb.jpg",	
+				},
+				{
+					name: 'Courgar Court',
 					image: "../assets/rb.jpg",	
 				}
 
