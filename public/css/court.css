@@ -118,18 +118,11 @@ div.court {
     background-position: 50% 50%;
 }
 
-
-#info1 {
-    padding-top: 8px;
-    padding-left: 5px;
-    color: #666666;
-    font-size: 1.0em;
-}
-
-#info2 {
-    padding-left: 5px;
-    color: #666666;
-    font-size: 0.8em;
+#courtCal {
+    padding-top: 40px; 
+    padding-left: 40px; 
+    padding-right: 40px; 
+    padding-bottom: 40px;
 }
 
 #footer {

@@ -60,17 +60,17 @@
 
 			<!-- Calendar --> 
 			<div class="row">
-				<div class="table-responsive" style="padding-top: 40px; padding-left: 40px; padding-right: 40px; padding-bottom: 40px;">          
+				<div class="table-responsive" id="courtCal" ng-controller="CalendarController">          
 			       	<table class="table table-striped table-bordered">
 				        <thead style="color: #666666; background-color: #eeeeee;">
 					        <tr ng-repeat="calendar in calendars">
-					            <th>{{calendar.name}}</th>
-					            <th>{{calendar.name}}</th>
-					        	<th>{{calendar.name}}</th>
-					            <th>{{calendar.name}}</th>
-					            <th>{{calendar.name}}</th>
-					            <th>{{calendar.name}}</th>
-					            <th>{{calendar.name}}</th>
+					            <th>{{calendar[0].name}}</th>
+					            <th>{{calendar[1].name}}</th>
+					        	<th>{{calendar[2].name}}</th>
+					            <th>{{calendar[3].name}}</th>
+					            <th>{{calendar[4].name}}</th>
+					            <th>{{calendar[5].name}}</th>
+					            <th>{{calendar[6].name}}</th>
 					        </tr>
 				        </thead>
 
