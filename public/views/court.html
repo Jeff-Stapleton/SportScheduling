@@ -79,13 +79,9 @@
 				        	<!--<tr ng-repeat="hour in calendar.hours">-->
 	  							<tr> <!-- ng-repeat="calendar in calendars">-->
 									<!--<td>{{calendar.hours[hour]}}</td>-->
-									<td>7 am</td>
-									<td>7 am</td>
-									<td>7 am</td>
-									<td>7 am</td>
-									<td>7 am</td>
-									<td>7 am</td>
-									<td>7 am</td>
+
+									<td ng-repeat="calendar in calendars">7 am</td>
+									
 	  							</tr>
 							<!--</tr>-->
 				        </tbody>
