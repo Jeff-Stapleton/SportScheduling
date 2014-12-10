@@ -48,21 +48,14 @@
       // Full docs on the response object can be found in the documentation
       // for FB.getLoginStatus().
       
-      if (response.status === 'connected') { 
-        // Logged into your app and Facebook.
+      if (response.status === 'connected') {              // Logged into your app and Facebook.
         if(localStorage.loggedIn === "true"){
           window.location = "/views/homePage.html";
         }
-        // testAPI();
-      } else if (response.status === 'not_authorized') {
-        // The person is logged into Facebook, but not your app.
-        /*document.getElementById('status').innerHTML = 'Please log ' +
-          'into this app.';*/
-      } else {
-        // The person is not logged into Facebook, so we're not sure if
-        // they are logged into this app or not.
-        /*document.getElementById('status').innerHTML = 'Please log ' +
-          'into Facebook.';*/
+      } else if (response.status === 'not_authorized') {  // The person is logged into Facebook, but not your app.
+        localStorage.loggedIn = "false";
+      } else {                            // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
+        localStorage.loggedIn = "false";
       }
     }
   
