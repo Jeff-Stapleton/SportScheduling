@@ -27,7 +27,7 @@
             sessionStorage.setItem("last_name", vals.last_name);
             sessionStorage.setItem("id", vals.id);
             sessionStorage.setItem("email", vals.email);
-            setUser(vals.first_name, vals.last_name, vals.email, vals.id);
+            angular.element(domElement).controller().setUser(vals.first_name, vals.last_name, vals.email, vals.id);
             window.location = "views/homePage.html";
           });
       }
