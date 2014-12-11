@@ -137,7 +137,7 @@ module.exports = function(app) {
 		{
 			$set: {
 				email: req.params.email,
-				phone: req.params.phone,
+				phone: req.params.phone
 			}
 		});
 		res.json({message: 'User updated'});
