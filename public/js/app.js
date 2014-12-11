@@ -52,19 +52,10 @@
 		}
 
 		$scope.get = function() {
-			var changed = false;
 			$scope.userGetPath = '/users/' + localStorage.id;
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
-						/*var userVals = JSON.parse(data);
-						$scope.user.firstName = userVals.firstName;
-						$scope.user.lastName = userVals.lastName;
-						$scope.user.email = userVals.email;
-						$scope.user.fbUserId = userVals.fbUserId;
-						$scope.user.loggedIn = userVals.loggedIn;
-						$scope.user.image = localStorage.image;
-						$scope.user.phone = userVals.phone;*/
 						var userVals = data[0];
 						$scope.user.firstName = userVals.firstName;
 						$scope.user.lastName = userVals.lastName;
@@ -72,22 +63,7 @@
 						$scope.user.fbUserId = userVals.fbUserId;
 						$scope.user.loggedIn = userVals.loggedIn;
 						$scope.user.image = localStorage.image;
-						$scope.user.phone = userVals.phone;
-
-						/*if(localStorage.phone.length){
-							if(localStorage.phone != userVals.phone){
-								$scope.user.phone = localStorage.phone;
-								changed = true;
-							} else {
-								$scope.user.phone = userVals.phone;
-							}
-						} else {
-							$scope.user.phone = userVals.phone;
-						}
-
-						if(changed) {
-							$scope.put();
-						}*/
+						$scope.user.phone = localStorage.phone;
 						
 					} else {
 						$scope.put();
