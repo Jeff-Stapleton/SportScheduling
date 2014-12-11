@@ -74,7 +74,7 @@
 
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
-							<tr ng-repeat="row in courts[0].calendar">
+							<tr ng-repeat="row in {{courts[0].calendar}}">
 								<td ng-repeat="col in row.col">{{col}}</td>
 							</tr>
 				        </tbody>
