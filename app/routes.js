@@ -132,7 +132,7 @@ module.exports = function(app) {
 		});
 	});
 
-	/*app.put('/users/:fbUserId/:email/:phone/:firstName/:lastName/:loggedIn',function(req,res){
+	app.post('/users/:fbUserId/:email/:phone/:firstName/:lastName/:loggedIn',function(req,res){
 		User.update({ fbUserId: req.params.fbUserId},
 		{
 			email: req.params.email,
@@ -143,7 +143,7 @@ module.exports = function(app) {
 			fbUserId: req.params.fbUserId
 		});
 		res.json({message: 'User updated'});
-	});*/
+	});
     
     app.put('/users/:firstName/:lastName/:email/:phone/:loggedIn/:fbUserId',function(req,res){
         var user = new User();
