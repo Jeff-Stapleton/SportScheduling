@@ -120,7 +120,7 @@
 		$scope.initFac = function(){
 			$scope.facilityId = sessionStorage.facId;
 
-			for(int i = 0; i < 4; i++) 
+			for(var i = 0; i < 4; i++) 
 				var fac = $scope.facilities[i];
 				if(fac.id === $scope.facilityId){
 					$scope.facility.name = fac.name;
