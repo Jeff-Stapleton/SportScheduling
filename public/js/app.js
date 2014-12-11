@@ -14,6 +14,8 @@
  		loggedIn: 'false'
 		}; 		
 
+		$('#modal').modal();  
+		
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
 		 	localStorage.phone = phone;
