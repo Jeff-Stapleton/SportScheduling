@@ -14,9 +14,6 @@
  		loggedIn: 'false'
 		};
 
-		$scope.userGetPath = '/users/' + $scope.user.fbUserId;
-		$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
-
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
 		 	localStorage.phone = phone;
@@ -57,6 +54,7 @@
 
 		$scope.get = function() {
 			var changed = false;
+			$scope.userGetPath = '/users/' + $scope.user.fbUserId;
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
@@ -102,6 +100,8 @@
 			$scope.user.image = localStorage.getItem("image");
 			$scope.user.phone = localStorage.getItem("phone");
 			$scope.user.loggedIn = localStorage.getItem("loggedIn");
+
+			$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
 
 			$http({method: 'PUT', url: $scope.userPutPath}).
 				success(function(data, status) {
