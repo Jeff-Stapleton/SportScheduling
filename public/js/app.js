@@ -153,82 +153,82 @@
 			{
 				name: 'Bulldog Court',
 				image: "../assets/rb.jpg",
-				calendar: [
-				['7 am','7 am','7 am','7 am','7 am','7 am','7 am'],	
-				['8 am','8 am','8 am','8 am','8 am','8 am','8 am'],	
-				['9 am','9 am','9 am','9 am','9 am','9 am','9 am'],	
-				['10 am','10 am','10 am','10 am','10 am','10 am','10 am'],	
-				['11 am','11 am','11 am','11 am','11 am','11 am','11 am'],	
-				['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm'],	
-				['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm'],	
-				['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm'],	
-				['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm'],	
-				['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm'],	
-				['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm'],	
-				['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm'],	
-				['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm'],	
-				['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']	
+				days: [
+				{col: ['7 am','7 am','7 am','7 am','7 am','7 am','7 am']},	
+				{col: ['8 am','8 am','8 am','8 am','8 am','8 am','8 am']},	
+				{col: ['9 am','9 am','9 am','9 am','9 am','9 am','9 am']},	
+				{col: ['10 am','10 am','10 am','10 am','10 am','10 am','10 am']},	
+				{col: ['11 am','11 am','11 am','11 am','11 am','11 am','11 am']},	
+				{col: ['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm']},	
+				{col: ['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm']},	
+				{col: ['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm']},	
+				{col: ['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm']},	
+				{col: ['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm']},	
+				{col: ['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm']},	
+				{col: ['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm']},	
+				{col: ['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm']},	
+				{col: ['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']}	
 				]				
 			},
 			{
 				name: 'Falcon Court',
 				image: "../assets/rb.jpg",
-				calendar: [
-				['7 am','7 am','7 am','7 am','7 am','7 am','7 am'],	
-				['8 am','8 am','8 am','8 am','8 am','8 am','8 am'],	
-				['9 am','9 am','9 am','9 am','9 am','9 am','9 am'],	
-				['10 am','10 am','10 am','10 am','10 am','10 am','10 am'],	
-				['11 am','11 am','11 am','11 am','11 am','11 am','11 am'],	
-				['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm'],	
-				['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm'],	
-				['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm'],	
-				['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm'],	
-				['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm'],	
-				['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm'],	
-				['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm'],	
-				['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm'],	
-				['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']	
+				days: [
+				{col: ['7 am','7 am','7 am','7 am','7 am','7 am','7 am']},	
+				{col: ['8 am','8 am','8 am','8 am','8 am','8 am','8 am']},	
+				{col: ['9 am','9 am','9 am','9 am','9 am','9 am','9 am']},	
+				{col: ['10 am','10 am','10 am','10 am','10 am','10 am','10 am']},	
+				{col: ['11 am','11 am','11 am','11 am','11 am','11 am','11 am']},	
+				{col: ['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm']},	
+				{col: ['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm']},	
+				{col: ['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm']},	
+				{col: ['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm']},	
+				{col: ['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm']},	
+				{col: ['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm']},	
+				{col: ['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm']},	
+				{col: ['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm']},	
+				{col: ['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']}	
 				]			
 			},
 			{
 				name: 'Shark Court',
 				image: "../assets/rb.jpg",
-				calendar: [
-				['7 am','7 am','7 am','7 am','7 am','7 am','7 am'],	
-				['8 am','8 am','8 am','8 am','8 am','8 am','8 am'],	
-				['9 am','9 am','9 am','9 am','9 am','9 am','9 am'],	
-				['10 am','10 am','10 am','10 am','10 am','10 am','10 am'],	
-				['11 am','11 am','11 am','11 am','11 am','11 am','11 am'],	
-				['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm'],	
-				['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm'],	
-				['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm'],	
-				['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm'],	
-				['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm'],	
-				['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm'],	
-				['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm'],	
-				['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm'],	
-				['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']	
-				]			
+				days: [
+				{col: ['7 am','7 am','7 am','7 am','7 am','7 am','7 am']},	
+				{col: ['8 am','8 am','8 am','8 am','8 am','8 am','8 am']},	
+				{col: ['9 am','9 am','9 am','9 am','9 am','9 am','9 am']},	
+				{col: ['10 am','10 am','10 am','10 am','10 am','10 am','10 am']},	
+				{col: ['11 am','11 am','11 am','11 am','11 am','11 am','11 am']},	
+				{col: ['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm']},	
+				{col: ['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm']},	
+				{col: ['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm']},	
+				{col: ['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm']},	
+				{col: ['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm']},	
+				{col: ['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm']},	
+				{col: ['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm']},	
+				{col: ['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm']},	
+				{col: ['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']}	
+				]				
 			},
 			{
 				name: 'Courgar Court',
 				image: "../assets/rb.jpg",
-				calendar: [
-				['7 am','7 am','7 am','7 am','7 am','7 am','7 am'],	
-				['8 am','8 am','8 am','8 am','8 am','8 am','8 am'],	
-				['9 am','9 am','9 am','9 am','9 am','9 am','9 am'],	
-				['10 am','10 am','10 am','10 am','10 am','10 am','10 am'],	
-				['11 am','11 am','11 am','11 am','11 am','11 am','11 am'],	
-				['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm'],	
-				['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm'],	
-				['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm'],	
-				['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm'],	
-				['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm'],	
-				['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm'],	
-				['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm'],	
-				['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm'],	
-				['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']	
-				]					
+				days: [
+				{col: ['7 am','7 am','7 am','7 am','7 am','7 am','7 am']},	
+				{col: ['8 am','8 am','8 am','8 am','8 am','8 am','8 am']},	
+				{col: ['9 am','9 am','9 am','9 am','9 am','9 am','9 am']},	
+				{col: ['10 am','10 am','10 am','10 am','10 am','10 am','10 am']},	
+				{col: ['11 am','11 am','11 am','11 am','11 am','11 am','11 am']},	
+				{col: ['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm']},	
+				{col: ['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm']},	
+				{col: ['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm']},	
+				{col: ['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm']},	
+				{col: ['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm']},	
+				{col: ['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm']},	
+				{col: ['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm']},	
+				{col: ['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm']},	
+				{col: ['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']}	
+				]						
 			}
 
 		];
