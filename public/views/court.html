@@ -74,7 +74,7 @@
 					
 
 			        <!-- Filling out the table-->
-			        <tbody style="text-align: center; color: #cccccc;">
+			        <tbody id="tableGuy" style="text-align: center; color: #cccccc;">
 						<tr ng-repeat="day in calendars">
 							<td ng-repeat="hour in day track by $index">
 								<div ng-if="hour != 'RESERVED'">
@@ -87,7 +87,7 @@
 								</div>
 
 								<!-- Modal HTML -->
-								<div id="myModal" class="modal fade">
+								<div id="myModal" class="modal fade" style="display: block;">
 								    <div class="modal-dialog">
 								        <div class="modal-content">
 								            <div class="modal-header">
@@ -105,7 +105,7 @@
 								        </div>
 								    </div>
 								</div>
-								
+
 							</td>
 						</tr>
 			        </tbody>
