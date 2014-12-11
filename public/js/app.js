@@ -117,7 +117,7 @@
 
 		}
 
-		$scope.initFac = function(){
+		/*$scope.initFac = function(){
 			$scope.facilityId = sessionStorage.facId;
 
 			for(var i = 0; i < 4; i++) 
@@ -130,7 +130,7 @@
 				}
 			
 
-		};
+		};*/
 
 		var fac = $scope;
 
@@ -151,13 +151,15 @@
 
 
 		$scope.getFac = function() {
-			var path = '/facilities/' + 1;		// need to fix this; dynamically add facility number
+			var path = '/facilities/' + sessionStorage.facId;		// need to fix this; dynamically add facility number
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
 						var facVals = data[0];
-						
-						
+						$scope.facility.name = facVals.name;
+						$scope.facility.hours = facVals.hours;
+						$scope.facility.phone = facVals.phone;
+						$scope.facility.image = facVals.image;						
 					} 
 				});
 		};
