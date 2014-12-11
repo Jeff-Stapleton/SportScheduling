@@ -51,15 +51,22 @@
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
-						/*var userVals = JSON.parse(data);*/
-						var userVals = data;
+						/*var userVals = JSON.parse(data);
 						$scope.user.firstName = userVals.firstName;
 						$scope.user.lastName = userVals.lastName;
 						$scope.user.email = userVals.email;
 						$scope.user.fbUserId = userVals.fbUserId;
 						$scope.user.loggedIn = userVals.loggedIn;
 						$scope.user.image = localStorage.image;
-						$scope.user.phone = userVals.phone;
+						$scope.user.phone = userVals.phone;*/
+
+						$scope.user.firstName = data[4];
+						$scope.user.lastName = data[5];
+						$scope.user.email = data[2];
+						$scope.user.fbUserId = data[3];
+						$scope.user.loggedIn = data[6];
+						$scope.user.image = localStorage.image;
+						$scope.user.phone = data[7];
 
 						/*if(localStorage.phone.length){
 							if(localStorage.phone != userVals.phone){
