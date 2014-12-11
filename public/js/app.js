@@ -118,7 +118,11 @@
 				success(function(data, status) {
 					fac.facilities = data;	
 				});
-				$scope.facilities = fac.facilities;
+				sessionStorage.facs = fac.facilities;
+		};
+
+		$scope.assign = function(){
+			$scope.facilities = sessionStorage.facs;
 		};
 
 		$scope.getFac = function() {
