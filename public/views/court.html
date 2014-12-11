@@ -77,7 +77,7 @@
   							<tr ng-repeat="hour in calendars[0].hours">
 								<td ng-repeat="day in calendars">
 									<span ng-if="hour != RESERVED">
-										<a href="">{{day.hour}}</a>
+										<a href="">{{calendars[day].hour}}</a>
 									</span>
 								</td>
   							</tr>
