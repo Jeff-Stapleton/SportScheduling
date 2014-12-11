@@ -7,7 +7,7 @@ var FacilitySchema   = new Schema({
     phone: String,
     id: Number,
     image: String,
-    facility: String
+    url: String
 });
 
 module.exports = mongoose.model('Facility', FacilitySchema);
