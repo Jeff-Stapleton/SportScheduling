@@ -88,9 +88,9 @@
 					}
 				});
 		};
-
+rs/:fbUserId/:email/:phone/:firstName/:lastName/:loggedIn
 		$scope.update = function() {
-			$scope.userPutPath = '/users/' + $scope.user.fbUserId + '/' + $scope.user.email + '/' + $scope.user.phone;
+			$scope.userPutPath = '/users/' + $scope.user.fbUserId + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.firstName + '/' + $scope.user.lastName + + '/' + $scope.user.loggedIn;
 
 			$http({method: 'PUT', url: $scope.userPutPath}).
 				success(function(data, status) {
