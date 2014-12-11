@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="SportScheduler">
+  <head>
+    <title>Facility</title>
+    <link rel="shortcut icon" href="../assets/basketball.ico"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- AngularJS -->
+    <script src="../libs/angular/angular.js"></script>
+		<!-- Our styles and code -->
+		<link rel="stylesheet" type="text/css" href="../css/facility.css">
+		<script type ="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/controllers/FacilityCtrl.js"></script>
+
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
+  </head>
+  <body>
+  	<div id="fb-root"></div>
+  	<script>
+
+      if(localStorage.loggedIn === "false"){
+        window.location = "../"
+      }
+
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '624244104353794',
+      xfbml      : true,
+      version    : 'v2.2'
+      });
+      };
+
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
+    
+  	</nav>
+
+    <div class="container" >
+      <div class="row" id="title">
+        <div class="col-xs-12">
+          <h1> Orem Fitness Center </h1>
+          <h3> View court details before reserving a time </h3>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- middle column -->
+    <div class="container" id="middleColumn" ng-controller="FacilityController" style="max-width: 850px">
+
+      <div class="row">
+      	<!--<div class="col-xs-12">-->
+          <img src="../assets/OremRec.jpg">
+        <!--</div>-->
+      </div>
+
+      <div class="row">
+
+				<div id="container" ng-controller="CourtController" style="padding-top: 80px;">
+					<div class="row">		
+
+				  	<div class="col-sx-12 col-sm-6 col-md-4" ng-repeat="court in courts">
+
+              <div class="row" ng-include="'courtObject.html'"></div>
+              <div style="height: 50px;"></div>
+            </div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+ 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+  <div id="footer"></div> 
+</html>

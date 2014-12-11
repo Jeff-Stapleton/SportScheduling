@@ -7,7 +7,8 @@ var GameSchema   = new Schema({
 	ownerId: String,
 	start: String,
 	end: String,
-	people: Number
+	people: Number,
+    courtId: String
 });
 
 module.exports = mongoose.model('Game', GameSchema);
