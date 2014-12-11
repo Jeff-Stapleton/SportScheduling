@@ -33,7 +33,15 @@ h3 {
     font-size: 1.3em;
 }
 
-
+h6 {
+    font-size: 1.5em;
+    background-color: #24527b;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(97,153,198,0.3) 0px 3px 3px;"
+}
 
 #title {
     padding-top: 10px;
