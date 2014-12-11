@@ -37,7 +37,7 @@ module.exports = function(app) {
 		});
 	});
     
-    app.put('/games/:name/:location/:ownerId/:start/:end/:people',function(req,res){
+    app.put('/games/:name/:location/:userId/:start/:end/:people/:courtId',function(req,res){
 		
 		var game = new Game();
 		game.name = req.params.name;
@@ -45,6 +45,7 @@ module.exports = function(app) {
         game.ownerId = req.params.ownerId;
         game.start = req.params.start;
         game.end = req.params.end;
+        game.courtId = req.params.courtId;
         
 		// res.json({message:game.name});
 
@@ -170,8 +171,46 @@ module.exports = function(app) {
  			res.json({ message: 'Successfully deleted' });
  		});
     });
+    
 
+//////////////////////////////////////////////////////////////////    
+////COURTS/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+    app.get('/courts/:court_id',function(req,res){
+		Court.findById(req.params.court_id,function(err,court){
+			if (err)
+				res.send(err);
+			res.json(court);
+		});
+	});
+    
+    app.put('/courts/:name/:facId/:image',function(req,res){
+        var court = new Court();
+        court.name = req.params.name;
+        court.facId = req.params.facId;
+        court.image = req.params.image;
+        
+        court.save(function(err){
+           if(err)
+               res.send(err);
+            res.json({message: 'Court created'});
+        });
+    });
 
+    app.delete('/courts/:court_id',function(req,res){
+        Court.remove({
+ 			_id: req.params.court_id
+ 		}, function(err, court) {
+ 			if (err)
+ 				res.send(err);
+
+ 			res.json({ message: 'Successfully deleted' });
+ 		});
+    });
+
+    
+    
+    
 // app.get('/', function(req, res) {
 // 	res.json({ message: 'hooray! welcome to our api!' });	
 // });
