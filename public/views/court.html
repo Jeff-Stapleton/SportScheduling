@@ -74,8 +74,8 @@
 
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
-  							<tr ng-repeat="hour in calendars[0].hours">
-								<td ng-repeat="day in calendars">
+				        	<tr ng-repeat="day in calendars">
+  								<td ng-repeat="hour in calendars[day].hours">			
 									<span ng-if="hour != RESERVED">
 										<a href="">{{hour}}</a>
 									</span>
