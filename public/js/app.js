@@ -109,6 +109,29 @@
 
 		$scope.facilityId = 0;
 
+		$scope.facility = {
+			name: "",
+			hours: "",
+			phone: "",
+			image: ""
+
+		}
+
+		$scope.initFac = function(){
+			$scope.facilityId = sessionStorage.facId;
+
+			for(var i = 0; i < 4; i++) 
+				var fac = $scope.facilities[i];
+				if(fac.id === $scope.facilityId){
+					$scope.facility.name = fac.name;
+					$scope.facility.hours = fac.hours;
+					$scope.facility.phone = fac.phone;
+					$scope.facility.image = fac.image;
+				}
+			
+
+		};
+
 		var fac = $scope;
 
  		$scope.facilities = [];
@@ -126,8 +149,6 @@
  			console.log($scope.facilities);
  		};
 
-		
-				
 
 		$scope.getFac = function() {
 			var path = '/facilities/' + 1;		// need to fix this; dynamically add facility number

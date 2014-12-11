@@ -15,7 +15,8 @@
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
   </head>
-  <body>
+  <body ng-controller="FacilityController">
+    <div ng-init="initGet()"></div>
   	<div id="fb-root"></div>
   	<script>
 
@@ -40,6 +41,8 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    <div ng-init="initFac()"></div>
+
     <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
     
   	</nav>
@@ -47,7 +50,7 @@
     <div class="container" >
       <div class="row" id="title">
         <div class="col-xs-12">
-          <h1> Provo Recreation Center </h1>
+          <h1> {{facility.name}} </h1>
           <h3> View court details before reserving a time </h3>
         </div>
       </div>
@@ -55,7 +58,7 @@
 
 
     <!-- middle column -->
-    <div class="container" id="middleColumn" ng-controller="FacilityController" style="max-width: 850px">
+    <div class="container" id="middleColumn" style="max-width: 850px">
 
       <div class="row">
       	<!--<div class="col-xs-12">-->
