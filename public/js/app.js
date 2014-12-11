@@ -117,8 +117,13 @@
 			$http({method: 'GET', url: path}).
 				success(function(data, status) {
 					fac.facilities = data;	
+					sessionStorage.facs = fac.facilities;
 				});
-				$scope.facilities = fac.facilities;
+				
+		};
+
+		$scope.assign = function(){
+			$scope.facilities = sessionStorage.facs;
 		};
 
 		$scope.getFac = function() {
