@@ -49,7 +49,7 @@
 
 		$scope.get = function() {
 			var changed = false;
-			$scope.userGetPath = '/users/' + $scope.user.fbUserId;
+			$scope.userGetPath = '/users/' + localStorage.fbUserId;
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
