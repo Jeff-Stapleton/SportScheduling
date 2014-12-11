@@ -78,8 +78,8 @@ module.exports = function(app) {
 		});
 	});
 
-    app.get('/facilites/:fac_id',function(req,res){
-		Facility.findById(req.params.fac_id,function(err,facility){
+    app.get('/facilites/:id',function(req,res){
+		Facility.findById(req.params.id,function(err,facility){
 			if (err)
 				res.send(err);
 			res.json(facility);
@@ -87,12 +87,12 @@ module.exports = function(app) {
 	});
 
     
-	app.put('/facilities/:name/:hours/:phone',function(req,res){
+	app.put('/facilities/:name/:hours/:phone/:id',function(req,res){
         var facility = new Facility();
         facility.name = req.params.name;
         facility.hours = req.params.hours;
         facility.phone = req.params.phone;
-        facility.address = '';
+        facility.id = req.params.id;
         
         facility.save(function(err){
            if(err)

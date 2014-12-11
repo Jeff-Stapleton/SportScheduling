@@ -138,6 +138,19 @@
 
 		];
 
+		$scope.get = function() {
+			var path = '/facilities/';
+			$http({method: 'GET', url: $scope.userGetPath}).
+				success(function(data, status) {
+					if(data.length) {
+						var facVals = data[0];
+						
+						
+					} 
+				});
+
+		};
+
 	}]);
 
 	app.controller('CourtController', ['$scope', function($scope){
