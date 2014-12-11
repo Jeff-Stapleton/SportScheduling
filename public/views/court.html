@@ -75,13 +75,14 @@
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
 							<tr ng-repeat="day in calendars">
-								<td ng-if="hour != 'RESERVED'" ng-repeat="hour in day track by $index">
-									<td ng-if="hour == 'RESERVED'" ng-repeat="hour in day track by $index">
+								<span ng-repeat="hour in day track by $index">
+									<td ng-if="hour != 'RESERVED'">
 										{{hour}}
 									</td>
-									{{hour}}
-								</td>
-							</tr>
+									<td ng-if="hour == 'RESERVED'">
+										{{hour}}
+									</td>
+							</span>
 				        </tbody>
 			       </table>
 			    </div>
