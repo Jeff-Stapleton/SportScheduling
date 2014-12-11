@@ -80,8 +80,8 @@ module.exports = function(app) {
 		});
 	});
 
-    app.get('/facilites/:fac_id',function(req,res){
-		Facility.findById(req.params.fac_id,function(err,facility){
+    app.get('/facilites/:id',function(req,res){
+		Facility.find({id: req.params.id},function(err,facility){
 			if (err)
 				res.send(err);
 			res.json(facility);
