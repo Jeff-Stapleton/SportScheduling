@@ -78,11 +78,25 @@
 					        <div class="modal-content">
 					            <div class="modal-header">
 					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                <h4 class="modal-title">Duration</h4>
+					                <h4 class="modal-title">Set Duration</h4>
 					            </div>
 					            <div class="modal-body">
 					                <p>Please select a duration for your court reservation</p>
-					                <p class="text-warning"><small>Then click 'Reserve' to finish</small></p>
+					                <p class="text-warning"><small>Click 'Reserve' to finalize</small></p>
+
+					                <div class="dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+										    Select Duration
+										    <span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+										    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1 Hour</a></li>
+										    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2 Hours</a></li>
+										    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3 Hours</a></li>
+										    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4 Hours</a></li>
+										</ul>
+									</div>
+
 					            </div>
 					            <div class="modal-footer">
 					                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
