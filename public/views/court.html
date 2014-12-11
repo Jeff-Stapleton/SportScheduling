@@ -58,7 +58,7 @@
 		    </div>
 
 			<!-- Calendar --> 
-				<div class="table-responsive" id="courtCal">          
+				<div class="table-responsive" id="courtCal" ng-controller="CalendarController">          
 			       	<table class="table table-striped table-bordered">
 				        <thead style="color: #666666; background-color: #eeeeee;">
 					        <tr>
@@ -74,7 +74,7 @@
 
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
-							<tr ng-repeat="day in calendar">
+							<tr ng-repeat="day in calendars">
 								<td ng-repeat="hour in day.col">{{hour}}</td>
 							</tr>
 				        </tbody>
