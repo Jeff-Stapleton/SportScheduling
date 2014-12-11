@@ -156,10 +156,11 @@
 				success(function(data, status) {
 					if(data.length) {
 						var facVals = data[0];
-						$scope.facility.name = facVals.name;
-						$scope.facility.hours = facVals.hours;
-						$scope.facility.phone = facVals.phone;
-						$scope.facility.image = facVals.image;						
+						fac.name = facVals.name;
+						fac.hours = facVals.hours;
+						fac.phone = facVals.phone;
+						fac.image = facVals.image;	
+						return fac;					
 					} 
 				});
 		};
