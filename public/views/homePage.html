@@ -14,9 +14,9 @@
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body ng-controller="FacilityController" >
   <div id="fb-root"></div>
-  <script ng-controller="UserController">
+  <script >
 
     if(localStorage.loggedIn === "false"){
         window.location = "../"
@@ -40,6 +40,8 @@
 
   </script>
 
+  <div ng-init="getAll()"></div>
+
   <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; color: ##24527B;">
     
   </nav>
@@ -51,7 +53,7 @@
 
 
 
-  <div class="cover-container" ng-controller="FacilityController" style="padding-top: 50px;">
+  <div class="cover-container" style="padding-top: 50px;">
     <div class="row">
       
       <div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="facility in facilities">
