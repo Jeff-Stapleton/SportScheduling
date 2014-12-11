@@ -14,9 +14,6 @@
  		loggedIn: 'false'
 		};
 
-		$scope.userGetPath = '/users/' + $scope.user.fbUserId;
-		$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
-
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
 		 	localStorage.phone = phone;
@@ -56,6 +53,8 @@
 		}
 
 		$scope.get = function() {
+			var changed = false;
+			$scope.userGetPath = '/users/' + $scope.user.fbUserId;
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
@@ -63,10 +62,29 @@
 						$scope.user.firstName = userVals.firstName;
 						$scope.user.lastName = userVals.lastName;
 						$scope.user.email = userVals.email;
-						$scope.user.phone = userVals.phone;
-						$scope.user.image = userVals.picture;
 						$scope.user.fbUserId = userVals.fbUserId;
 						$scope.user.loggedIn = userVals.loggedIn;
+
+						if(localStorage.phone.length){
+							if(localStorage.phone != userVals.phone){
+								$scope.user.phone = localStorage.phone;
+								changed = true;
+							} else {
+								$scope.user.phone = userVals.phone;
+							}
+						} else {
+							$scope.user.phone = userVals.phone;
+						}
+
+						if(localStorage.image != userVals.picture) {
+							$scope.user.image = localStorage.image;
+							changed = true;
+						}
+
+						if(changed) {
+							$scope.put();
+						}
+						
 					} else {
 						$scope.put();
 					}
@@ -74,6 +92,17 @@
 		};
 
 		$scope.put = function() {
+
+			$scope.user.firstName = localStorage.getItem("first_name");
+			$scope.user.lastName = localStorage.getItem("last_name");
+			$scope.user.email = localStorage.getItem("email");
+			$scope.user.fbUserId = localStorage.getItem("id");
+			$scope.user.image = localStorage.getItem("image");
+			$scope.user.phone = localStorage.getItem("phone");
+			$scope.user.loggedIn = localStorage.getItem("loggedIn");
+
+			$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
+
 			$http({method: 'PUT', url: $scope.userPutPath}).
 				success(function(data, status) {
 					if(status = '200'){
