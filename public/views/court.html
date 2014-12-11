@@ -54,7 +54,7 @@
 
 	    	<!-- Court Picture -->
 	    	<div class="row">
-            	<img src="../assets/rb.jpg">
+            	<img src="{{courts[0].image}}">
 		    </div>
 
 			<!-- Calendar --> 
@@ -75,7 +75,7 @@
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
 							<tr ng-repeat="row in courts[0].calendar">
-								<td ng-repeat="col in row.col"><{{col}}</td>
+								<td ng-repeat="col in row.col">7 am</td>
 							</tr>
 				        </tbody>
 			       </table>
