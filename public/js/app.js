@@ -49,6 +49,7 @@
 			localStorage.setItem("id", "");
 			localStorage.setItem("image", "");
 			localStorage.setItem("phone", "");
+			alert("You have logged out of the application but you are still logged into Facebook.")
 			window.location = "../";
 		}
 
