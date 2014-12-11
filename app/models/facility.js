@@ -6,7 +6,8 @@ var FacilitySchema   = new Schema({
 	hours: String,
     phone: String,
     id: Number,
-    image: String
+    image: String,
+    facility: String
 });
 
 module.exports = mongoose.model('Facility', FacilitySchema);
