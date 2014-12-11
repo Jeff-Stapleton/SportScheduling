@@ -3,8 +3,8 @@ var Schema       = mongoose.Schema;
 
 var FacilitySchema   = new Schema({
 	name: String,
+	hours: String,
     phone: String,
-    hours: String,
     id: Number,
     image: String
 });
