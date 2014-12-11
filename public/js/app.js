@@ -51,7 +51,8 @@
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
-						var userVals = JSON.parse(data);
+						/*var userVals = JSON.parse(data);*/
+						var userVals = data;
 						$scope.user.firstName = userVals.firstName;
 						$scope.user.lastName = userVals.lastName;
 						$scope.user.email = userVals.email;
