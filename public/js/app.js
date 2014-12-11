@@ -17,7 +17,7 @@
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
 		 	localStorage.phone = phone;
-		 	$scope.put();
+		 	$scope.update();
 		};
 
 		$scope.log = function() {
@@ -77,6 +77,17 @@
 						
 					} else {
 						$scope.put();
+					}
+				});
+		};
+
+		$scope.update = function() {
+			$scope.userPutPath = '/users/' + $scope.user.fbUserId + '/' + $scope.user.email + '/' + $scope.user.phone;
+
+			$http({method: 'PUT', url: $scope.userPutPath}).
+				success(function(data, status) {
+					if(status = '200'){
+						console.log(data);
 					}
 				});
 		};
