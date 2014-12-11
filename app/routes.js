@@ -131,6 +131,18 @@ module.exports = function(app) {
 			res.json(user);
 		});
 	});
+
+	app.update('/users/:fbUserId/:email/:phone',function(req,res){
+		User.update(
+		{ fbUserId: req.params.fbUserId},
+		{
+			$set: {
+				email: req.params.email,
+				phone: req.params.phone
+			}	
+		}
+		)
+	});
     
     app.put('/users/:firstName/:lastName/:email/:phone/:loggedIn/:fbUserId',function(req,res){
         var user = new User();
@@ -150,7 +162,7 @@ module.exports = function(app) {
 
     app.delete('/users/:user_id',function(req,res){
         User.remove({
- 			_id: req.params.user_id
+ 			fbUserId: req.params.user_id
  		}, function(err, user) {
  			if (err)
  				res.send(err);
