@@ -132,6 +132,8 @@
 				});
 		};
 
+		$scope.facilities = fac.facilities;
+
 
 
 	}]);
