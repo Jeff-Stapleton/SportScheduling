@@ -17,6 +17,11 @@
   <body>
   	<div id="fb-root"></div>
   	<script>
+
+      if(localStorage.loggedIn === "false"){
+        window.location = "../"
+      }
+
       window.fbAsyncInit = function() {
       FB.init({
       appId      : '624244104353794',
@@ -52,15 +57,20 @@
     <div class="container" id="middleColumn" ng-controller="FacilityController" style="max-width: 850px">
 
       <div class="row">
-      	<div class="col-xs-12" id="profilePic" ng-style="{'background-image':'url({{facilities[0].images}})'}; {'height':'350px'};">
-        </div>
+      	<!--<div class="col-xs-12">-->
+          <img src="{{facilities[0].images}}">
+        <!--</div>-->
       </div>
 
       <div class="row">
 
-				<div id="container" ng-controller="FacilityController" style="padding-top: 80px;">
-					<div class="row">				  	
-				  	<div class="col-sx-12 col-sm-6 col-md-4" ng-include="'courtObject.html'">
+				<div id="container" ng-controller="CourtController" style="padding-top: 80px;">
+					<div class="row">		
+
+				  	<div class="col-sx-12 col-sm-6 col-md-4" ng-repeat="court in courts">
+
+              <div class="row" ng-include="'courtObject.html'">
+
 					</div>
 				</div>
 

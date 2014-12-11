@@ -17,6 +17,11 @@
 <body>
   <div id="fb-root"></div>
   <script ng-controller="UserController">
+
+    if(localStorage.loggedIn === "false"){
+        window.location = "../"
+    }
+
     window.fbAsyncInit = function() {
     FB.init({
     appId      : '624244104353794',
@@ -49,7 +54,7 @@
   <div class="cover-container" ng-controller="FacilityController" style="padding-top: 50px;">
     <div class="row">
       
-      <div class="col-xs-12 col-sm-4 col-md-2" ng-repeat="facility in facilities">
+      <div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="facility in facilities">
 
 
         <div class="row" ng-include="'facilitiesObject.html'">

@@ -17,22 +17,25 @@
      <body ng-controller="UserController">
       <div id="fb-root"></div>
       <script >
+
     // This is called with the results from from FB.getLoginStatus().
       function goToHome() {
           FB.api('/me', function(response) {
             console.log(JSON.stringify(response));
             var text = JSON.stringify(response);
             var vals = JSON.parse(text);
-            sessionStorage.setItem("first_name", vals.first_name);
-            sessionStorage.setItem("last_name", vals.last_name);
-            sessionStorage.setItem("email", vals.email);
-            sessionStorage.setItem("id", vals.id);
-            sessionStorage.setItem("loggedIn", "true");
+            localStorage.setItem("first_name", vals.first_name);
+            localStorage.setItem("last_name", vals.last_name);
+            localStorage.setItem("email", vals.email);
+            localStorage.setItem("id", vals.id);
+            localStorage.setItem("phone", "");
+            localStorage.setItem("loggedIn", "true");
+
           });
           FB.api('/me/picture?redirect=0&height=500&type=normal&width=500', function(response) {
             var text = JSON.stringify(response);
             var pic = JSON.parse(text);
-            sessionStorage.setItem("image", pic.data.url);
+            localStorage.setItem("image", pic.data.url);
             window.location = "views/homePage.html";
           });
       }
@@ -45,18 +48,14 @@
       // Full docs on the response object can be found in the documentation
       // for FB.getLoginStatus().
       
-      if (response.status === 'connected') { 
-        // Logged into your app and Facebook.
-        // testAPI();
-      } else if (response.status === 'not_authorized') {
-        // The person is logged into Facebook, but not your app.
-        /*document.getElementById('status').innerHTML = 'Please log ' +
-          'into this app.';*/
-      } else {
-        // The person is not logged into Facebook, so we're not sure if
-        // they are logged into this app or not.
-        /*document.getElementById('status').innerHTML = 'Please log ' +
-          'into Facebook.';*/
+      if (response.status === 'connected') {              // Logged into your app and Facebook.
+        if(localStorage.loggedIn === "true"){
+          window.location = "/views/homePage.html";
+        }
+      } else if (response.status === 'not_authorized') {  // The person is logged into Facebook, but not your app.
+        localStorage.loggedIn = "false";
+      } else {                            // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
+        localStorage.loggedIn = "false";
       }
     }
   
