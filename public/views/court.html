@@ -58,30 +58,24 @@
 		    </div>
 
 			<!-- Calendar --> 
-				<div class="table-responsive" id="courtCal" ng-controller="CalendarController">          
+				<div class="table-responsive" id="courtCal">          
 			       	<table class="table table-striped table-bordered">
 				        <thead style="color: #666666; background-color: #eeeeee;">
 					        <tr>
-					            <th>{{calendars[0].name}}</th>
-					            <th>{{calendars[1].name}}</th>
-					        	<th>{{calendars[2].name}}</th>
-					            <th>{{calendars[3].name}}</th>
-					            <th>{{calendars[4].name}}</th>
-					            <th>{{calendars[5].name}}</th>
-					            <th>{{calendars[6].name}}</th>
+					            <th>Sunday</th>
+					            <th>Monday</th>
+					        	<th>Tuesday</th>
+					     		<th>Wednesday</th>
+					            <th>Thursday</th>
+					            <th>Friday</th>
+					            <th>Saturday</th>
 					        </tr>
 				        </thead>
 
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
-							<tr ng-repeat="hour in calendars.hours">
-								<td><a href="">{{calendars[0].hour}}</a></td>
-								<td><a href="">{{calendars[1].hour}}</a></td>
-								<td><a href="">{{calendars[2].hour}}</a></td>
-								<td><a href="">{{calendars[3].hour}}</a></td>
-								<td><a href="">{{calendars[4].hour}}</a></td>
-								<td><a href="">{{calendars[5].hour}}</a></td>
-								<td><a href="">{{calendars[6].hour}}</a></td>
+							<tr ng-repeat="row in courts[0].calendar">
+								<td ng-repeat="col in row.col"><{{col}}</td>
 							</tr>
 				        </tbody>
 			       </table>
