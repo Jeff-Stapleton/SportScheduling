@@ -75,7 +75,9 @@
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
 							<tr ng-repeat="day in calendars">
-								<td ng-repeat="hours in calendars[0].hour">hour</td>
+								<td ng-repeat="hour in day by $index">
+								 	{{$parent.$index}}-{{$index}} {{hour}}
+								</td>
 							</tr>
 				        </tbody>
 			       </table>
