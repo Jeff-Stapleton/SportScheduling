@@ -2,6 +2,7 @@
 <html ng-app="SportScheduler">
 	<head>
 	  <title>Events</title>
+    <link rel="shortcut icon" href="../assets/basketball.ico"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- AngularJS -->
@@ -37,15 +38,14 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
-		<nav class="navbar navbar-inverse" ng-include="'navbar.html'">
-    
-    </nav>
+    <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
 
 	  <div class="container" style="padding-top: 25px;">
-      <h1 style="text-align: center; font-family: serif;">Play Today, Join a Game</h1>
+      <h1 style="text-align: center;">Play Today, Join a Game</h1>
+      <h3 style="text-align: center;">Find games to join or review games you have organized</h3>
       <div class="panel-group" id="accordion" style="padding-top: 25px;">
         <div class="panel panel-default">
-          <div class="panel-heading" style="background-color: rgb(53,118,190); color: white;">
+          <div class="panel-heading" style="background-color: #4E7BA0; color: white;">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#mygames">My Games</a>
             </h4>
@@ -137,7 +137,7 @@
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-heading" style="background-color: rgb(53,118,190); color: white;">
+          <div class="panel-heading" style="background-color: #4E7BA0; color: white;">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#opengames">Open Games</a>
             </h4>
@@ -198,7 +198,7 @@
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-heading" style="background-color: rgb(53,118,190); color: white;">
+          <div class="panel-heading" style="background-color: #4E7BA0; color: white;">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#allgames">All Games</a>
             </h4>
@@ -295,4 +295,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</body>
+  <div id="footer"></div> 
 </html>

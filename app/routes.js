@@ -78,8 +78,8 @@ module.exports = function(app) {
 		});
 	});
 
-    app.get('/facilites/:fac_id',function(req,res){
-		Facility.findById(req.params.fac_id,function(err,facility){
+    app.get('/facilites/:id',function(req,res){
+		Facility.findById(req.params.id,function(err,facility){
 			if (err)
 				res.send(err);
 			res.json(facility);
@@ -87,11 +87,12 @@ module.exports = function(app) {
 	});
 
     
-	app.put('/facilities/:name/:address/:phone',function(req,res){
+	app.put('/facilities/:name/:hours/:phone/:id',function(req,res){
         var facility = new Facility();
         facility.name = req.params.name;
-        facility.location = req.params.location;
+        facility.hours = req.params.hours;
         facility.phone = req.params.phone;
+        facility.id = req.params.id;
         
         facility.save(function(err){
            if(err)
@@ -132,16 +133,15 @@ module.exports = function(app) {
 		});
 	});
 
-	app.put('/users/:fbUserId/:email/:phone',function(req,res){
-		User.update(
-		{ fbUserId: req.params.fbUserId},
+	app.post('/users/:fbUserId/:email/:phone',function(req,res){
+		User.update({ fbUserId: req.params.fbUserId},
 		{
 			$set: {
 				email: req.params.email,
 				phone: req.params.phone
-			}	
-		}
-		)
+			}
+		});
+		res.json({message: 'User updated'});
 	});
     
     app.put('/users/:firstName/:lastName/:email/:phone/:loggedIn/:fbUserId',function(req,res){

@@ -2,6 +2,7 @@
 <html ng-app="SportScheduler">
   <head>
     <title>Facility</title>
+    <link rel="shortcut icon" href="../assets/basketball.ico"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- AngularJS -->
@@ -39,7 +40,7 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; color: ##24527B;"">
+    <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
     
   	</nav>
 
@@ -69,7 +70,9 @@
 
 				  	<div class="col-sx-12 col-sm-6 col-md-4" ng-repeat="court in courts">
 
-              <div class="row" ng-include="'courtObject.html'">
+              <div class="row" ng-include="'courtObject.html'"></div>
+              <div style="height: 50px;"></div>
+            </div>
 
 					</div>
 				</div>
@@ -80,4 +83,5 @@
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
+  <div id="footer"></div> 
 </html>

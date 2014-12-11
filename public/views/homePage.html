@@ -2,6 +2,7 @@
 <html ng-app="SportScheduler">
 <head>
   <title>Ball So Hard</title>
+  <link rel="shortcut icon" href="../assets/basketball.ico"/>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <!-- AngularJS -->
@@ -14,35 +15,15 @@
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-  <div id="fb-root"></div>
-  <script ng-controller="UserController">
-
+<body ng-controller="FacilityController" >
+ 
+  <script >
     if(localStorage.loggedIn === "false"){
         window.location = "../"
     }
-
-    window.fbAsyncInit = function() {
-    FB.init({
-    appId      : '624244104353794',
-    xfbml      : true,
-    version    : 'v2.2'
-    });
-    };
-
-    (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
   </script>
 
-  <nav class="navbar navbar-inverse" ng-include="'navbar.html'">
-    
-  </nav>
+  <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
 
   <div id="title">
     <h1>Find Games In Your Area</h1>
@@ -51,14 +32,14 @@
 
 
 
-  <div class="cover-container" ng-controller="FacilityController" style="padding-top: 50px;">
+  <div class="cover-container" style="padding-top: 50px;" >
     <div class="row">
       
-      <div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="facility in facilities">
+      <div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="facility in fac.facilities">
 
 
-        <div class="row" ng-include="'facilitiesObject.html'">
-
+        <div class="row" ng-include="'facilitiesObject.html'"></div>
+        <div style="height: 50px;"></div>
 
       </div>
 
@@ -68,4 +49,5 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   
 </body>
+<div id="footer"></div> 
 </html>

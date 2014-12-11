@@ -12,8 +12,14 @@
  		accessToken: '',
  		image: '',
  		loggedIn: 'false'
-		};
+		}; 		
 
+		$(document).ready(function(){
+		    $(".toggle-modal").click(function(){
+		        $("#myModal").modal('toggle');
+		    });
+		});
+		
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
 		 	localStorage.phone = phone;
@@ -46,35 +52,18 @@
 		}
 
 		$scope.get = function() {
-			var changed = false;
-			$scope.userGetPath = '/users/' + $scope.user.fbUserId;
+			$scope.userGetPath = '/users/' + localStorage.id;
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
-						/*var userVals = JSON.parse(data);*/
-						var userVals = data;
+						var userVals = data[0];
 						$scope.user.firstName = userVals.firstName;
 						$scope.user.lastName = userVals.lastName;
 						$scope.user.email = userVals.email;
 						$scope.user.fbUserId = userVals.fbUserId;
 						$scope.user.loggedIn = userVals.loggedIn;
 						$scope.user.image = localStorage.image;
-						$scope.user.phone = userVals.phone;
-
-						/*if(localStorage.phone.length){
-							if(localStorage.phone != userVals.phone){
-								$scope.user.phone = localStorage.phone;
-								changed = true;
-							} else {
-								$scope.user.phone = userVals.phone;
-							}
-						} else {
-							$scope.user.phone = userVals.phone;
-						}
-
-						if(changed) {
-							$scope.put();
-						}*/
+						$scope.user.phone = localStorage.phone;
 						
 					} else {
 						$scope.put();
@@ -83,9 +72,9 @@
 		};
 
 		$scope.update = function() {
-			$scope.userPutPath = '/users/' + $scope.user.fbUserId + '/' + $scope.user.email + '/' + $scope.user.phone;
+			$scope.userPutPath = '/users/' + $scope.user.fbUserId + '/' + $scope.user.email + '/' + $scope.user.phone;// + '/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.loggedIn;
 
-			$http({method: 'PUT', url: $scope.userPutPath}).
+			$http({method: 'POST', url: $scope.userPutPath}).
 				success(function(data, status) {
 					if(status = '200'){
 						console.log(data);
@@ -115,38 +104,32 @@
 
 	}]);
 
-	app.controller('FacilityController', ['$scope', function($scope){
- 		$scope.facilities = [
- 			{
-				name: 'Richards Building - BYU',
-				hours: '6 am-10 pm Mon-Sat',
-				phone: '(801) 422-3644',
-				images: "../assets/rb.jpg"
-				
-			},
-			{
-				name: '24 Hour Fitness',
-				hours: '6 am-12 pm Mon-Sat',
-				phone: '(801) 224-2096',
-				images: "../assets/24Hour.jpg"
-				
-			},
-			{
-					name: 'Orem Recreation Center',
-					hours: '5 am-10 pm Mon-Fri 7 am-7 pm Sat',
-					phone: '(801) 852-6600',
-					images: "../assets/OremRec.jpg"
-					
-				},
-				{
-					name: 'Provo Recreation Center',
-					hours: '5 am-10 pm Mon-Fri 7 am-8 pm Sat',
-					phone: '(801) 229-7154',
-					images: "../assets/ProvoRec.jpg" 
-					
-				}
 
-		];
+	app.controller('FacilityController', ['$scope', '$http', function($scope, $http){
+
+		$scope.facilityId = 0;
+
+		var fac = $scope;
+ 		fac.facilities = [];
+
+		$http({method: 'GET', url: '/facilities/'}).
+			success(function(data, status) {
+				fac.facilities = data;
+			});
+				
+
+		$scope.getFac = function() {
+			var path = '/facilities/' + 1;		// need to fix this; dynamically add facility number
+			$http({method: 'GET', url: $scope.userGetPath}).
+				success(function(data, status) {
+					if(data.length) {
+						var facVals = data[0];
+						
+						
+					} 
+				});
+		};
+
 
 	}]);
 
@@ -193,17 +176,4 @@
 
 		}]);
 
-
-
 })();
-
-
-// var myApp = angular.module('SportScheduler',[])
-//    .config(function($routeProvider) {
-//        $routeProvider
-//                .when('/homePage', {templateUrl: "views/homePage.html", controller: "homeCtrl"})
-//                .when('/login', {templateUrl: "views/login.html", controller: "loginCtrl"})
-//                .when('/project/:projectId', {templateUrl: "views/project.html", controller: "projectCtrl"})
-//                .when('/editproject/:projectId', {templateUrl: "views/editproject.html", controller: "editProjectCtrl"})
-//                .otherwise({redirectTo: '/home'});
-//    });
