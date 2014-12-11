@@ -114,7 +114,7 @@
 
 		$scope.getAll = function() {
 			var path = '/facilities/';
-			$http({method: 'GET', url: $scope.userGetPath}).
+			$http({method: 'GET', url: path}).
 				success(function(data, status) {
 					fac.facilities = data;	
 				});
