@@ -149,6 +149,14 @@
  			console.log($scope.facilities);
  		};
 
+ 		$scope.setFac = function(){
+ 			var fac = $scope.getFac();
+ 			$scope.facility.name = fac.name;
+			$scope.facility.hours = fac.hours;
+			$scope.facility.phone = fac.phone;
+			$scope.facility.image = fac.image;
+ 		};
+
 
 		$scope.getFac = function() {
 			var path = '/facilities/' + sessionStorage.facId;		// need to fix this; dynamically add facility number

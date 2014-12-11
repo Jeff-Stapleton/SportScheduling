@@ -144,7 +144,9 @@ module.exports = function(app) {
 				email: req.params.email,
 				phone: req.params.phone
 			}
-		});
+		},
+		{ upsert: true }
+		);
 		res.json({message: 'User updated'});
 	});
     
