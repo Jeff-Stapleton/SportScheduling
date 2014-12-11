@@ -4,18 +4,27 @@
   <li><a href="/views/events.html"><h6><b>Events</b></h6></a></li>
   <li class="dropdown" style="background-color: #4E7BA0;">
     <a class="dropdown-toggle" data-toggle="dropdown" style="background-color: #4E7BA0; max-height: 50px;" href="#"><h6><b>Facilities</b></h6> </a>
-    <ul class="dropdown-menu" onclick="click(4)" style="background-color: #666666;">
-      <li><a id="4" href="/views/rbView.html" style="color: #ffffff; font-size: 1.2em;"><b>Richards Building - BYU</b></a></li>
-      <li><a id="1" href="/views/24View.html" style="color: #ffffff; font-size: 1.2em;"><b>24 Hour Fitness</b></a></li>
-      <li><a id="2" href="/views/oremRecView.html" style="color: #ffffff; font-size: 1.2em;"><b>Orem Recreation Center</b></a></li>  
-      <li><a id="3" href="/views/provoRecView.html" style="color: #ffffff; font-size: 1.2em;"><b>Provo Recreation Center</b></a></li>             
+    <ul class="dropdown-menu" style="background-color: #666666;">
+      <li><a href="/views/rbView.html" onclick="click4()" style="color: #ffffff; font-size: 1.2em;"><b>Richards Building - BYU</b></a></li>
+      <li><a href="/views/24View.html" onclick="click3()" style="color: #ffffff; font-size: 1.2em;"><b>24 Hour Fitness</b></a></li>
+      <li><a href="/views/oremRecView.html" onclick="click2()" style="color: #ffffff; font-size: 1.2em;"><b>Orem Recreation Center</b></a></li>  
+      <li><a href="/views/provoRecView.html" onclick="click3()" style="color: #ffffff; font-size: 1.2em;"><b>Provo Recreation Center</b></a></li>             
     </ul>
   </li>
 </ul>
 
 <script>
-  function click(tab) {
-    sessionStorage.facId = tab;
+  function click1() {
+    sessionStorage.facId = 1;
+  }
+  function click2() {
+    sessionStorage.facId = 2;
+  }
+  function click3() {
+    sessionStorage.facId = 3;
+  }
+  function click4() {
+    sessionStorage.facId = 4;
   }
 
 </script>
