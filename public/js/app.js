@@ -113,7 +113,7 @@
  		fac.facilities = [];
 
 		$scope.getAll = function() {
-			var path = '/facilities';
+			var path = '/facilities/';
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					fac.facilities = data;	
