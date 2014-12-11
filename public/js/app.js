@@ -109,22 +109,18 @@
 
 		$scope.facilityId = 0;
 
-		var fac = this;
+		var fac = $scope;
  		fac.facilities = [];
 
 		$scope.getAll = function() {
 			var path = '/facilities/';
 			$http({method: 'GET', url: path}).
 				success(function(data, status) {
-					fac.facilities = data;	
-					sessionStorage.facs = fac.facilities;
+					fac.facilities = data;
 				});
 				
 		};
 
-		$scope.assign = function(){
-			$scope.facilities = sessionStorage.facs;
-		};
 
 		$scope.getFac = function() {
 			var path = '/facilities/' + 1;		// need to fix this; dynamically add facility number
