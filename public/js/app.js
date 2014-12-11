@@ -117,8 +117,9 @@
 			$http({method: 'GET', url: path}).
 				success(function(data, status) {
 					fac.facilities = data;	
+					sessionStorage.facs = fac.facilities;
 				});
-				sessionStorage.facs = fac.facilities;
+				
 		};
 
 		$scope.assign = function(){
