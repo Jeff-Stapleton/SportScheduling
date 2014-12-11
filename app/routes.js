@@ -132,13 +132,12 @@ module.exports = function(app) {
 		});
 	});
     
-    app.put('/users/:firstName/:lastName/:email/:phone/:picture/:loggedIn/:fbUserId',function(req,res){
+    app.put('/users/:firstName/:lastName/:email/:phone/:loggedIn/:fbUserId',function(req,res){
         var user = new User();
         user.firstName = req.params.firstName;
         user.lastName = req.params.lastName;
         user.email = req.params.email;
         user.phone = req.params.phone;
-        user.picture = req.params.picture;
         user.loggedIn = req.params.loggedIn;
         user.fbUserId = req.params.fbUserId;
         
