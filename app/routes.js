@@ -133,15 +133,14 @@ module.exports = function(app) {
 	});
 
 	app.put('/users/:fbUserId/:email/:phone',function(req,res){
-		User.update(
-		{ fbUserId: req.params.fbUserId},
+		User.update({ fbUserId: req.params.fbUserId},
 		{
 			$set: {
-				email: req.params.email,
-				phone: req.params.phone
-			}	
-		}
-		)
+					email: req.params.email,
+					phone: req.params.phone
+				}	
+		})
+		res.json({message: 'User updated'});
 	});
     
     app.put('/users/:firstName/:lastName/:email/:phone/:loggedIn/:fbUserId',function(req,res){
