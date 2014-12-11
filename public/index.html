@@ -12,34 +12,34 @@
  
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
+  </head>
 
-     <body ng-controller="UserController">
-      <div id="fb-root"></div>
-      <script >
-
+  <body ng-controller="UserController">
+    <div id="fb-root"></div>
+    <script >
     // This is called with the results from from FB.getLoginStatus().
-      function goToHome() {
-          FB.api('/me', function(response) {
-            console.log(JSON.stringify(response));
-            var text = JSON.stringify(response);
-            var vals = JSON.parse(text);
-            localStorage.setItem("first_name", vals.first_name);
-            localStorage.setItem("last_name", vals.last_name);
-            localStorage.setItem("email", vals.email);
-            localStorage.setItem("id", vals.id);
-            localStorage.setItem("phone", "Enter Phone Number");
-            localStorage.setItem("loggedIn", "true");
+    function goToHome() {
+        FB.api('/me', function(response) {
+          console.log(JSON.stringify(response));
+          var text = JSON.stringify(response);
+          var vals = JSON.parse(text);
+          localStorage.setItem("first_name", vals.first_name);
+          localStorage.setItem("last_name", vals.last_name);
+          localStorage.setItem("email", vals.email);
+          localStorage.setItem("id", vals.id);
+          localStorage.setItem("phone", "Enter Phone Number");
+          localStorage.setItem("loggedIn", "true");
 
-          });
-          FB.api('/me/picture?redirect=0&height=500&type=normal&width=500', function(response) {
-            var text = JSON.stringify(response);
-            var pic = JSON.parse(text);
-            localStorage.setItem("image", pic.data.url);
-            window.location = "views/homePage.html";
-          });
-      }
-    
+        });
+        FB.api('/me/picture?redirect=0&height=500&type=normal&width=500', function(response) {
+          var text = JSON.stringify(response);
+          var pic = JSON.parse(text);
+          localStorage.setItem("image", pic.data.url);
+          
+        });
+        window.location = "views/homePage.html";
+    }
+  
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
       console.log(response);
@@ -59,9 +59,7 @@
       }
     }
   
-    // This function is called when someone finishes with the Login
-    // Button.  See the onlogin handler attached to it in the sample
-    // code below.
+    // This function is called when someone finishes with the Login Button.  
     function checkLoginState() {
       FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
@@ -77,18 +75,9 @@
       version    : 'v2.2' // use version 2.1
     });
 
-    // Now that we've initialized the JavaScript SDK, we call 
-    // FB.getLoginStatus().  This function gets the state of the
-    // person visiting this page and can return one of three states to
-    // the callback you provide.  They can be:
-    //
-    // 1. Logged into your app ('connected')
-    // 2. Logged into Facebook, but not your app ('not_authorized')
-    // 3. Not logged into Facebook and can't tell if they are logged into
-    //    your app or not.
-    //
-    // These three cases are handled in the callback function.
-  
+    // Now that we've initialized the JavaScript SDK, we call FB.getLoginStatus().
+    // This function gets the state of the person visiting this page and can return 
+    // one of three states to the callback you provide.  
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
@@ -104,46 +93,46 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   
-  </script>
+    </script>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 ">
-            <h1>Play Basketball Always</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 ">
+          <h1>Play Basketball Always</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    	<h2 class="details-text-tagline">
+    	  Find Games
+    	  <span class="bullet">
+                •
+    	  </span>
+    	  Play with Friends
+    	  <span class="bullet">
+                •
+    	  </span>
+    	  Organize Games
+    	  <span class="details-tagline--break">
+                <span class="bullet">
+                  •
+    	    </span>
+                Ball Hard
+    	  </span>
+    	</h2>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false" onlogin="goToHome()" data-scope="public_profile,email,user_friends">
           </div>
-        </div>
+
+        </div>          
       </div>
+    </div> 
 
-      <div class="container">
-	<h2 class="details-text-tagline">
-	  Find Games
-	  <span class="bullet">
-            •
-	  </span>
-	  Play with Friends
-	  <span class="bullet">
-            •
-	  </span>
-	  Organize Games
-	  <span class="details-tagline--break">
-            <span class="bullet">
-              •
-	    </span>
-            Ball Hard
-	  </span>
-	</h2>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-
-            <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false" onlogin="goToHome()" data-scope="public_profile,email,user_friends">
-            </div>
-
-          </div>          
-        </div>
-      </div>
-
-    </body>
+  </body>
 </html> 
