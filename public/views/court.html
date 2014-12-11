@@ -13,7 +13,7 @@
 
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
-   	<body ng-controller="ModalController" class="pad">
+   	<body>
 	  	<script>
 
 	  	  if(localStorage.loggedIn === "false"){
@@ -50,7 +50,9 @@
 
 
 	    <!-- middle column -->
+	    <div ng-controller="ModalController">
 	    <div class="container" id="middleColumn" ng-controller="CourtController" style="max-width: 850px;">
+	    </div>
 
 	    	<!-- Court Picture -->
 	    	<div class="row">
@@ -79,7 +81,7 @@
 							<tr ng-repeat="day in calendars">
 								<td ng-repeat="hour in day track by $index">
 									<div ng-if="hour != 'RESERVED'">
-										<a href="" ng-click="launch('custom')" style="color: #999999">
+										<a href="" style="color: #999999">
 											{{hour}}
 										</a>
 									</div>
