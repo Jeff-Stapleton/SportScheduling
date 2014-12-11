@@ -119,57 +119,59 @@
  		$scope.courts = [
 			{
 				name: 'Bulldog Court',
-				image: "../assets/rb.jpg"	
+				image: "../assets/rb.jpg",
+				calendar: [
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				]				
 			},
 			{
 				name: 'Falcon Court',
-				image: "../assets/rb.jpg"	
+				image: "../assets/rb.jpg"
+				calendar: [
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				]			
 			},
 			{
 				name: 'Shark Court',
-				image: "../assets/rb.jpg"	
+				image: "../assets/rb.jpg"
+				calendar: [
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				]			
 			},
 			{
 				name: 'Courgar Court',
-				image: "../assets/rb.jpg"	
+				image: "../assets/rb.jpg"
+				calendar: [
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']
+				]					
 			}
 
 		];
 	}]);
-
-	app.controller('CalendarController', ['$scope', function($scope){
-		$scope.calendars = [
-			{
-				name: 'Sunday',
-				hours: ['7 am','8 am','9 am','10 am','11 am','RESERVED','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
-			},
-			{
-				name: 'Monday',
-				hours: ['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
-			},
-			{
-				name: 'Tuesday',
-				hours: ['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
-			},
-			{
-				name: 'Wednesday',
-				hours: ['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
-			},
-			{
-				name: 'Thursday',
-				hours: ['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
-			},
-			{
-				name: 'Friday',
-				hours: ['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
-			},
-			{
-				name: 'Saturday',
-				hours: ['7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm', '8 pm']	
-			}
-		];
-	}]);
-
 
 
 })();
