@@ -132,7 +132,7 @@ module.exports = function(app) {
 		});
 	});
 
-	app.put('/users/:fbUserId/:email/:phone',function(req,res){
+	app.post('/users/:fbUserId/:email/:phone',function(req,res){
 		User.update({ fbUserId: req.params.fbUserId},
 		{
 			$set: {
