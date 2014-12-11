@@ -20,6 +20,7 @@
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
 		 	localStorage.phone = phone;
+		 	$scope.put();
 		};
 
 		$scope.log = function() {
@@ -31,13 +32,14 @@
 
 		$scope.setUser = function(){
 			if(localStorage.getItem("loggedIn") === "true"){
-				$scope.user.firstName = localStorage.getItem("first_name");
+				/*$scope.user.firstName = localStorage.getItem("first_name");
 				$scope.user.lastName = localStorage.getItem("last_name");
 				$scope.user.email = localStorage.getItem("email");
 				$scope.user.fbUserId = localStorage.getItem("id");
 				$scope.user.image = localStorage.getItem("image");
 				$scope.user.phone = localStorage.getItem("phone");
-				$scope.user.loggedIn = localStorage.getItem("loggedIn");
+				$scope.user.loggedIn = localStorage.getItem("loggedIn");*/
+				$scope.get();
 			}
 		};
 
@@ -65,6 +67,8 @@
 						$scope.user.image = userVals.picture;
 						$scope.user.fbUserId = userVals.fbUserId;
 						$scope.user.loggedIn = userVals.loggedIn;
+					} else {
+						$scope.put();
 					}
 				});
 		};
