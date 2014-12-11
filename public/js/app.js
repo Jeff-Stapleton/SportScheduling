@@ -123,7 +123,7 @@
 
  		$scope.initGet = function(){
  			$scope.facilities = $scope.get();
-
+ 			console.log($scope.facilities);
  		};
 
 		
