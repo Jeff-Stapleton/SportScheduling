@@ -59,14 +59,14 @@
 						$scope.user.loggedIn = userVals.loggedIn;
 						$scope.user.image = localStorage.image;
 						$scope.user.phone = userVals.phone;*/
-
-						$scope.user.firstName = data[4];
-						$scope.user.lastName = data[5];
-						$scope.user.email = data[2];
-						$scope.user.fbUserId = data[3];
-						$scope.user.loggedIn = data[6];
+						var userVals = data[0];
+						$scope.user.firstName = userVals[4];
+						$scope.user.lastName = userVals[5];
+						$scope.user.email = userVals[2];
+						$scope.user.fbUserId = userVals[3];
+						$scope.user.loggedIn = userVals[6];
 						$scope.user.image = localStorage.image;
-						$scope.user.phone = data[7];
+						$scope.user.phone = userVals[7];
 
 						/*if(localStorage.phone.length){
 							if(localStorage.phone != userVals.phone){
