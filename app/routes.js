@@ -132,15 +132,13 @@ module.exports = function(app) {
 		});
 	});
 
-	app.post('/users/:fbUserId/:email/:phone/:firstName/:lastName/:loggedIn',function(req,res){
+	app.put('/users/:fbUserId/:email/:phone',function(req,res){
 		User.update({ fbUserId: req.params.fbUserId},
 		{
-			email: req.params.email,
-			phone: req.params.phone,
-			firstName: req.params.firstName,
-			lastName: req.params.lastName,
-			loggedIn: req.params.loggedIn,
-			fbUserId: req.params.fbUserId
+			$set: {
+				email: req.params.email,
+				phone: req.params.phone,
+			}
 		});
 		res.json({message: 'User updated'});
 	});
