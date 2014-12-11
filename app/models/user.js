@@ -6,7 +6,6 @@ var UserSchema = new Schema({
 	lastName: String,
 	email: String,
 	phone: String,
-	picture: String,
 	fbUserId: String,
 	loggedIn: Boolean
 });

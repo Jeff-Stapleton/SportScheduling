@@ -14,12 +14,20 @@
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
   </head>
-  <body ng-controller="UserController">
+  <body ng-controller="UserController" onload="getImage()">
     <div id="fb-root"></div>
     <script>
 
       if(localStorage.loggedIn === "false"){
         window.location = "../"
+      }
+
+      function getImage(){
+        FB.api('/me/picture?redirect=0&height=500&type=normal&width=500', function(response) {
+            var text = JSON.stringify(response);
+            var pic = JSON.parse(text);
+            localStorage.setItem("image", pic.data.url);
+        });
       }
 
       window.fbAsyncInit = function() {

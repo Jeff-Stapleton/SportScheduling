@@ -29,13 +29,6 @@
 
 		$scope.setUser = function(){
 			if(localStorage.getItem("loggedIn") === "true"){
-				/*$scope.user.firstName = localStorage.getItem("first_name");
-				$scope.user.lastName = localStorage.getItem("last_name");
-				$scope.user.email = localStorage.getItem("email");
-				$scope.user.fbUserId = localStorage.getItem("id");
-				$scope.user.image = localStorage.getItem("image");
-				$scope.user.phone = localStorage.getItem("phone");
-				$scope.user.loggedIn = localStorage.getItem("loggedIn");*/
 				$scope.get();
 			}
 		};
@@ -64,8 +57,10 @@
 						$scope.user.email = userVals.email;
 						$scope.user.fbUserId = userVals.fbUserId;
 						$scope.user.loggedIn = userVals.loggedIn;
+						$scope.user.image = localStorage.image;
+						$scope.user.phone = userVals.phone;
 
-						if(localStorage.phone.length){
+						/*if(localStorage.phone.length){
 							if(localStorage.phone != userVals.phone){
 								$scope.user.phone = localStorage.phone;
 								changed = true;
@@ -76,14 +71,9 @@
 							$scope.user.phone = userVals.phone;
 						}
 
-						if(localStorage.image != userVals.picture) {
-							$scope.user.image = localStorage.image;
-							changed = true;
-						}
-
 						if(changed) {
 							$scope.put();
-						}
+						}*/
 						
 					} else {
 						$scope.put();
@@ -101,7 +91,7 @@
 			$scope.user.phone = localStorage.getItem("phone");
 			$scope.user.loggedIn = localStorage.getItem("loggedIn");
 
-			$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
+			$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
 
 			$http({method: 'PUT', url: $scope.userPutPath}).
 				success(function(data, status) {
