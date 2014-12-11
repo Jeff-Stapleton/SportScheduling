@@ -2,6 +2,7 @@
 var Game     = require('./models/game');
 var Facility = require('./models/facility');
 var User = require('./models/user');
+var Court = require('./models/court');
 
 module.exports = function(app) {
 
@@ -79,8 +80,8 @@ module.exports = function(app) {
 		});
 	});
 
-    app.get('/facilites/:id',function(req,res){
-		Facility.findById(req.params.id,function(err,facility){
+    app.get('/facilites/:fac_id',function(req,res){
+		Facility.findById(req.params.fac_id,function(err,facility){
 			if (err)
 				res.send(err);
 			res.json(facility);
@@ -88,12 +89,11 @@ module.exports = function(app) {
 	});
 
     
-	app.put('/facilities/:name/:hours/:phone/:id',function(req,res){
+	app.put('/facilities/:name/:address/:phone',function(req,res){
         var facility = new Facility();
         facility.name = req.params.name;
-        facility.hours = req.params.hours;
+        facility.location = req.params.location;
         facility.phone = req.params.phone;
-        facility.id = req.params.id;
         
         facility.save(function(err){
            if(err)
@@ -145,12 +145,13 @@ module.exports = function(app) {
 		res.json({message: 'User updated'});
 	});
     
-    app.put('/users/:firstName/:lastName/:email/:phone/:loggedIn/:fbUserId',function(req,res){
+    app.put('/users/:firstName/:lastName/:email/:phone/:picture/:loggedIn/:fbUserId',function(req,res){
         var user = new User();
         user.firstName = req.params.firstName;
         user.lastName = req.params.lastName;
         user.email = req.params.email;
         user.phone = req.params.phone;
+        user.picture = req.params.picture;
         user.loggedIn = req.params.loggedIn;
         user.fbUserId = req.params.fbUserId;
         
@@ -163,7 +164,7 @@ module.exports = function(app) {
 
     app.delete('/users/:user_id',function(req,res){
         User.remove({
- 			fbUserId: req.params.user_id
+ 			_id: req.params.user_id
  		}, function(err, user) {
  			if (err)
  				res.send(err);
@@ -176,6 +177,14 @@ module.exports = function(app) {
 //////////////////////////////////////////////////////////////////    
 ////COURTS/////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
+    app.get('/courts',function(req,res){
+      Court.find(function(err,courts){
+			if(err)
+				res.send(err);
+			res.json(courts);
+		});
+	});
+    
     app.get('/courts/:court_id',function(req,res){
 		Court.findById(req.params.court_id,function(err,court){
 			if (err)
@@ -183,6 +192,14 @@ module.exports = function(app) {
 			res.json(court);
 		});
 	});
+    
+    app.get('/courts/fac/:facId',function(req,res){
+        Court.find({facId : req.params.facId},function(err,court){
+			if (err)
+				res.send(err);
+			res.json(court);
+		});
+    });
     
     app.put('/courts/:name/:facId/:image',function(req,res){
         var court = new Court();
