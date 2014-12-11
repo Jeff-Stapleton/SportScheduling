@@ -70,35 +70,42 @@
 				            <th>Saturday</th>
 				        </tr>
 			        </thead>
-
-        		    <!-- Modal Window-->
-				    <div id="modal" class="modal hide">  
-					    <div class="modal-header">  
-					        <h2>Lorem Ipsum</h2>  
-					    </div>      
-					    <div class="modal-body">  
-					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.   
-					        Donec placerat sem ipsum, ut faucibus nulla. Nullam mattis volutpat  
-					        dolor, eu porta magna facilisis ut. In ultricies, purus sed pellentesque   
-					        mollis, nibh tortor semper elit, eget rutrum purus nulla id quam.</p>  
-					    </div>
-					    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>    
-					</div>  
-
-					$('#modal').modal();  
+			 
+					
 
 			        <!-- Filling out the table-->
 			        <tbody style="text-align: center; color: #cccccc;">
 						<tr ng-repeat="day in calendars">
 							<td ng-repeat="hour in day track by $index">
 								<div ng-if="hour != 'RESERVED'">
-									<a href="#modal" role="button" class="btn" data-toggle="modal" style="color: #999999">
+									<a href="#myModal" role="button" class="btn" data-toggle="modal" style="color: #999999">
 										{{hour}}
 									</a>
 								</div>
 								<div ng-if="hour == 'RESERVED'" style="background-color: #0099ff; color: #ffffff;">
 									{{hour}}
 								</div>
+
+								<!-- Modal HTML -->
+								<div id="myModal" class="modal fade">
+								    <div class="modal-dialog">
+								        <div class="modal-content">
+								            <div class="modal-header">
+								                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								                <h4 class="modal-title">Confirmation</h4>
+								            </div>
+								            <div class="modal-body">
+								                <p>Do you want to save changes you made to document before closing?</p>
+								                <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+								            </div>
+								            <div class="modal-footer">
+								                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								                <button type="button" class="btn btn-primary">Save changes</button>
+								            </div>
+								        </div>
+								    </div>
+								</div>
+								
 							</td>
 						</tr>
 			        </tbody>

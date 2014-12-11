@@ -14,7 +14,11 @@
  		loggedIn: 'false'
 		}; 		
 
-		$('#modal').modal();  
+		$(document).ready(function(){
+		    $(".toggle-modal").click(function(){
+		        $("#myModal").modal('toggle');
+		    });
+		});
 		
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
