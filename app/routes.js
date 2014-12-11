@@ -87,11 +87,12 @@ module.exports = function(app) {
 	});
 
     
-	app.put('/facilities/:name/:address/:phone',function(req,res){
+	app.put('/facilities/:name/:hours/:phone',function(req,res){
         var facility = new Facility();
         facility.name = req.params.name;
-        facility.location = req.params.location;
+        facility.hours = req.params.hours;
         facility.phone = req.params.phone;
+        facility.address = '';
         
         facility.save(function(err){
            if(err)
