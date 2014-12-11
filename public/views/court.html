@@ -107,7 +107,7 @@
 						<tr ng-repeat="day in calendars">
 							<td ng-repeat="hour in day track by $index">
 								<div ng-if="hour != 'RESERVED'">
-									<a href="#modal" role="button" class="btn" data-toggle="modal" style="color: #999999">
+									<a href="#myModal" role="button" class="btn btn-large btn-primary" data-toggle="modal" style="color: #999999">
 										{{hour}}
 									</a>
 								</div>
