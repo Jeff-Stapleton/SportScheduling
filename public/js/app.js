@@ -108,6 +108,7 @@
 	app.controller('FacilityController', ['$scope', '$http', function($scope, $http){
 
 		$scope.facilityId = 0;
+        
 
 		var fac = $scope;
  		fac.facilities = [];
@@ -119,8 +120,8 @@
 				
 
 		$scope.getFac = function() {
-			var path = '/facilities/' + 1;		// need to fix this; dynamically add facility number
-			$http({method: 'GET', url: $scope.userGetPath}).
+//			var path = '/facilities/' + 1;		// need to fix this; dynamically add facility number
+			$http({method: 'GET', url: '/facilities'}).
 				success(function(data, status) {
 					if(data.length) {
 						var facVals = data[0];
@@ -129,7 +130,38 @@
 					} 
 				});
 		};
-
+        
+        $scope.courts = [{name: "test"}];
+        
+        $scope.initCourts = function(facId){
+            console.log(facId);
+            var url = '/courts/fac/'+facId;
+            $http({method:'GET',url:url}).
+                success(function(data,status){
+                    console.log(data);
+                
+               
+                for(var x in data){
+                    $scope.courts.push(data[x]);
+                    
+                     $('.courtBox').append('<div class="row">'+
+  '<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+'<div class="court">'+
+      '<a href="../views/court.html">'+
+      '<div class="row">'+
+        '<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
+          '<div id="nameBlock">'+
+                  ' <p style="color: #0099ff; padding-left: 5px; padding-top: 5px;">'+data[x].name+'</p>'+
+                    '</div></div></div><div class="row"><div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
+                                    '<div id="picBlock"><img class="courtPic" src="../assets/'+data[x].image+
+                  '"/></div></div></div><div class="row"><div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
+          '<h5 style="font-weight: bold;">Availability</h5><h5>Time slots available</h5></div></div></div></div></div>');
+                    console.log(data[x].image);
+                }
+                console.log($scope.courts);
+            });
+        };
+        
+        console.log($scope.courts);
 
 	}]);
 
@@ -137,19 +169,19 @@
  		$scope.courts = [
 			{
 				name: 'Bulldog Court',
-				image: "../assets/rb.jpg"			
+				image: "../assets/bulldog.png"			
 			},
 			{
 				name: 'Falcon Court',
-				image: "../assets/rb.jpg"				
+				image: "../assets/bulldog.png"				
 			},
 			{
 				name: 'Shark Court',
-				image: "../assets/rb.jpg"							
+				image: "../assets/bulldog.png"							
 			},
 			{
 				name: 'Courgar Court',
-				image: "../assets/rb.jpg"						
+				image: "../assets/bulldog.png"						
 			}
 
 		];
