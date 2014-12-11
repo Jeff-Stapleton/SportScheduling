@@ -76,9 +76,9 @@
 				        <tbody style="text-align: center; color: #cccccc;">
   							<tr ng-repeat="hour in calendars[0].hours">
 								<td ng-repeat="day in calendars">
-									<div ng-if="{{hour}} != RESERVED">
+									<span ng-if="{{hour}} != RESERVED">
 										<a href="">{{hour}}</a>
-									</div>
+									</span>
 								</td>
   							</tr>
 				        </tbody>
