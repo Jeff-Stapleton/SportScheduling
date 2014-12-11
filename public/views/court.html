@@ -37,7 +37,7 @@
 	      }(document, 'script', 'facebook-jssdk'));
 	    </script>
 
- 		<nav class="navbar navbar-inverse" ng-include="'navbar.html'"></nav>
+ 		<nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; color: ##24527B;"></nav>
 
 	    <div class="container" ng-controller="UserController">
 	      	<div class="user row" id="title">
@@ -75,7 +75,14 @@
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
 							<tr ng-repeat="day in calendars">
-								<td ng-repeat="hour in day.col">{{hour}}</td>
+								<td ng-repeat="hour in day track by $index">
+									<div ng-if="hour != 'RESERVED'">
+										<a href="" style="color: #999999">{{hour}}</a>
+									</div>
+									<div ng-if="hour == 'RESERVED'" style="background-color: #0099ff; color: #ffffff;">
+										{{hour}}
+									</div>
+								</td>
 							</tr>
 				        </tbody>
 			       </table>

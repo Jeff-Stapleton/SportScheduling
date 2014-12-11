@@ -125,20 +125,31 @@ module.exports = function(app) {
 	});
 
 	app.get('/users/:user_id',function(req,res){
-		User.findById(req.params.user_id,function(err,user){
+		User.find({fbUserId: req.params.user_id},function(err,user){
 			if (err)
 				res.send(err);
 			res.json(user);
 		});
 	});
+
+	app.put('/users/:fbUserId/:email/:phone',function(req,res){
+		User.update(
+		{ fbUserId: req.params.fbUserId},
+		{
+			$set: {
+				email: req.params.email,
+				phone: req.params.phone
+			}	
+		}
+		)
+	});
     
-    app.put('/users/:firstName/:lastName/:email/:phone/:picture/:loggedIn/:fbUserId',function(req,res){
+    app.put('/users/:firstName/:lastName/:email/:phone/:loggedIn/:fbUserId',function(req,res){
         var user = new User();
         user.firstName = req.params.firstName;
         user.lastName = req.params.lastName;
         user.email = req.params.email;
         user.phone = req.params.phone;
-        user.picture = req.params.picture;
         user.loggedIn = req.params.loggedIn;
         user.fbUserId = req.params.fbUserId;
         
@@ -151,7 +162,7 @@ module.exports = function(app) {
 
     app.delete('/users/:user_id',function(req,res){
         User.remove({
- 			_id: req.params.user_id
+ 			fbUserId: req.params.user_id
  		}, function(err, user) {
  			if (err)
  				res.send(err);

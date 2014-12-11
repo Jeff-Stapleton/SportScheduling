@@ -17,7 +17,7 @@
 		$scope.submit = function(phone) {
 		 	$scope.user.phone = phone;
 		 	localStorage.phone = phone;
-		 	$scope.put();
+		 	$scope.update();
 		};
 
 		$scope.log = function() {
@@ -29,13 +29,6 @@
 
 		$scope.setUser = function(){
 			if(localStorage.getItem("loggedIn") === "true"){
-				/*$scope.user.firstName = localStorage.getItem("first_name");
-				$scope.user.lastName = localStorage.getItem("last_name");
-				$scope.user.email = localStorage.getItem("email");
-				$scope.user.fbUserId = localStorage.getItem("id");
-				$scope.user.image = localStorage.getItem("image");
-				$scope.user.phone = localStorage.getItem("phone");
-				$scope.user.loggedIn = localStorage.getItem("loggedIn");*/
 				$scope.get();
 			}
 		};
@@ -58,14 +51,17 @@
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
-						var userVals = JSON.parse(data);
+						/*var userVals = JSON.parse(data);*/
+						var userVals = data;
 						$scope.user.firstName = userVals.firstName;
 						$scope.user.lastName = userVals.lastName;
 						$scope.user.email = userVals.email;
 						$scope.user.fbUserId = userVals.fbUserId;
 						$scope.user.loggedIn = userVals.loggedIn;
+						$scope.user.image = localStorage.image;
+						$scope.user.phone = userVals.phone;
 
-						if(localStorage.phone.length){
+						/*if(localStorage.phone.length){
 							if(localStorage.phone != userVals.phone){
 								$scope.user.phone = localStorage.phone;
 								changed = true;
@@ -76,17 +72,23 @@
 							$scope.user.phone = userVals.phone;
 						}
 
-						if(localStorage.image != userVals.picture) {
-							$scope.user.image = localStorage.image;
-							changed = true;
-						}
-
 						if(changed) {
 							$scope.put();
-						}
+						}*/
 						
 					} else {
 						$scope.put();
+					}
+				});
+		};
+
+		$scope.update = function() {
+			$scope.userPutPath = '/users/' + $scope.user.fbUserId + '/' + $scope.user.email + '/' + $scope.user.phone;
+
+			$http({method: 'PUT', url: $scope.userPutPath}).
+				success(function(data, status) {
+					if(status = '200'){
+						console.log(data);
 					}
 				});
 		};
@@ -101,7 +103,7 @@
 			$scope.user.phone = localStorage.getItem("phone");
 			$scope.user.loggedIn = localStorage.getItem("loggedIn");
 
-			$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.image + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
+			$scope.userPutPath = '/users/' + $scope.user.firstName + '/' + $scope.user.lastName + '/' + $scope.user.email + '/' + $scope.user.phone + '/' + $scope.user.loggedIn + '/' + $scope.user.fbUserId;
 
 			$http({method: 'PUT', url: $scope.userPutPath}).
 				success(function(data, status) {
@@ -172,20 +174,20 @@
 
 	app.controller('CalendarController', ['$scope', function($scope){
 	 		$scope.calendars = [
-				{hour: ['7 am','7 am','7 am','7 am','7 am','7 am','7 am']},	
-				{hour: ['8 am','8 am','8 am','8 am','8 am','8 am','8 am']},	
-				{hour: ['9 am','9 am','9 am','9 am','9 am','9 am','9 am']},	
-				{hour: ['10 am','10 am','10 am','10 am','10 am','10 am','10 am']},	
-				{hour: ['11 am','11 am','11 am','11 am','11 am','11 am','11 am']},	
-				{hour: ['12 pm','12 pm','12 pm','12 pm','12 pm','12 pm','12 pm']},	
-				{hour: ['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm']},	
-				{hour: ['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm']},	
-				{hour: ['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm']},	
-				{hour: ['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm']},	
-				{hour: ['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm']},	
-				{hour: ['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm']},	
-				{hour: ['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm']},	
-				{hour: ['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']}				
+			['7 am','7 am','7 am','7 am','7 am','7 am','7 am'],	
+			['8 am','8 am','8 am','8 am','8 am','8 am','8 am'],	
+			['9 am','9 am','9 am','9 am','9 am','9 am','9 am'],	
+			['10 am','10 am','10 am','10 am','10 am','10 am','10 am'],	
+			['11 am','11 am','11 am','11 am','11 am','11 am','11 am'],	
+			['12 pm','12 pm','12 pm','RESERVED','12 pm','12 pm','12 pm'],	
+			['1 pm','1 pm','1 pm','1 pm','1 pm','1 pm','1 pm'],	
+			['2 pm','2 pm','2 pm','2 pm','2 pm','2 pm','2 pm'],	
+			['3 pm','3 pm','3 pm','3 pm','3 pm','3 pm','3 pm'],	
+			['4 pm','4 pm','4 pm','4 pm','4 pm','4 pm','4 pm'],	
+			['5 pm','5 pm','5 pm','5 pm','5 pm','5 pm','5 pm'],	
+			['6 pm','6 pm','6 pm','6 pm','6 pm','6 pm','6 pm'],	
+			['7 pm','7 pm','7 pm','7 pm','7 pm','7 pm','7 pm'],	
+			['8 pm','8 pm','8 pm','8 pm','8 pm','8 pm','8 pm']				
 		
 			];
 
