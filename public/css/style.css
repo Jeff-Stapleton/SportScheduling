@@ -12,8 +12,15 @@ body {
 
 h1 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-weight: 400;
-    font-size:3.7em;
+    font-size:2.3em;
+    line-height:0.2em;
+    color: #666666;
+}
+
+h3 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: #666666;
 }
 
 h2 {
@@ -24,7 +31,6 @@ h2 {
 
 h6 {
     font-size: 1.5em;
-    line-height: 0.5em;
     background-color: #24527b;
     -webkit-background-clip: text;
     -moz-background-clip: text;
