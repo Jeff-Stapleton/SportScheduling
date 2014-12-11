@@ -74,8 +74,8 @@
 
 				        <!-- Filling out the table-->
 				        <tbody style="text-align: center; color: #cccccc;">
-							<tr ng-repeat="day in courts[0].days">
-								<td ng-repeat="col in day.col">7 am</td>
+							<tr ng-repeat="day in calendar">
+								<td ng-repeat="hour in day.col">{{hour}}</td>
 							</tr>
 				        </tbody>
 			       </table>
