@@ -142,9 +142,8 @@ module.exports = function(app) {
 				lastName: req.params.lastName,
 				loggedIn: req.params.loggedIn,
 				fbUserId: req.params.fbUserId
-
 			}	
-		})
+		});
 		res.json({message: 'User updated'});
 	});
     
