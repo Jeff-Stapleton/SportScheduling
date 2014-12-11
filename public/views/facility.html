@@ -16,7 +16,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
   </head>
   <body ng-controller="FacilityController">
-    <div ng-init="initFac()"></div>
+    <div ng-init="initGet()"></div>
   	<div id="fb-root"></div>
   	<script>
 
@@ -40,6 +40,8 @@
       fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
+
+    <div ng-init="initFac()"></div>
 
     <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
     
