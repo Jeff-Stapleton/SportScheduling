@@ -16,7 +16,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
   </head>
   <body ng-controller="FacilityController">
-    <div ng-init="getFac()"></div>
+    <div ng-init="facilitie = getFac()"></div>
   	<div id="fb-root"></div>
   	<script>
 
@@ -50,7 +50,7 @@
     <div class="container" >
       <div class="row" id="title">
         <div class="col-xs-12">
-          <h1> {{facility.name}} </h1>
+          <h1> {{facilitie.name}} </h1>
           <h3> View court details before reserving a time </h3>
         </div>
       </div>
@@ -58,11 +58,11 @@
 
 
     <!-- middle column -->
-    <div class="container" id="middleColumn" style="max-width: 850px">
+    <div class="container" id="middleColumn" ng-controller="FacilityController" style="max-width: 850px">
 
       <div class="row">
       	<!--<div class="col-xs-12">-->
-          <img src="{{facilities[0].images}}">
+          <img ng-src="../assets/{{facilitie.image}}">
         <!--</div>-->
       </div>
 

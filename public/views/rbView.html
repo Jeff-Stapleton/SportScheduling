@@ -55,7 +55,7 @@
 
 
     <!-- middle column -->
-    <div class="container" id="middleColumn" ng-controller="FacilityController" style="max-width: 850px">
+    <div class="container" id="middleColumn" ng-controller="FacilityController" style="max-width: 850px"  ng-init="initCourts('548a0e2d4a8f9a905a3a36f7')">
 
       <div class="row">
       	<!--<div class="col-xs-12">-->
@@ -65,18 +65,15 @@
 
       <div class="row">
 
-				<div id="container" ng-controller="CourtController" style="padding-top: 80px;">
-					<div class="row">		
+				<div id="container" style="padding-top: 80px;">
+            <div class="row">		
 
-				  	<div class="col-sx-12 col-sm-6 col-md-4" ng-repeat="court in courts">
+                <div class="col-sx-12 col-sm-6 col-md-4 courtBox" >
 
-              <div class="row" ng-include="'courtObject.html'"></div>
-              <div style="height: 50px;"></div>
+                </div>
+
             </div>
-
-					</div>
-				</div>
-
+        </div>
 			</div>
 		</div>
 
