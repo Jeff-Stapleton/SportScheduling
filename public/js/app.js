@@ -110,12 +110,23 @@
 		$scope.facilityId = 0;
 
 		var fac = $scope;
- 		fac.facilities = [];
 
-		$http({method: 'GET', url: '/facilities/'}).
-			success(function(data, status) {
-				fac.facilities = data;
-			});
+ 		$scope.facilities = [];
+
+ 		$scope.get = function() {
+			$http({method: 'GET', url: '/facilities/'}).
+						success(function(data, status) {
+							fac.facilities = data;
+						});
+						return fac.facilities;
+ 		};
+
+ 		$scope.initGet = function(){
+ 			$scope.facilities = $scope.get();
+
+ 		};
+
+		
 				
 
 		$scope.getFac = function() {
