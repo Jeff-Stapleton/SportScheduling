@@ -60,13 +60,13 @@
 						$scope.user.image = localStorage.image;
 						$scope.user.phone = userVals.phone;*/
 						var userVals = data[0];
-						$scope.user.firstName = userVals[4];
-						$scope.user.lastName = userVals[5];
-						$scope.user.email = userVals[2];
-						$scope.user.fbUserId = userVals[3];
-						$scope.user.loggedIn = userVals[6];
+						$scope.user.firstName = userVals.firstName;
+						$scope.user.lastName = userVals.lastName;
+						$scope.user.email = userVals.email;
+						$scope.user.fbUserId = userVals.fbUserId;
+						$scope.user.loggedIn = userVals.loggedIn;
 						$scope.user.image = localStorage.image;
-						$scope.user.phone = userVals[7];
+						$scope.user.phone = userVals.phone;
 
 						/*if(localStorage.phone.length){
 							if(localStorage.phone != userVals.phone){
