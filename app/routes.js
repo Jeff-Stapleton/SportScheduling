@@ -94,7 +94,7 @@ module.exports = function(app) {
         facility.name = req.params.name;
         facility.hours = req.params.hours;
         facility.phone = req.params.phone;
-        facility.id = req.params.phone;
+        facility.id = req.params.id;
         facility.image = req.params.image;
         
         facility.save(function(err){
