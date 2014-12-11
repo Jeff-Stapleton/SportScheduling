@@ -105,41 +105,23 @@
 	}]);
 
 
-	app.controller('FacilityController', ['$scope', function($scope){
- 		$scope.facilities = [
- 			{
-				name: 'Richards Building - BYU',
-				hours: '6 am-10 pm Mon-Sat',
-				phone: '(801) 422-3644',
-				images: "../assets/rb.jpg"
-				
-			},
-			{
-				name: '24 Hour Fitness',
-				hours: '6 am-12 pm Mon-Sat',
-				phone: '(801) 224-2096',
-				images: "../assets/24Hour.jpg"
-				
-			},
-			{
-					name: 'Orem Recreation Center',
-					hours: '5 am-10 pm Mon-Fri 7 am-7 pm Sat',
-					phone: '(801) 852-6600',
-					images: "../assets/OremRec.jpg"
-					
-				},
-				{
-					name: 'Provo Recreation Center',
-					hours: '5 am-10 pm Mon-Fri 7 am-8 pm Sat',
-					phone: '(801) 229-7154',
-					images: "../assets/ProvoRec.jpg" 
-					
-				}
+	app.controller('FacilityController', ['$scope', '$http', function($scope, $http){
 
-		];
+		$scope.facilityId = 0;
 
-		$scope.get = function() {
-			var path = '/facilities/';
+		var fac = this;
+ 		fac.facilities = [];
+
+		$scope.getAll = function() {
+			var path = '/facilities';
+			$http({method: 'GET', url: $scope.userGetPath}).
+				success(function(data, status) {
+					fac.facilities = data;	
+				});
+		};
+
+		$scope.getFac = function() {
+			var path = '/facilities/' + 1;		// need to fix this; dynamically add facility number
 			$http({method: 'GET', url: $scope.userGetPath}).
 				success(function(data, status) {
 					if(data.length) {
@@ -148,8 +130,9 @@
 						
 					} 
 				});
-
 		};
+
+
 
 	}]);
 
