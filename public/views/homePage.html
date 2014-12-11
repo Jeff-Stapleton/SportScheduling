@@ -15,7 +15,9 @@
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body ng-controller="FacilityController" onload="initGet()">
+<body ng-controller="FacilityController" ng-onload="initGet()">
+
+  <span ng-init="initGet()"
  
   <script >
     if(localStorage.loggedIn === "false"){
