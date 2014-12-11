@@ -118,6 +118,7 @@
 				success(function(data, status) {
 					fac.facilities = data;	
 				});
+				$scope.facilities = fac.facilities;
 		};
 
 		$scope.getFac = function() {
@@ -131,9 +132,6 @@
 					} 
 				});
 		};
-
-		$scope.facilities = fac.facilities;
-
 
 
 	}]);
