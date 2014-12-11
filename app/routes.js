@@ -89,11 +89,12 @@ module.exports = function(app) {
 	});
 
     
-	app.put('/facilities/:name/:address/:phone',function(req,res){
+	app.put('/facilities/:name/:address/:phone/:image',function(req,res){
         var facility = new Facility();
         facility.name = req.params.name;
         facility.location = req.params.location;
         facility.phone = req.params.phone;
+        facility.image = req.params.image;
         
         facility.save(function(err){
            if(err)
