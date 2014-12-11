@@ -18,11 +18,11 @@
  
   <script >
     if(localStorage.loggedIn === "false"){
-        $window.location = "../"
+        window.location = "../"
     }
   </script>
 
- <!--  <div ng-init="getAll()"></div> -->
+ <div ng-init="getAll()"></div>
 
   <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; color: ##24527B;">
     
@@ -35,10 +35,10 @@
 
 
 
-  <div class="cover-container" style="padding-top: 50px;" ng-init="getAll()">
+  <div class="cover-container" style="padding-top: 50px;" >
     <div class="row">
       
-      <div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="facility in facilities">
+      <div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="facility in fac.facilities">
 
 
         <div class="row" ng-include="'facilitiesObject.html'"></div>
