@@ -78,6 +78,9 @@
 								<td ng-if="hour != 'RESERVED'" ng-repeat="hour in day track by $index">
 									{{hour}}
 								</td>
+								<td ng-if="hour == 'RESERVED'" ng-repeat="hour in day track by $index">
+									{{hour}}
+								</td>
 							</tr>
 				        </tbody>
 			       </table>
