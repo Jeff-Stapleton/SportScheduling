@@ -5,11 +5,9 @@ body {
     -o-background-size: cover;
     background-size: cover;
     text-align: center;
+    padding-top: 290px;
     font-family: serif; 
     color: white; 
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 h1 {
@@ -41,7 +39,7 @@ h6 {
 }
 
 #loginInfo {
-
+    top: 40%;
 }
 
 .fb-login-button{}
