@@ -26,7 +26,7 @@
 
 		$(".dropdown-inverse li a").click( function() {
 		    var yourText = $(this).text();
-		    var temp = yourText.slice(0,0);
+		    var temp = yourText.slice(0,1);
 		    var duration = parseInt(duration, temp); 
 		});
 
