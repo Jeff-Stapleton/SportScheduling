@@ -137,7 +137,7 @@ module.exports = function(app) {
 		});
 	});
 
-	app.post('/users/:fbUserId/:email/:phone',function(req,res){
+	app.post('/users/update/:fbUserId/:email/:phone',function(req,res){
 		User.update({ fbUserId: req.params.fbUserId},
 		{
 			$set: {
