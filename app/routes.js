@@ -39,15 +39,25 @@ module.exports = function(app) {
 		});
 	});
     
-    app.put('/games/:name/:location/:userId/:start/:end/:people/:courtId',function(req,res){
+    app.get('/games/user/:user_id',function(req,res){
+        Game.find({fbUserId:req.params.user_id}, function(err,games){
+            if(err)
+                res.send(err);
+            res.json(games);
+        });
+    });
+    
+    app.put('/games/:name/:location/:userId/:start/:end/:people/:courtId/:open/:image',function(req,res){
 		
 		var game = new Game();
 		game.name = req.params.name;
         game.location = req.params.location;
-        game.ownerId = req.params.ownerId;
+        game.fbUserId = req.params.userId;
         game.start = req.params.start;
         game.end = req.params.end;
         game.courtId = req.params.courtId;
+        game.open = req.params.open;
+        game.image = req.params.image;
         
 		// res.json({message:game.name});
 
