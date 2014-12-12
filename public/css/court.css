@@ -79,10 +79,13 @@ h6 {
 }
 
 .label {
-    float: left;
+    margin-right: auto;
+    margin-left: auto;
+    color: #666666;
 }
 .dropdown {
-    float: left;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #header {
