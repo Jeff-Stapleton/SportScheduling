@@ -19,11 +19,6 @@
 		        $("#myModal").modal('toggle');
 		    });
 		});
-		
-		$scope.submit = function(phone, email) {
-		 	
-		 	$scope.update();
-		};
 
 		$scope.log = function() {
 		 	console.log($scope.user.firstName);
