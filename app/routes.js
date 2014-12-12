@@ -203,8 +203,8 @@ module.exports = function(app) {
 		});
 	});
     
-    app.get('/courts/:court_id',function(req,res){
-		Court.findById(req.params.court_id,function(err,court){
+    app.get('/courts/:courtName',function(req,res){
+		Court.find({name : req.params.courtName},function(err,court){
 			if (err)
 				res.send(err);
 			res.json(court);
