@@ -190,7 +190,7 @@ module.exports = function(app) {
 		{ upsert: true }
 		);
 		res.json({message: 'User updated'});*/
-	});
+	
     
     app.put('/users/:firstName/:lastName/:email/:phone/:picture/:loggedIn/:fbUserId',function(req,res){
         var user = new User();
