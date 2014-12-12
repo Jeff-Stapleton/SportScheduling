@@ -196,11 +196,11 @@
 	        							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
 	          								'<div id="nameBlock">'+
 	                  							'<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;">'+data[x].name+'</p>'+
-	                    					'</div>
-	                    				</div>
-	                    			</div>
-	                    			<div class="row">
-	                    				<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
+	                    					'</div>' +
+	                    				'</div>' +
+	                    			'</div>' +
+	                    			'<div class="row">'+
+	                    				'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
 	                                    	'<div id="picBlock">
 	                                    		<img class="courtPic" src="../assets/'+data[x].image+'"/>
 	                  						</div>
