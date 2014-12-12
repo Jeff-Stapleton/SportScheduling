@@ -197,7 +197,7 @@
                    	'<div class="row">'+
 							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
 								'<div class="court">'+
-      							'<a href="../views/court.html" onclick="sessionStorage.courtName = data[x].name">'+
+      							'<a href="../views/court.html" onclick="sessionStorage.courtName = '+data[x].name+'">'+
       							'<div class="row">'+
         							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
           								'<div id="nameBlock">'+
