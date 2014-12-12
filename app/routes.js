@@ -3,6 +3,7 @@ var Game     = require('./models/game');
 var Facility = require('./models/facility');
 var User = require('./models/user');
 var Court = require('./models/court');
+var Calendar = require('./models/calendar');
 
 module.exports = function(app) {
 
@@ -105,7 +106,7 @@ module.exports = function(app) {
         });
 	});
     
-    /*app.delete('/facilities/:facility_id',function(req,res){
+    app.delete('/facilities/:facility_id',function(req,res){
         Facility.remove({
  			_id: req.params.facility_id
  		}, function(err, user) {
@@ -114,7 +115,7 @@ module.exports = function(app) {
 
  			res.json({ message: 'Successfully deleted' });
  		});
-    });*/
+    });
 
 
 //////////////////////////////////////////////////////////////////    
@@ -217,6 +218,80 @@ module.exports = function(app) {
 			res.json(court);
 		});
     });
+
+    app.post('/courts/:name/:facId/:image',function(req,res){
+    	Court.remove({
+ 			name: req.params.name
+	 		}, function(err, court) {
+	 			if (err)
+	 				res.send(err);
+	 		});
+
+	 		var court = new Court();
+      court.name = req.params.name;
+      court.facId = req.params.facId;
+      court.image = req.params.image;
+      
+      court.save(function(err){
+         if(err)
+             res.send(err);
+          res.json({message: 'Court updated'});
+      });
+
+    });
+    
+    app.put('/courts/:name/:facId/:image/:id',function(req,res){
+        var court = new Court();
+        court.name = req.params.name;
+        court.facId = req.params.facId;
+        court.image = req.params.image;
+        court.id = req.params.id;
+        
+        court.save(function(err){
+           if(err)
+               res.send(err);
+            res.json({message: 'Court created'});
+        });
+    });
+
+    app.delete('/courts/:court_id',function(req,res){
+        Court.remove({
+ 			_id: req.params.court_id
+ 		}, function(err, court) {
+ 			if (err)
+ 				res.send(err);
+
+ 			res.json({ message: 'Successfully deleted' });
+ 		});
+    });
+
+
+//////////////////////////////////////////////////////////////////    
+////Calendars/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+    app.get('/calendars/fac/court/:facId/:courtId',function(req,res){
+      Calendar.find({facId : req.params.facId},function(err,calendars){
+			if(err)
+				res.send(err);
+			res.json(calendars);
+		});
+	});
+    
+    app.get('/calendars/:courtId',function(req,res){							// return calendar of specific court
+		Court.find({courtId :req.params.courtId,function(err,court){
+			if (err)
+				res.send(err);
+			res.json(court);
+		});
+	});
+    
+    app.get('/calendars/fac/:facId',function(req,res){						// return all calendars of a given facility
+        Court.find({facId : req.params.facId},function(err,court){
+			if (err)
+				res.send(err);
+			res.json(court);
+		});
+    });
     
     app.put('/courts/:name/:facId/:image',function(req,res){
         var court = new Court();
@@ -241,7 +316,6 @@ module.exports = function(app) {
  			res.json({ message: 'Successfully deleted' });
  		});
     });
-
     
     
     
