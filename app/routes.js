@@ -137,22 +137,30 @@ module.exports = function(app) {
 		});
 	});
 
-	app.post('/users/update/:fbUserId/:email/:phone',function(req,res){
- 		User.find({fbUserId: req.params.fbUserId}, function(err, user) {
-
+	app.post('/users/update/:fbUserId/:email/:phone/:firstName/:lastName/:loggedIn',function(req,res){
+ 		
+ 		User.remove({
+ 			_id: req.params.fbUserId
+ 		}, function(err, user) {
  			if (err)
- 				res.send('1'+err);
-
- 			user.email = req.body.email;
- 			user.phone = req.body.phone;
- 			user.save(function(err) {
- 				if (err)
- 					res.send('2'+err);
-
- 				res.json({ message: 'User updated!' });
- 			});
-
+ 				res.send(err);
  		});
+
+		var user = new User();
+    user.firstName = req.params.firstName;
+    user.lastName = req.params.lastName;
+    user.email = req.params.email;
+    user.phone = req.params.phone;
+    user.picture = req.params.picture;
+    user.loggedIn = req.params.loggedIn;
+    user.fbUserId = req.params.fbUserId;
+    
+    user.save(function(err){
+       if(err)
+           res.send(err);
+        res.json({message: 'User updated'});
+    });
+
  	});
 
 
@@ -198,7 +206,6 @@ module.exports = function(app) {
         user.lastName = req.params.lastName;
         user.email = req.params.email;
         user.phone = req.params.phone;
-        user.picture = req.params.picture;
         user.loggedIn = req.params.loggedIn;
         user.fbUserId = req.params.fbUserId;
         
