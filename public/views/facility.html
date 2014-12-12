@@ -66,21 +66,18 @@
         <!--</div>-->
       </div>
 
-      <div class="row">
+			<div id="container" ng-controller="CourtController" style="padding-top: 80px;">
+				<div class="row">		
 
-				<div id="container" ng-controller="CourtController" style="padding-top: 80px;">
-					<div class="row">		
+			  	<div class="col-sx-12 col-sm-6 col-md-4" ng-repeat="court in courts">
 
-				  	<div class="col-sx-12 col-sm-6 col-md-4" ng-repeat="court in courts">
+            <div style="height: 50px;"></div>
+            
+          </div>
 
-              <div class="row" ng-include="'courtObject.html'"></div>
-              <div style="height: 50px;"></div>
-            </div>
-
-					</div>
 				</div>
-
 			</div>
+
 		</div>
 
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
