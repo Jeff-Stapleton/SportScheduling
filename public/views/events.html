@@ -8,14 +8,15 @@
     <!-- AngularJS -->
     <script src="../libs/angular/angular.js"></script>
 		<!-- Our styles and code -->
-		<link rel="stylesheet" type="text/css" href="../css/events.css">
+		<link rel="stylesheet" type="text/css" href="../css/facility.css">
 		<script type ="text/javascript" src="../js/app.js"></script>
 
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	<body>
-		<script>
+	<body ng-controller="GameController" on-load="initGet()">
+         <span ng-init="initGet()"></span>
+        <script>
 
       if(localStorage.loggedIn === "false"){
         window.location = "../"
@@ -40,7 +41,7 @@
 
     <nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
 
-	  <div class="container" style="padding-top: 25px;">
+	  <div class="container" style="padding-top: 25px;" ng-controller="GameController">
       <h1 style="text-align: center;">Play Today, Join a Game</h1>
       <h3 style="text-align: center;">Find games to join or review games you have organized</h3>
       <div class="panel-group" id="accordion" style="padding-top: 25px;">
@@ -54,10 +55,9 @@
             <div class="panel-body">
 
               <div class="cover-container">
-                  <div class="row">
-                      
-                    <!-- Call initiate and it will load all the games -->
-
+                  <div class="row" >
+                     <div class="myGamesBox"></div>
+                      </div>
                   </div> 
               </div>
 
@@ -95,9 +95,7 @@
 
             	<div class="cover-container">
                   <div class="row">
-                     
-                    <!-- Call initiate and it will load all the games -->
-
+                     <div class="allGamesBox"></div>
                   </div> 
               </div>
 
