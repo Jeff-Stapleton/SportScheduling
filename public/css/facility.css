@@ -29,26 +29,23 @@ img.courtPic {
 h1 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size:2.3em;
-    line-height:0.2em;
     color: #666666;
 }
 
 h2 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size:1.6em;
-    line-height:0.4em;
 }
 
 h3 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1.3em;\
+    font-size: 1.3em;
     color: #666666;
 }
 
 h5 {
     padding-left: 5px;
     color: #666666;
-    line-height: 0.8em;
 }
 
 h6 {
