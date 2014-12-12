@@ -52,24 +52,28 @@
     </div>
 
 
-    <!-- middle column -->
     <div class="container" id="middleColumn" ng-controller="FacilityController" style="max-width: 850px"  ng-init="initCourts('548a0e2d4a8f9a905a3a36f7')">
 
       <div class="row">
-      	<!--<div class="col-xs-12">-->
-          <img src="../assets/rb.jpg">
+        <!--<div class="col-xs-12">-->
+          <img ng-src="../assets/rb.jpg">
         <!--</div>-->
       </div>
 
-        <div class="cover-container" style="padding-top: 50px;" >
-          <div class="row">
+      <div id="container" ng-controller="CourtController" style="padding-top: 80px;">
+        <div class="row">   
+
+          <div class="col-sx-12 col-sm-6 col-md-4 courtBox">
+
+            <div style="height: 50px;"></div>
             
-            <div class="col-xs-12 col-sm-4 col-md-3 courtBox"></div>
+          </div>
 
-          </div> 
         </div>
+      </div>
 
-		</div>
+    </div>
+
 
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
