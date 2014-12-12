@@ -79,13 +79,11 @@ h6 {
 }
 
 .label {
-    margin-right: auto;
-    margin-left: auto;
     color: #666666;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 .dropdown {
-    margin-right: auto;
-    margin-left: auto;
+
 }
 
 #header {
