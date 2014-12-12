@@ -24,6 +24,10 @@
 		    $('.status').text(this.innerHTML);
 		});
 
+		$(".dropdown-inverse li a").click( function() {
+		    var yourText = $(this).text();
+		});
+
 		$scope.log = function() {
 		 	console.log($scope.user.firstName);
 		 	console.log($scope.user.lastName);
