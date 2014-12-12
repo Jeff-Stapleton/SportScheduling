@@ -35,9 +35,9 @@
           var text = JSON.stringify(response);
           var pic = JSON.parse(text);
           localStorage.setItem("image", pic.data.url);
-          
+          window.location = "views/homePage.html";
         });
-        window.location = "views/homePage.html";
+        
     }
   
     function statusChangeCallback(response) {

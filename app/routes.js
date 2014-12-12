@@ -105,7 +105,7 @@ module.exports = function(app) {
         });
 	});
     
-    app.delete('/facilities/:facility_id',function(req,res){
+    /*app.delete('/facilities/:facility_id',function(req,res){
         Facility.remove({
  			_id: req.params.facility_id
  		}, function(err, user) {
@@ -114,7 +114,7 @@ module.exports = function(app) {
 
  			res.json({ message: 'Successfully deleted' });
  		});
-    });
+    });*/
 
 
 //////////////////////////////////////////////////////////////////    
@@ -162,43 +162,6 @@ module.exports = function(app) {
     });
 
  	});
-
-
-
-		/*User.remove({
- 			_id: req.params.fbUserId
- 		}, function(err, user) {
- 			if (err)
- 				res.send(err);
- 		});
-
-		var user = new User();
-        user.firstName = req.params.firstName;
-        user.lastName = req.params.lastName;
-        user.email = req.params.email;
-        user.phone = req.params.phone;
-        user.picture = req.params.picture;
-        user.loggedIn = req.params.loggedIn;
-        user.fbUserId = req.params.fbUserId;
-        
-        user.save(function(err){
-           if(err)
-               res.send(err);
-            res.json({message: 'User updated'});
-        });*/
-
-
-		/*User.update({ fbUserId: req.params.fbUserId},
-		{
-			$set: {
-				email: req.params.email,
-				phone: req.params.phone
-			}
-		},
-		{ upsert: true }
-		);
-		res.json({message: 'User updated'});*/
-	
     
     app.put('/users/:firstName/:lastName/:email/:phone/:picture/:loggedIn/:fbUserId',function(req,res){
         var user = new User();
