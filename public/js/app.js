@@ -30,7 +30,11 @@
 		    var duration = parseInt(duration, temp); 
 		});
 
-
+		$('.time').click(function(){
+		  var col = $(this).parent().children().index($(this));
+		  var row = $(this).parent().parent().children().index($(this).parent());
+		  alert('Row: ' + row + ', Column: ' + col);
+		});
 
 		$scope.log = function() {
 		 	console.log($scope.user.firstName);

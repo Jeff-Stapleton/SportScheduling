@@ -37,11 +37,6 @@
 	      fjs.parentNode.insertBefore(js, fjs);
 	      }(document, 'script', 'facebook-jssdk'));
 
-
-	      $('td').click(function(){
-		  var col = $(this).parent().children().index($(this));
-		  var row = $(this).parent().parent().children().index($(this).parent());
-		  alert('Row: ' + row + ', Column: ' + col);
 		});
 
 	    </script>
@@ -119,7 +114,7 @@
 			        <!-- Filling out the table-->
 			        <tbody id="tableGuy" style="text-align: center; color: #cccccc;">
 						<tr ng-repeat="day in calendars">
-							<td ng-repeat="hour in day track by $index">
+							<td class="time" ng-repeat="hour in day track by $index">
 								<div ng-if="hour != 'RESERVED'">
 									<a href="#myModal" role="button" class="btn" data-toggle="modal" style="color: #999999">
 										{{hour}}
