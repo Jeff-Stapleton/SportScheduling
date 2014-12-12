@@ -196,21 +196,23 @@
 	        							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
 	          								'<div id="nameBlock">'+
 	                  							'<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;">'+data[x].name+'</p>'+
-	                    					'</div>' +
-	                    				'</div>' +
-	                    			'</div>' +
+	                    					'</div>'+
+	                    				'</div>'+
+	                    			'</div>'+
 	                    			'<div class="row">'+
 	                    				'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
 	                                    	'<div id="picBlock">'+
-	                                    		'<img class="courtPic" src="../assets/'+data[x].image+'"/>' +
+<<<<<<< HEAD
+	                                    		'<img class="courtPic" src="../assets/'+data[x].image+'"/>'+
 	                  						'</div>'+
 	                  					'</div>'+
 	                  				'</div>'+
 			                  		'<div class="row">'+
 			                  			'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
-			          						'<h5 style="font-weight: bold;">Availability</h5>' +
-			          						'<h5>Time slots available</h5>' +
-			          					'</div>' +
+<<<<<<< HEAD
+			          						'<h5 style="font-weight: bold;">Availability</h5>'+
+			          						'<h5>Time slots available</h5>'+
+			          					'</div>'+
 			          				'</div>'+
 		          				'</div>'+
 		          			'</div>'+
