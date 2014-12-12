@@ -216,8 +216,7 @@
 			          				'</div>'+
 			          			'</div>'+
 			          		'</div>'+
-		          		'</div>'+
-		          		'<div style="height: 50px;"></div>');
+		          		'</div>');
 
                     console.log(data[x].image);
                 }
