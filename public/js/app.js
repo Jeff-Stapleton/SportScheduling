@@ -30,6 +30,12 @@
 		    var duration = parseInt(duration, temp); 
 		});
 
+		$('.time').click(function(){
+		  var col = $(this).parent().children().index($(this));
+		  var row = $(this).parent().parent().children().index($(this).parent());
+		  alert('Row: ' + row + ', Column: ' + col);
+		});
+
 		$scope.log = function() {
 		 	console.log($scope.user.firstName);
 		 	console.log($scope.user.lastName);
@@ -306,5 +312,115 @@
 			];
 
 		}]);
+    app.controller('GameController',['$scope','$http', function($scope,$http){
+        
+        $scope.myGames = [];
+//        $scope.allGames = [];
+        
+        $scope.getMyGames = function(userId){
+            var url = '/games/user/'+userId;
+             $http({method:'GET',url:url}).
+                success(function(data,status){
+                    console.log(data);
+                
+               
+                for(var x in data){
+                    $scope.allGames.push(data[x]);
+                    
+                     $('.myGamesBox').append(
+                     	'<div class="col-xs-12 col-sm-6 col-md-4">'+
+	                     	'<div class="row">'+
+	  							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
+	  								'<div class="court">'+
+		      							'<a href="../views/court.html">'+
+		      							'<div class="row">'+
+		        							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
+		          								'<div id="nameBlock">'+
+		                  							'<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;">'+data[x].name+'</p>'+
+		                    					'</div>'+
+		                    				'</div>'+
+		                    			'</div>'+
+		                    			'<div class="row">'+
+		                    				'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
+		                                    	'<div id="picBlock">'+
+		                                    		'<img class="courtPic" src="../assets/'+data[x].image+'"/>'+
+		                  						'</div>'+
+		                  					'</div>'+
+		                  				'</div>'+
+				                  		'<div class="row">'+
+				                  			'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
+				          						'<h5 style="font-weight: bold;">Availability</h5>'+
+				          						'<h5>Time slots available</h5>'+
+				          					'</div>'+
+				          				'</div>'+
+			          				'</div>'+
+			          			'</div>'+
+			          		'</div>'+
+		          		'</div>');
+
+                    console.log(data[x].image);
+                }
+             })};
+        
+        var fac = $scope;
+ 		fac.allGames = [];
+        $scope.allGames = [];
+        
+        $scope.getAllGames = function(){
+            var url = '/games';
+             $http({method:'GET',url:url}).
+                success(function(data,status){
+                    console.log(data);
+                
+               
+                for(var x in data){
+                    $scope.allGames.push(data[x]);
+                    
+                     $('.allGamesBox').append(
+                     	'<div class="col-xs-12 col-sm-6 col-md-4">'+
+	                     	'<div class="row">'+
+	  							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
+	  								'<div class="court">'+
+		      							'<a href="../views/court.html">'+
+		      							'<div class="row">'+
+		        							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
+		          								'<div id="nameBlock">'+
+		                  							'<p style="color: #0099ff; padding-left: 5px; padding-top: 5px;">'+data[x].name+'</p>'+
+		                    					'</div>'+
+		                    				'</div>'+
+		                    			'</div>'+
+		                    			'<div class="row">'+
+		                    				'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
+		                                    	'<div id="picBlock">'+
+		                                    		'<img class="courtPic" src="../assets/'+data[x].image+'"/>'+
+		                  						'</div>'+
+		                  					'</div>'+
+		                  				'</div>'+
+				                  		'<div class="row">'+
+				                  			'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
+				          						'<h5 style="font-weight: bold;">Availability</h5>'+
+				          						'<h5>Time slots available</h5>'+
+				          					'</div>'+
+				          				'</div>'+
+			          				'</div>'+
+			          			'</div>'+
+			          		'</div>'+
+		          		'</div>');
+
+                    console.log(data[x].image);
+                }
+             })};
+        
+        
+        $scope.initGet = function(){
+            $scope.myGames =     $scope.getMyGames(localStorage.id);
+            $scope.getAllGames();
+            console.log($scope.myGames);
+            console.log($scope.allGames);
+        }
+        
+            
+                        
+    }]);
 
 })();

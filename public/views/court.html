@@ -36,6 +36,9 @@
 	      js.src = "//connect.facebook.net/en_US/sdk.js";
 	      fjs.parentNode.insertBefore(js, fjs);
 	      }(document, 'script', 'facebook-jssdk'));
+
+		});
+
 	    </script>
 
  		<nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
@@ -89,9 +92,9 @@
 
 							        	<div class="btn-group" ng-controller="UserController"> 
 										    <i class="dropdown-arrow dropdown-arrow-inverse"></i>
-										    <button class="btn btn-default status">Select Duration</button>
+										    <button class="btn btn-default status" style="margin-left: 12.5vw">Select Duration</button>
 										    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> </button>
-										    <ul class="dropdown-menu dropdown-inverse">
+										    <ul class="dropdown-menu dropdown-inverse" style="margin-left: 12.5vw">
 										        <li><a href="#fakelink">1 Hour</a></li>
 										        <li><a href="#fakelink">2 Hours</a></li>
 										        <li><a href="#fakelink">3 Hours</a></li>
@@ -102,7 +105,7 @@
 								</div>      
 					            <div class="modal-footer">
 					                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-					                <button type="button" class="btn btn-primary">Reserve</button>
+					                <button type="button" class="btn btn-primary" data-dismiss="modal">Reserve</button>
 					            </div>
 					        </div>
 					    </div>
@@ -111,7 +114,7 @@
 			        <!-- Filling out the table-->
 			        <tbody id="tableGuy" style="text-align: center; color: #cccccc;">
 						<tr ng-repeat="day in calendars">
-							<td ng-repeat="hour in day track by $index">
+							<td class="time" ng-repeat="hour in day track by $index">
 								<div ng-if="hour != 'RESERVED'">
 									<a href="#myModal" role="button" class="btn" data-toggle="modal" style="color: #999999">
 										{{hour}}
