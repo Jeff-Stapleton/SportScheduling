@@ -277,13 +277,13 @@ module.exports = function(app) {
 		});
 	});
     
-    app.get('/calendars/:courtId',function(req,res){							// return calendar of specific court
+   /* app.get('/calendars/:courtId',function(req,res){							// return calendar of specific court
 		Court.find({courtId :req.params.courtId,function(err,court){
 			if (err)
 				res.send(err);
 			res.json(court);
 		});
-	});
+	});*/
     
     app.get('/calendars/fac/:facId',function(req,res){						// return all calendars of a given facility
         Court.find({facId : req.params.facId},function(err,court){
