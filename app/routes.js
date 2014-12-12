@@ -140,7 +140,7 @@ module.exports = function(app) {
 	app.post('/users/update/:fbUserId/:email/:phone/:firstName/:lastName/:loggedIn',function(req,res){
  		
  		User.remove({
- 			_id: req.params.fbUserId
+ 			fbUserId: req.params.fbUserId
  		}, function(err, user) {
  			if (err)
  				res.send(err);
