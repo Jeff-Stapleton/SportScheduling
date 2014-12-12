@@ -5,7 +5,7 @@ var FacilitySchema   = new Schema({
 	name: String,
 	hours: String,
     phone: String,
-    id: Number,
+    id: String,
     image: String,
     url: String
 });
