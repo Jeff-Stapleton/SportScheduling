@@ -7,6 +7,9 @@ body {
     text-align: center;
     font-family: serif; 
     color: white; 
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 h1 {
@@ -38,9 +41,7 @@ h6 {
 }
 
 #loginInfo {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+
 }
 
 .fb-login-button{}
