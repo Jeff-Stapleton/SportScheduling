@@ -77,10 +77,15 @@ h6 {
 }
 
 .durInfo {
-
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #666666;
+    font-size: 1.3em;
 }
 .dropdown {
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #header {
