@@ -188,6 +188,7 @@
                     $scope.courts.push(data[x]);
                     
                      $('.courtBox').append(
+                     	'<div class="col-xs-12 col-sm-4 col-md-3">'+
                      	'<div class="row">'+
   							'<div class="col-xs-12 cover-tile-image" style="text-align: left;">'+
   								'<div class="court">'+
@@ -214,6 +215,7 @@
 			          				'</div>'+
 		          				'</div>'+
 		          			'</div>'+
+		          		'</div>'
 		          		'</div>');
 
                     console.log(data[x].image);
