@@ -41,6 +41,11 @@ h6 {
     text-shadow: rgba(97,153,198,0.3) 0px 3px 3px;
 }
 
+#inner {
+    display: table;
+    margin: 0 auto;
+}
+
 #title {
     padding-top: 10px;
     padding-bottom: 15px;
