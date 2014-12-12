@@ -20,9 +20,9 @@
 		    });
 		});
 
-			$('.dropdown-inverse li > a').click(function(e){
-			    $('.status').text(this.innerHTML);
-			});
+		$('.dropdown-inverse li > a').click(function(e){
+		    $('.status').text(this.innerHTML);
+		});
 
 		$scope.log = function() {
 		 	console.log($scope.user.firstName);
