@@ -141,13 +141,13 @@ module.exports = function(app) {
  		User.find({fbUserId: req.params.fbUserId}, function(err, user) {
 
  			if (err)
- 				res.send(err);
+ 				res.send('1'+err);
 
  			user.email = req.body.email;
  			user.phone = req.body.phone;
  			user.save(function(err) {
  				if (err)
- 					res.send(err);
+ 					res.send('2'+err);
 
  				res.json({ message: 'User updated!' });
  			});
