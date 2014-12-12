@@ -168,6 +168,8 @@
 				});
 		};
         
+		$scope.courts = [];
+
     $scope.initCourts = function(facId){
         console.log(facId);
         var url = '/courts/fac/'+facId;
