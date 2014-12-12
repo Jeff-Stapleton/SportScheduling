@@ -20,6 +20,10 @@
 		    });
 		});
 
+			$('.dropdown-inverse li > a').click(function(e){
+			    $('.status').text(this.innerHTML);
+			});
+
 		$scope.log = function() {
 		 	console.log($scope.user.firstName);
 		 	console.log($scope.user.lastName);
@@ -97,6 +101,7 @@
 		};
 
 	}]);
+
 
 
 	app.controller('FacilityController', ['$scope', '$http', function($scope, $http){
