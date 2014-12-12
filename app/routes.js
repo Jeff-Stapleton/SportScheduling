@@ -138,7 +138,7 @@ module.exports = function(app) {
 	});
 
 	app.post('/users/update/:fbUserId/:email/:phone',function(req,res){
- 		User.find({fbUserId: req.params.user_id}, function(err, user) {
+ 		User.find({fbUserId: req.params.fbUserId}, function(err, user) {
 
  			if (err)
  				res.send(err);
