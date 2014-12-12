@@ -5,6 +5,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     text-align: center;
+    padding-top: 290px;
     font-family: serif; 
     color: white; 
 }

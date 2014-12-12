@@ -19,13 +19,11 @@ img {
 h1 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size:2.3em;
-    line-height:0.2em;
 }
 
 h2 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size:1.6em;
-    line-height:0.4em;
 }
 
 h3 {
@@ -78,11 +76,13 @@ h6 {
     top: 25%;
 }
 
-.label {
-    float: left;
-}
-.dropdown {
-    float: left;
+.durInfo {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #666666;
+    font-size: 1.3em;
 }
 
 #header {
