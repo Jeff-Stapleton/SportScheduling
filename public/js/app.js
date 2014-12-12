@@ -215,6 +215,7 @@
 		          				'</div>'+
 		          			'</div>'+
 		          		'</div>');
+
                     console.log(data[x].image);
                 }
                 console.log($scope.courts);
