@@ -20,9 +20,8 @@
 		    });
 		});
 		
-		$scope.submit = function(phone) {
-		 	$scope.user.phone = phone;
-		 	localStorage.phone = phone;
+		$scope.submit = function(phone, email) {
+		 	
 		 	$scope.update();
 		};
 
@@ -63,7 +62,7 @@
 						$scope.user.fbUserId = userVals.fbUserId;
 						$scope.user.loggedIn = userVals.loggedIn;
 						$scope.user.image = localStorage.image;
-						$scope.user.phone = localStorage.phone;
+						$scope.user.phone = userVals.phone;
 						
 					} else {
 						$scope.put();
