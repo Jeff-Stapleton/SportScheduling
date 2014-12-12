@@ -21,10 +21,7 @@
 		});
 		
 		$scope.submit = function(phone, email) {
-		 	/*$scope.user.phone = phone;
-		 	localStorage.phone = phone;
-		 	$scope.user.email = email;
-		 	localStorage.email = email;*/
+		 	
 		 	$scope.update();
 		};
 
