@@ -202,14 +202,12 @@
 	                    			'<div class="row">'+
 	                    				'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
 	                                    	'<div id="picBlock">'+
-<<<<<<< HEAD
 	                                    		'<img class="courtPic" src="../assets/'+data[x].image+'"/>'+
 	                  						'</div>'+
 	                  					'</div>'+
 	                  				'</div>'+
 			                  		'<div class="row">'+
 			                  			'<div class="col-xs-12 cover-tile-text" style="text-align: left;">'+
-<<<<<<< HEAD
 			          						'<h5 style="font-weight: bold;">Availability</h5>'+
 			          						'<h5>Time slots available</h5>'+
 			          					'</div>'+
