@@ -36,6 +36,14 @@
 	      js.src = "//connect.facebook.net/en_US/sdk.js";
 	      fjs.parentNode.insertBefore(js, fjs);
 	      }(document, 'script', 'facebook-jssdk'));
+
+
+	      $('td').click(function(){
+		  var col = $(this).parent().children().index($(this));
+		  var row = $(this).parent().parent().children().index($(this).parent());
+		  alert('Row: ' + row + ', Column: ' + col);
+		});
+
 	    </script>
 
  		<nav class="navbar navbar-inverse" ng-include="'navbar.html'" style="background-color: #4E7BA0; border-color: #4E7BA0;"></nav>
